@@ -16,6 +16,7 @@
   @include('layouts.partials.index.tmp')
 
 
+
 {{-- @include('components.nav', ['menu' => [
           (object) ['slug' => 'vectors', 'title' => 'Направления подготовки'],
           (object) ['slug' => 'steps', 'title' => 'Как начать обучение'],

@@ -20,6 +20,8 @@ const tailwindcss = require('tailwindcss');
      require('autoprefixer'),
  ]);
 
+ mix.browserSync('money.cam');
+
  if (mix.inProduction()) {
      mix.version();
  }
