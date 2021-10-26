@@ -1,159 +1,8 @@
-<div class="bg-primary">
-    <div class="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div class="relative flex items-center justify-between lg:justify-center lg:space-x-16">
-            <ul class="flex items-center hidden space-x-8 lg:flex">
-                <li><a href="/" aria-label="Our product" title="Our product"
-                       class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Product</a>
-                </li>
-                <li><a href="/" aria-label="Our product" title="Our product"
-                       class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Features</a>
-                </li>
-                <li><a href="/" aria-label="Product pricing" title="Product pricing"
-                       class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Pricing</a>
-                </li>
-            </ul>
-            <a href="/" aria-label="Company" title="Company" class="inline-flex items-center text-white w-36 -mt-10 lg:-mt-5">
-                @include('layouts.partials.svg.logo')
-            </a>
-            <ul class="flex items-center hidden space-x-8 lg:flex">
-                <li><a href="/" aria-label="About us" title="About us"
-                       class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">About
-                        us</a></li>
-                <li><a href="/" aria-label="Sign in" title="Sign in"
-                       class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Sign
-                        in</a></li>
-                <li><a href="/" aria-label="Sign up" title="Sign up"
-                       class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Sign
-                        up</a></li>
-            </ul>
-{{--            <!-- Mobile menu -->--}}
-{{--            <div class="lg:hidden">--}}
-{{--                <button aria-label="Open Menu" title="Open Menu"--}}
-{{--                        class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">--}}
-{{--                    <svg class="w-5 text-gray-600" viewBox="0 0 24 24">--}}
-{{--                        <path fill="currentColor"--}}
-{{--                              d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>--}}
-{{--                        <path fill="currentColor"--}}
-{{--                              d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>--}}
-{{--                        <path fill="currentColor"--}}
-{{--                              d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>--}}
-{{--                    </svg>--}}
-{{--                </button>--}}
-{{--                <!-- Mobile menu dropdown -->--}}
-{{--                <div class="absolute top-0 left-0 w-full">--}}
-{{--                    <div class="p-5 bg-white border rounded shadow-sm">--}}
-{{--                        <div class="flex items-center justify-between mb-4">--}}
-{{--                            <div>--}}
-{{--                                <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">--}}
-{{--                                    <svg class="w-8 text-primary" viewBox="0 0 24 24"--}}
-{{--                                         stroke-linejoin="round" stroke-width="2" stroke-linecap="round"--}}
-{{--                                         stroke-miterlimit="10" stroke="currentColor" fill="none">--}}
-{{--                                        <rect x="3" y="1" width="7" height="12"></rect>--}}
-{{--                                        <rect x="3" y="17" width="7" height="6"></rect>--}}
-{{--                                        <rect x="14" y="1" width="7" height="6"></rect>--}}
-{{--                                        <rect x="14" y="11" width="7" height="12"></rect>--}}
-{{--                                    </svg>--}}
-{{--                                    <span--}}
-{{--                                        class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Company</span>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <button aria-label="Close Menu" title="Close Menu"--}}
-{{--                                        class="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">--}}
-{{--                                    <svg class="w-5 text-gray-600" viewBox="0 0 24 24">--}}
-{{--                                        <path--}}
-{{--                                            fill="currentColor"--}}
-{{--                                            d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"--}}
-{{--                                        ></path>--}}
-{{--                                    </svg>--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <nav>--}}
-{{--                            <ul class="space-y-4">--}}
-{{--                                <li><a href="/" aria-label="Our product" title="Our product"--}}
-{{--                                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primary">Product</a>--}}
-{{--                                </li>--}}
-{{--                                <li><a href="/" aria-label="Our product" title="Our product"--}}
-{{--                                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primary">Features</a>--}}
-{{--                                </li>--}}
-{{--                                <li><a href="/" aria-label="Product pricing" title="Product pricing"--}}
-{{--                                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primary">Pricing</a>--}}
-{{--                                </li>--}}
-{{--                                <li><a href="/" aria-label="About us" title="About us"--}}
-{{--                                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primary">About--}}
-{{--                                        us</a></li>--}}
-{{--                                <li><a href="/" aria-label="Sign in" title="Sign in"--}}
-{{--                                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-primary">Sign--}}
-{{--                                        in</a></li>--}}
-{{--                                <li>--}}
-{{--                                    <a--}}
-{{--                                        href="/"--}}
-{{--                                        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-primary hover:bg-primary-50 focus:shadow-outline focus:outline-none"--}}
-{{--                                        aria-label="Sign up"--}}
-{{--                                        title="Sign up"--}}
-{{--                                    >--}}
-{{--                                        Sign up--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </nav>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-                <!---->
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="flex flex-col items-center justify-center px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:pt-32 md:px-0">
-    <div class="flex flex-col items-center max-w-2xl md:px-8">
-        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-            <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-        <span class="relative inline-block">
-            @include('layouts.partials.svg.chips-pattern')
-          <span class="relative text-primary">Hello</span>
-        </span>
-                quick, brown fox jumps over a lazy dog
-            </h2>
-            <p class="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque
-                ipsa quae.
-            </p>
-        </div>
-        <form class="flex flex-col items-center w-full mb-4 md:flex-row">
-{{--            <input--}}
-{{--                name="name"--}}
-{{--                placeholder="Name"--}}
-{{--                required=""--}}
-{{--                type="text"--}}
-{{--                class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-primary focus:outline-none focus:shadow-outline"--}}
-{{--            />--}}
-            <input
-                placeholder="Email"
-                required=""
-                type="text"
-                class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-primary focus:outline-none focus:shadow-outline"
-            />
-            <button
-                type="submit"
-                class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-primary hover:bg-primary-50 focus:shadow-outline focus:outline-none"
-            >
-                Subscribe
-            </button>
-        </form>
-        <p class="max-w-md mb-10 text-xs text-gray-600 sm:text-sm md:text-center">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
-        </p>
-    </div>
-    <img src="/svg/dev.svg"
-         class="w-full max-w-screen-sm mx-auto md:w-auto lg:max-w-screen-md" alt=""/>
-</div>
-
-
 <div class="bg-primary-50">
     <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <h2 class="max-w-md mb-6 font-sans text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl sm:leading-none xl:max-w-lg">
+            Каталог услуг
+        </h2>
         <div class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
             <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-gray-800">
                 <circle fill="currentColor" fill-opacity="0.4" cx="44" cy="44" r="15.5"></circle>
@@ -163,55 +12,64 @@
                 <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44" r="22.5"></circle>
             </svg>
         </div>
+
         <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Sed ut perspiciatis unde omnis iste
-                </p>
-            </div>
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Well, the way they make shows is
-                </p>
-            </div>
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Some don't, become nothing again
-                </p>
-            </div>
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Pommy ipsum smeg head whizz morris
-                </p>
-            </div>
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Taking the mick middle class bog
-                </p>
-            </div>
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Sportacus andrew weatherall goose
-                </p>
-            </div>
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Semi beard cream bun disaster alpha
-                </p>
-            </div>
-            <div
-                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">
-                <p class="font-semibold text-gray-200">
-                    Bro ipsum dolor sit amet gaper dart
-                </p>
-            </div>
+            @for($i=0;  $i < 8 ; $i++)
+                <div class="text-center">
+                    <div
+                        class="px-10 py-20 text-center transition duration-300 transform bg-local rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl"
+                        style="background-image: url('/landing.jpg')">
+                    </div>
+                    <p class="font-semibold text-sm text-white">
+                        Корпоративный сайт
+                    </p>
+                </div>
+
+            @endfor
+
+
+            {{--            <div--}}
+            {{--                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">--}}
+            {{--                <p class="font-semibold text-gray-200">--}}
+            {{--                    Well, the way they make shows is--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
+            {{--            <div--}}
+            {{--                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">--}}
+            {{--                <p class="font-semibold text-gray-200">--}}
+            {{--                    Some don't, become nothing again--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
+            {{--            <div--}}
+            {{--                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">--}}
+            {{--                <p class="font-semibold text-gray-200">--}}
+            {{--                    Pommy ipsum smeg head whizz morris--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
+            {{--            <div--}}
+            {{--                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">--}}
+            {{--                <p class="font-semibold text-gray-200">--}}
+            {{--                    Taking the mick middle class bog--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
+            {{--            <div--}}
+            {{--                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">--}}
+            {{--                <p class="font-semibold text-gray-200">--}}
+            {{--                    Sportacus andrew weatherall goose--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
+            {{--            <div--}}
+            {{--                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">--}}
+            {{--                <p class="font-semibold text-gray-200">--}}
+            {{--                    Semi beard cream bun disaster alpha--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
+            {{--            <div--}}
+            {{--                class="px-10 py-20 text-center transition duration-300 transform bg-gray-900 rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl">--}}
+            {{--                <p class="font-semibold text-gray-200">--}}
+            {{--                    Bro ipsum dolor sit amet gaper dart--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
         </div>
     </div>
 </div>

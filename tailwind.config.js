@@ -18,7 +18,16 @@ module.exports = {
                 'secondary-50': '#9F8757',
                 'secondary-100': '#FFC75B',
                 teal: colors.teal,
-            }
+            },
+            // animation: {
+            //     'fade-in': 'fadeIn 3s linear infinite',
+            // },
+            // keyframes: {
+            //     fadeIn: {
+            //         '0%': { opacity: 0 },
+            //         '100%': { opacity: 1 },
+            //     }
+            // }
         },
     },
     variants: {

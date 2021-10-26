@@ -13,7 +13,11 @@
 
 @section('main')
 
-  @include('layouts.partials.index.tmp')
+    @include('layouts.partials.nav')
+
+    @include('layouts.partials.index.alfa')
+    @include('layouts.partials.index.dev-vectors')
+    @include('layouts.partials.index.tmp')
 
 
 
