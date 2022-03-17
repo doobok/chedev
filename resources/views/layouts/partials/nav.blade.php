@@ -3,38 +3,35 @@
         <div class="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div class="relative flex items-center justify-between lg:justify-center lg:space-x-16">
                 <ul class="flex items-center hidden space-x-8 lg:flex">
-                    <li><a href="/" aria-label="Our product" title="Our product"
-                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Послуги</a>
+                    <li><a href="{{route('page', 'services')}}" aria-label="{{__('site.services')}}" title="{{__('site.services')}}"
+                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.services')}}</a>
                     </li>
-                    <li><a href="/" aria-label="Our product" title="Our product"
-                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Портфоліо</a>
+                    <li><a href="{{route('page', 'portfolio')}}" aria-label="{{__('site.portfolio')}}" title="{{__('site.portfolio')}}"
+                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.portfolio')}}</a>
                     </li>
-                    <li><a href="/" aria-label="Product pricing" title="Product pricing"
-                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Pricing</a>
+                    <li><a href="{{route('page', 'prices')}}" aria-label="{{__('site.prices')}}" title="{{__('site.prices')}}"
+                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.prices')}}</a>
                     </li>
                 </ul>
-                <a href="/" aria-label="Company" title="Company"
+                <a href="{{route('main-page')}}" aria-label="{{config('app.name')}}" title="{{config('app.name')}}"
                    class="inline-flex items-center text-white w-36 -mt-10 lg:-mt-9">
                     @include('layouts.partials.svg.logo')
                 </a>
                 <ul class="flex items-center hidden space-x-8 lg:flex">
-                    <li><a href="/" aria-label="About us" title="About us"
-                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">About
-                            us</a></li>
-                    <li><a href="/" aria-label="Sign in" title="Sign in"
-                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Sign
-                            in</a></li>
-                    <li><a href="/" aria-label="Sign up" title="Sign up"
-                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">Sign
-                            up</a></li>
+                    <li><a href="{{route('page', 'about-us')}}" aria-label="{{__('site.about-us')}}" title="{{__('site.about-us')}}"
+                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.about-us')}}</a>
+                    </li>
+                    <li><a href="{{route('page', 'contacts')}}" aria-label="{{__('site.contacts')}}" title="{{__('site.contacts')}}"
+                           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.contacts')}}</a>
+                    </li>
                 </ul>
                 <div class="block lg:hidden">
-                        <button class="absolute top-0 right-0"
-                                onclick="toggleNavbar('collapse-navbar')"
-                        >
-                            <img src="/svg/menu.svg"
-                                 class="h-7 w-auto">
-                        </button>
+                    <button class="absolute top-0 right-0"
+                            onclick="toggleNavbar('collapse-navbar')"
+                    >
+                        <img src="/svg/menu.svg"
+                             class="h-7 w-auto">
+                    </button>
                 </div>
             </div>
         </div>

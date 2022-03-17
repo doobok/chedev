@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-})->route('mainpage');
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Route::get('/', 'App\Http\Controllers\PagesController@mainPage')->name('main-page');
+Route::get('/{slug}', 'App\Http\Controllers\PagesController@page')->name('page');

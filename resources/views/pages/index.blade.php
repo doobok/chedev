@@ -17,6 +17,7 @@
 
     @include('layouts.partials.index.alfa')
     @include('layouts.partials.index.dev-vectors')
+    @include('layouts.partials.index.services')
     @include('layouts.partials.index.tmp')
 
 
