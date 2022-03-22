@@ -26,6 +26,7 @@
     @include('layouts.partials.nav')
 
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+
         <p class="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">
             Chernobay Development
         </p>
@@ -36,10 +37,14 @@
                     {{$page->getTranslatedAttribute('heading')}}
                 </h1>
             </div>
+            <div class="flex justify-center mb-4">
+                <img class="object-cover w-full rounded shadow-lg" src="{{ Voyager::image( $page->image ) }}" alt="{{$page->getTranslatedAttribute('heading')}}" />
+            </div>
             <p class="text-base text-gray-700 md:text-lg">
                 {{$page->getTranslatedAttribute('teaser')}}
             </p>
         </div>
+
         <div class="mb-10 sm:text-center">
             <a href="https://t.me/Yura_Chernobay" aria-label="Founder" class="inline-block mb-1" target="_blank">
                 <img alt="avatar"
@@ -53,7 +58,12 @@
             </div>
         </div>
 
+
         <article class="max-w-screen-lg sm:mx-auto">
+            <blockquote>
+                <h2 class="text-gray-700">{{$page->getTranslatedAttribute('heading')}}</h2>
+            </blockquote>
+
             <div class="space-y-8">
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>

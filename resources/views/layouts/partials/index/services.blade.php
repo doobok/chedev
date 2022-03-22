@@ -14,18 +14,20 @@
         </div>
 
         <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            @for($i=0;  $i < 8 ; $i++)
-                <div class="text-center">
-                    <div
-                        class="px-10 py-20 text-center transition duration-300 transform bg-local rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl"
-                        style="background-image: url('/landing.jpg')">
+            @foreach($services as $service)
+                <a href="{{route('page', $service->slug)}}" title="{{$service->getTranslatedAttribute('heading')}}">
+                    <div class="text-center">
+                        <div
+                            class="px-10 py-20 text-center transition duration-300 transform bg-local rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl"
+                            style="background-image: url('{{Voyager::image($service->thumbnail('small'))}}')">
+                        </div>
+                        <p class="font-semibold text-sm text-white mt-2">
+                            {{$service->getTranslatedAttribute('heading')}}
+                        </p>
                     </div>
-                    <p class="font-semibold text-sm text-white mt-2">
-                        Корпоративный сайт
-                    </p>
-                </div>
+                </a>
 
-            @endfor
+            @endforeach
 
         </div>
     </div>
