@@ -17,7 +17,9 @@ module.exports = {
                 secondary: '#FFC046',
                 'secondary-50': '#9F8757',
                 'secondary-100': '#FFC75B',
-                teal: colors.teal,
+                'blue': colors.indigo,
+                'yellow': colors.amber,
+                'green': colors.emerald,
             },
             // animation: {
             //     'fade-in': 'fadeIn 3s linear infinite',

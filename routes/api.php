@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// V1 API
+Route::group(['prefix' => 'v1'], function () {
+    // Захват лидов
+    Route::post('send-lead', 'App\Http\Controllers\LeadsController@addLead');
 });

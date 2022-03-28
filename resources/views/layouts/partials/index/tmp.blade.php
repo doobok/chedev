@@ -373,9 +373,9 @@
         <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
       <span class="relative inline-block">
         @include('layouts.partials.svg.chips-pattern')
-        <span class="relative">Welcome</span>
+        <span class="relative">Chernobay Dev</span>
       </span>
-            our talented team of professionals
+            team of professionals
         </h2>
         <p class="text-base text-gray-700 md:text-lg">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque

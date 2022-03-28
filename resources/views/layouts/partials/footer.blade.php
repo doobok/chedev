@@ -96,22 +96,15 @@
                 </div>
             </div>
             <div class="md:max-w-md lg:col-span-2">
-                <span class="text-base font-medium tracking-wide text-gray-300">Subscribe for updates</span>
-                <form class="flex flex-col mt-4 md:flex-row">
-                    <input
-                        placeholder="Email"
-                        required=""
-                        type="text"
-                        class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-purple-400 focus:outline-none focus:shadow-outline"
-                    />
-                    <button
-                        class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
-                    >
-                        Subscribe
-                    </button>
-                </form>
+                <span class="text-base font-medium tracking-wide text-gray-300">{{__('site.footer-consultation-h')}}</span>
+                <div class="flex flex-col mt-4 md:flex-row">
+                    <smpl-button
+                        cls="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+                        txt="{{__('site.footer-consultation-b')}}"
+                    ></smpl-button>
+                </div>
                 <p class="mt-4 text-sm text-gray-500">
-                    Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken spare ribs salami.
+                    {{__('site.footer-consultation-t')}}
                 </p>
             </div>
         </div>
