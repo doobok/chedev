@@ -2372,6 +2372,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['clr', 'txt'],
@@ -2572,6 +2576,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     enter_name: 'укажите имя',
     phone: 'Номер телефона',
     enter_phone: 'введите действительный номер телефона',
+    format_err: 'ошибка ввода',
     fill_form: 'заполните форму',
     "continue": 'продолжить',
     phone_secure: 'мы никогда не передадим Ваш номер телефона третьим лицам',
@@ -2587,6 +2592,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     enter_name: 'вкажіть ім\'я',
     phone: 'Номер телефону',
     enter_phone: 'введіть дійсний номер телефону',
+    format_err: 'помилка вводу',
     fill_form: 'заповніть форму',
     "continue": 'продовжити',
     phone_secure: 'ми ніколи не передамо Ваш номер телефону третім особам',
@@ -3868,14 +3874,6 @@ var render = function() {
                                 ]
                               ),
                               _vm._v(" "),
-                              _c("input", {
-                                attrs: {
-                                  type: "text",
-                                  name: "phone",
-                                  hidden: ""
-                                }
-                              }),
-                              _vm._v(" "),
                               _c(
                                 "div",
                                 { staticClass: "w-full p-2 relative mb-3" },
@@ -3906,8 +3904,7 @@ var render = function() {
                                       "border-0 placeholder-gray-400 text-gray-500 bg-gray-100 rounded text-xl shadow focus:outline-none focus:ring w-full p-4",
                                     attrs: {
                                       type: "text",
-                                      name: "password",
-                                      autocomplete: "new-password",
+                                      name: "phone",
                                       placeholder: _vm.$ml.get("phone")
                                     },
                                     domProps: { value: _vm.phone },
@@ -3949,11 +3946,12 @@ var render = function() {
                                     "button",
                                     {
                                       staticClass:
-                                        "text-white w-full p-4 text-sm font-bold uppercase rounded shadow hover:shadow-lg outline-none focus:outline-none border-2 border-gray-100",
-                                      attrs: {
-                                        type: "button",
-                                        disabled: _vm.$v.$invalid
-                                      },
+                                        "text-white w-full p-4 text-sm font-bold uppercase rounded shadow hover:shadow-lg outline-none focus:outline-none",
+                                      class: [
+                                        _vm.$v.$invalid ? "bg-red-400" : "",
+                                        "bg-green-400"
+                                      ],
+                                      attrs: { disabled: _vm.$v.$invalid },
                                       on: { click: _vm.sendForm }
                                     },
                                     [
@@ -4156,63 +4154,61 @@ var render = function() {
       !_vm.sended
         ? [
             _vm.errorshow
-              ? _c("div", { staticClass: "text-lg text-center" }, [
-                  _c(
-                    "span",
-                    { staticClass: "text-white p-2 rounded bg-red-400" },
-                    [_vm._v(_vm._s(_vm.error))]
-                  )
+              ? _c("div", { staticClass: "text-base text-center" }, [
+                  _c("span", { staticClass: "text-red-400 mb-6" }, [
+                    _vm._v(_vm._s(_vm.error))
+                  ])
                 ])
               : _vm._e(),
             _vm._v(" "),
             _c("div", [
-              _c("div", { staticClass: "flex flex-col md:flex-row relative" }, [
-                _c("div", { staticClass: "flex-grow w-full mb-2 md:mr-2" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.name,
-                        expression: "name"
-                      }
-                    ],
-                    staticClass:
-                      "px-4 h-12 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
-                    attrs: {
-                      type: "text",
-                      name: "name",
-                      placeholder: _vm.$ml.get("name")
-                    },
-                    domProps: { value: _vm.name },
-                    on: {
-                      blur: function($event) {
-                        return _vm.$v.name.$touch()
-                      },
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.name = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _vm.$v.name.$error
-                    ? _c(
-                        "span",
+              _c("div", { staticClass: "flex flex-col md:flex-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "flex-grow w-full mb-2 md:mr-2 relative" },
+                  [
+                    _c("input", {
+                      directives: [
                         {
-                          staticClass:
-                            "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3"
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.name,
+                          expression: "name"
+                        }
+                      ],
+                      staticClass:
+                        "px-4 h-12 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                      attrs: {
+                        type: "text",
+                        name: "name",
+                        placeholder: _vm.$ml.get("name")
+                      },
+                      domProps: { value: _vm.name },
+                      on: {
+                        blur: function($event) {
+                          return _vm.$v.name.$touch()
                         },
-                        [_vm._v(_vm._s(_vm.$ml.get("enter_name")))]
-                      )
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  attrs: { type: "text", name: "phone", hidden: "" }
-                }),
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.name = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.name.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-4 left-3"
+                          },
+                          [_vm._v(_vm._s(_vm.$ml.get("enter_name")))]
+                        )
+                      : _vm._e()
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -4237,8 +4233,7 @@ var render = function() {
                         "px-4 h-12 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
                       attrs: {
                         type: "text",
-                        name: "password",
-                        autocomplete: "new-password",
+                        name: "phone",
                         placeholder: _vm.$ml.get("phone")
                       },
                       domProps: { value: _vm.phone },
@@ -4260,83 +4255,86 @@ var render = function() {
                           "span",
                           {
                             staticClass:
-                              "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3"
+                              "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-4 left-3"
                           },
-                          [_vm._v(_vm._s(_vm.$ml.get("enter_phone")))]
+                          [_vm._v(_vm._s(_vm.$ml.get("format_err")))]
                         )
                       : _vm._e()
                   ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "inline-flex items-center justify-center h-12 px-6 mr-6 capitalize tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none",
-                    class:
-                      "bg-" + _vm.clr + "-500 hover:bg-" + _vm.clr + "-700",
-                    attrs: { disabled: _vm.$v.$invalid },
-                    on: { click: _vm.sendForm }
-                  },
-                  [
-                    _vm.$v.$invalid
-                      ? [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(_vm.$ml.get("fill_form")) +
-                              "\n                    "
-                          )
-                        ]
-                      : [
-                          _c(
-                            "span",
-                            { staticClass: "flex justify-center text-white" },
-                            [
-                              _vm.loading
-                                ? _c(
-                                    "svg",
-                                    {
-                                      staticClass: "animate-spin h-5 w-5 mr-3",
-                                      attrs: {
-                                        viewBox: "0 0 24 24",
-                                        fill: "currentColor"
-                                      }
-                                    },
-                                    [
-                                      _c("path", {
-                                        attrs: {
-                                          d:
-                                            "M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm8 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8zm-19 0c0-6.065 4.935-11 11-11v2c-4.962 0-9 4.038-9 9 0 2.481 1.009 4.731 2.639 6.361l-1.414 1.414.015.014c-2-1.994-3.24-4.749-3.24-7.789z"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(_vm._s(_vm.$ml.get("continue")))
-                              ])
-                            ]
-                          )
-                        ]
-                  ],
-                  2
                 )
-              ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "inline-flex items-center justify-center h-12 px-6 my-4 capitalize tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none",
+                  class: [
+                    _vm.$v.$invalid ? "bg-red-400" : "",
+                    "bg-" + _vm.clr + "-500"
+                  ],
+                  attrs: { disabled: _vm.$v.$invalid },
+                  on: { click: _vm.sendForm }
+                },
+                [
+                  _vm.$v.$invalid
+                    ? [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.$ml.get("fill_form")) +
+                            "\n                    "
+                        )
+                      ]
+                    : [
+                        _c(
+                          "span",
+                          { staticClass: "flex justify-center text-white" },
+                          [
+                            _vm.loading
+                              ? _c(
+                                  "svg",
+                                  {
+                                    staticClass: "animate-spin h-5 w-5 mr-3",
+                                    attrs: {
+                                      viewBox: "0 0 24 24",
+                                      fill: "currentColor"
+                                    }
+                                  },
+                                  [
+                                    _c("path", {
+                                      attrs: {
+                                        d:
+                                          "M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm8 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8zm-19 0c0-6.065 4.935-11 11-11v2c-4.962 0-9 4.038-9 9 0 2.481 1.009 4.731 2.639 6.361l-1.414 1.414.015.014c-2-1.994-3.24-4.749-3.24-7.789z"
+                                      }
+                                    })
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("span", [
+                              _vm._v(_vm._s(_vm.$ml.get("continue")))
+                            ])
+                          ]
+                        )
+                      ]
+                ],
+                2
+              )
             ])
           ]
         : [
             _c(
               "div",
               {
-                staticClass: "w-full flex text-center justify-center flex-col"
+                staticClass: "w-full flex text-center flex-col rounded py-4",
+                class: "bg-" + _vm.clr + "-100"
               },
               [
                 _c(
                   "div",
                   {
                     staticClass:
-                      "text-2xl font-semibold text-white flex flex-row justify-center"
+                      "text-base font-semibold text-gray-700 flex flex-row justify-center"
                   },
                   [
                     _c(
@@ -4365,11 +4363,11 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-base text-white m-3" }, [
+                _c("p", { staticClass: "text-sm text-gray-700 m-2" }, [
                   _vm._v(
-                    "\n                " +
+                    "\n                    " +
                       _vm._s(_vm.$ml.get("lead_success_d")) +
-                      "\n            "
+                      "\n                "
                   )
                 ])
               ]

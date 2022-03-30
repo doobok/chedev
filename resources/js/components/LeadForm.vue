@@ -44,13 +44,13 @@
                                               class="text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3">{{ $ml.get('enter_name') }}</span>
                                     </div>
                                     <!-- phone -->
-                                    <input type="text" name="phone" hidden>
                                     <div class="w-full p-2 relative mb-3">
                                         <span class="text-sm text-white">{{ $ml.get('phone') }}</span>
                                         <input
-                                            type="text" name="password" autocomplete="new-password"
+                                            type="text"
                                             v-model="phone"
                                             v-mask="'+38 (###) ###-####'"
+                                            name="phone"
                                             ref="phone"
                                             class="border-0 placeholder-gray-400 text-gray-500 bg-gray-100 rounded text-xl shadow focus:outline-none focus:ring w-full p-4"
                                             :placeholder="$ml.get('phone')"
@@ -62,9 +62,9 @@
 
                                     <div class="w-full p-2 relative">
                                         <button
-                                            class="text-white w-full p-4 text-sm font-bold uppercase rounded shadow hover:shadow-lg outline-none focus:outline-none border-2 border-gray-100"
-                                            type="button"
+                                            class="text-white w-full p-4 text-sm font-bold uppercase rounded shadow hover:shadow-lg outline-none focus:outline-none"
                                             :disabled="$v.$invalid"
+                                            :class="[$v.$invalid ? 'bg-red-400' : '', 'bg-green-400']"
                                             @click="sendForm"
                                         >
                                             <template v-if="$v.$invalid">

@@ -2,14 +2,14 @@
     <div>
         <template v-if="!sended">
 
-            <div v-if="errorshow" class="text-lg text-center">
-                <span class="text-white p-2 rounded bg-red-400">{{ error }}</span>
+            <div v-if="errorshow" class="text-base text-center">
+                <span class="text-red-400 mb-6">{{ error }}</span>
             </div>
 
             <div>
 
-                <div class="flex flex-col md:flex-row relative">
-                    <div class="flex-grow w-full mb-2 md:mr-2">
+                <div class="flex flex-col md:flex-row">
+                    <div class="flex-grow w-full mb-2 md:mr-2 relative">
                         <input
                             type="text" name="name"
                             v-model="name"
@@ -18,36 +18,38 @@
                             @blur="$v.name.$touch()"
                         />
                         <span v-if="$v.name.$error"
-                              class="text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3">{{
+                              class="text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-4 left-3">{{
                                 $ml.get('enter_name')
                             }}</span>
                     </div>
                     <!-- phone -->
-                    <input type="text" name="phone" hidden>
+<!--                    <input type="text" name="phone" hidden>-->
                     <div class="flex-grow w-full mb-2 md:mr-2 relative">
                         <input
-                            type="text" name="password" autocomplete="new-password"
+                            type="text"
                             v-model="phone"
+                            name="phone"
                             v-mask="'+38 (###) ###-####'"
                             class="px-4 h-12 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline"
                             :placeholder="$ml.get('phone')"
                             @blur="$v.phone.$touch()"
                         />
                         <span v-if="$v.phone.$error"
-                              class="text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3">{{
-                                $ml.get('enter_phone')
+                              class="text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-4 left-3">{{
+                                $ml.get('format_err')
                             }}</span>
                     </div>
-                    <button
-                        class="inline-flex items-center justify-center h-12 px-6 mr-6 capitalize tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none"
-                        :class="'bg-'+clr+'-500 hover:bg-'+clr+'-700'"
-                        :disabled="$v.$invalid"
-                        @click="sendForm"
-                    >
-                        <template v-if="$v.$invalid">
-                            {{ $ml.get('fill_form') }}
-                        </template>
-                        <template v-else>
+                </div>
+                <button
+                    class="inline-flex items-center justify-center h-12 px-6 my-4 capitalize tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none"
+                    :class="[$v.$invalid ? 'bg-red-400' : '', 'bg-'+clr+'-500']"
+                    :disabled="$v.$invalid"
+                    @click="sendForm"
+                >
+                    <template v-if="$v.$invalid">
+                        {{ $ml.get('fill_form') }}
+                    </template>
+                    <template v-else>
                         <span class="flex justify-center text-white">
                             <svg v-if="loading" class="animate-spin h-5 w-5 mr-3"
                                  viewBox="0 0 24 24" fill="currentColor">
@@ -56,14 +58,16 @@
                             </svg>
                             <span>{{ $ml.get('continue') }}</span>
                         </span>
-                        </template>
-                    </button>
-                </div>
+                    </template>
+                </button>
             </div>
         </template>
         <template v-else>
-            <div class="w-full flex text-center justify-center flex-col">
-                <div class="text-2xl font-semibold text-white flex flex-row justify-center">
+            <div
+                class="w-full flex text-center flex-col rounded py-4"
+                :class="'bg-'+clr+'-100'"
+            >
+                <div class="text-base font-semibold text-gray-700 flex flex-row justify-center">
 
                     <svg class="mr-2 text-green-400" xmlns="http://www.w3.org/2000/svg" width="32"
                          height="32" viewBox="0 0 24 24" fill="currentColor">
@@ -73,7 +77,7 @@
                     <span>{{ $ml.get('lead_success') }}</span>
                 </div>
 
-                <p class="text-base text-white m-3">
+                <p class="text-sm text-gray-700 m-2">
                     {{ $ml.get('lead_success_d') }}
                 </p>
 

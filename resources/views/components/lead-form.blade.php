@@ -11,42 +11,17 @@
                     </p>
                 </div>
                 <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                    Получить бесплатную<br class="hidden md:block" />
-                    консультацию
+                    {{__('site.module-consultation-h1')}}<br class="hidden md:block" />
+                    {{__('site.module-consultation-h2')}}
                     <span class="inline-block text-blue-500">online</span>
                 </h2>
                 <p class="text-base text-gray-700 md:text-lg">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
+                    {{__('site.module-consultation-t')}}
                 </p>
             </div>
-{{--            <form>--}}
-{{--                <div class="flex flex-col md:flex-row">--}}
-{{--                    <input--}}
-{{--                        placeholder="Name"--}}
-{{--                        required=""--}}
-{{--                        type="text"--}}
-{{--                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 focus:border-purple-400 focus:outline-none focus:shadow-outline"--}}
-{{--                    />--}}
-{{--                    <input--}}
-{{--                        placeholder="Email"--}}
-{{--                        required=""--}}
-{{--                        type="text"--}}
-{{--                        class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mb-0 focus:border-purple-400 focus:outline-none focus:shadow-outline"--}}
-{{--                    />--}}
-{{--                </div>--}}
-{{--                <div class="flex items-center mt-4">--}}
-{{--                    <button--}}
-{{--                        class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none"--}}
-{{--                    >--}}
-{{--                        Получить консультацию--}}
-{{--                    </button>--}}
-
-
-{{--                </div>--}}
-{{--            </form>--}}
             <lead-form-stroke
                 clr="green"
-                txt="Получить консультацию"
+                txt="module service page"
             ></lead-form-stroke>
         </div>
     </div>

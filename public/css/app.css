@@ -64,6 +64,9 @@
 .left-3 {
   left: 0.75rem;
 }
+.-bottom-4 {
+  bottom: -1rem;
+}
 .z-0 {
   z-index: 0;
 }
@@ -76,8 +79,8 @@
 .m-3 {
   margin: 0.75rem;
 }
-.m-auto {
-  margin: auto;
+.m-2 {
+  margin: 0.5rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -95,6 +98,10 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -110,20 +117,11 @@
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 .mb-3 {
   margin-bottom: 0.75rem;
-}
-.mt-4 {
-  margin-top: 1rem;
-}
-.mr-6 {
-  margin-right: 1.5rem;
-}
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 .-mt-8 {
   margin-top: -2rem;
@@ -134,6 +132,9 @@
 .mt-2 {
   margin-top: 0.5rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -142,6 +143,12 @@
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mr-6 {
+  margin-right: 1.5rem;
 }
 .-ml-1 {
   margin-left: -0.25rem;
@@ -499,10 +506,6 @@
   --tw-bg-opacity: 1;
   background-color: rgb(52 211 153 / var(--tw-bg-opacity));
 }
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
-}
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(65 104 187 / var(--tw-bg-opacity));
@@ -543,6 +546,10 @@
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
 }
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+}
 .bg-transparent {
   background-color: transparent;
 }
@@ -553,6 +560,14 @@
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+.bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(167 243 208 / var(--tw-bg-opacity));
+}
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 250 229 / var(--tw-bg-opacity));
 }
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
@@ -822,6 +837,10 @@
 .text-green-400 {
   --tw-text-opacity: 1;
   color: rgb(52 211 153 / var(--tw-text-opacity));
+}
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -1516,10 +1535,6 @@ article blockquote {
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.hover\:bg-green-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(4 120 87 / var(--tw-bg-opacity));
-}
 .hover\:bg-amber-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 158 11 / var(--tw-bg-opacity));
@@ -1535,6 +1550,10 @@ article blockquote {
 .hover\:bg-indigo-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(49 46 129 / var(--tw-bg-opacity));
+}
+.hover\:bg-green-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 120 87 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
@@ -1584,13 +1603,13 @@ article blockquote {
   --tw-border-opacity: 1;
   border-color: rgb(165 180 252 / var(--tw-border-opacity));
 }
-.focus\:border-purple-400:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(192 132 252 / var(--tw-border-opacity));
-}
 .focus\:border-primary:focus {
   --tw-border-opacity: 1;
   border-color: rgb(65 104 187 / var(--tw-border-opacity));
+}
+.focus\:border-purple-400:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(192 132 252 / var(--tw-border-opacity));
 }
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
@@ -1733,14 +1752,14 @@ article blockquote {
     margin-left: auto;
     margin-right: auto;
   }
+  .md\:mb-12 {
+    margin-bottom: 3rem;
+  }
   .md\:mr-2 {
     margin-right: 0.5rem;
   }
   .md\:mb-0 {
     margin-bottom: 0px;
-  }
-  .md\:mb-12 {
-    margin-bottom: 3rem;
   }
   .md\:mb-10 {
     margin-bottom: 2.5rem;
@@ -1780,9 +1799,6 @@ article blockquote {
   }
   .md\:flex-row {
     flex-direction: row;
-  }
-  .md\:flex-wrap {
-    flex-wrap: wrap;
   }
   .md\:border-r {
     border-right-width: 1px;
