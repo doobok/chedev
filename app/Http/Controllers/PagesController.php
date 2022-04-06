@@ -28,10 +28,15 @@ class PagesController extends Controller
 //        static pages
         ($slug === 'contacts') ? $slg='contacts' : '';
         ($slug === 'products') ? $slg='products' : '';
+        ($slug === 'collaborate') ? $slg='collaborate' : '';
 //        dynamic pages
         if($slug === 'services') {
             $slg='services';
             $data=Page::where('id', '<', 4)->get();
+        }
+        if($slug === 'collaborate') {
+            $slg='collaborate';
+            $page=Page::where('slug', 'collaborate')->first();
         }
 //        get models pages
         if(!$slg){

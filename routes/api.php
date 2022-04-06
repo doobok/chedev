@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function () {
     // Захват лидов
     Route::post('send-lead', 'App\Http\Controllers\LeadsController@addLead');
+    Route::post('send-vacancy', 'App\Http\Controllers\VacanciesController@addVacancy');
 });

@@ -2482,6 +2482,266 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VacancyForm.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VacancyForm.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      sended: false,
+      sending: false,
+      //индикатор отправки
+      loading: false,
+      errorshow: false,
+      error: '',
+      name: '',
+      lname: '',
+      phone: '',
+      specialty: '',
+      age: '',
+      comment: '',
+      link: '',
+      professions: ['Вебдизайн', 'Копирайтер', 'PHP - бэкенд', 'VUE - фронтенд', 'Другое']
+    };
+  },
+  methods: {
+    sendForm: function sendForm() {
+      var _this = this;
+
+      if (!this.sending) {
+        this.sending = true;
+        this.loading = true;
+        axios.post('/api/v1/send-vacancy', {
+          name: this.name,
+          lname: this.lname,
+          phone: this.phoneNum,
+          specialty: this.specialty,
+          age: this.age,
+          comment: this.comment,
+          link: this.link
+        }).then(function (response) {
+          if (response.data.success) {
+            // вызываем событие GA
+            gtag('event', 'sendPhone', {
+              'event_category': 'getVacancy',
+              'event_label': 'Отправка вакансии'
+            });
+            _this.loading = false;
+            _this.sended = true; // в противном случае показываем сообщение об ошибке
+          } else {
+            _this.loading = false;
+            _this.errorshow = true;
+            _this.error = 'Возникла ошибка. Данные не удалось отправить. Попробуйте повторить попытку немного позже.';
+          }
+        })["catch"](function (err) {
+          var e = _objectSpread({}, err);
+
+          console.log(e);
+          alert('Ошибка! попробуйте повторить позже');
+        });
+      }
+    }
+  },
+  computed: {
+    phoneNum: function phoneNum() {
+      var str = this.phone;
+      str = str.replace(/[^0-9.]/g, '');
+      str = str.substr(2);
+      return str;
+    }
+  },
+  validations: {
+    phone: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required,
+      validFormat: function validFormat(val) {
+        return /^\+38 \(0\d{2}\) \d{3}\-\d{4}$/.test(val);
+      }
+    },
+    name: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required
+    },
+    lname: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required
+    },
+    specialty: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required
+    },
+    age: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required,
+      between: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.between)(18, 40)
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -2511,6 +2771,7 @@ Vue.use(v_mask__WEBPACK_IMPORTED_MODULE_3__["default"]);
 Vue.component('smpl-button', (__webpack_require__(/*! ./components/SimpleButton.vue */ "./resources/js/components/SimpleButton.vue")["default"]));
 Vue.component('lead-form', (__webpack_require__(/*! ./components/LeadForm.vue */ "./resources/js/components/LeadForm.vue")["default"]));
 Vue.component('lead-form-stroke', (__webpack_require__(/*! ./components/LeadFormStroke.vue */ "./resources/js/components/LeadFormStroke.vue")["default"]));
+Vue.component('vacancy-form', (__webpack_require__(/*! ./components/VacancyForm.vue */ "./resources/js/components/VacancyForm.vue")["default"]));
 var app = new Vue({
   el: '#app',
   store: _store_index__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -2573,6 +2834,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     lead_d: 'И наш специалист свяжется с Вами',
     you_name: 'Ваше имя',
     name: 'Имя',
+    lname: 'Фамилия',
     enter_name: 'укажите имя',
     phone: 'Номер телефона',
     enter_phone: 'введите действительный номер телефона',
@@ -2582,13 +2844,20 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     phone_secure: 'мы никогда не передадим Ваш номер телефона третьим лицам',
     lead_success: 'Номер телефона успешно отправлен',
     lead_success_d: 'С вами свяжутся в течение часа для консультации, ждите звонка!',
-    back_to_site: 'Вернутся к просмотру сайта'
+    back_to_site: 'Вернутся к просмотру сайта',
+    vacancy_success: 'Резюме успешно отправлено',
+    vacancy_success_d: 'Мы рассмотрим его в ближайшее время и свяжемся с вами',
+    age: 'Возраст',
+    specialty: 'Специализация',
+    bio_link: 'Ссылка на портфолио',
+    bio_comment: 'Немного информации о себе'
   }), new vue_multilanguage__WEBPACK_IMPORTED_MODULE_0__.MLanguage('uk').create({
     dark_mode_toggle: 'Переключити тему',
     lead_h: 'Залишіть контактний номер',
     lead_d: 'І наш спеціаліст зв\'яжеться з Вами',
     you_name: 'Ваше ім\'я',
     name: 'Ім\'я',
+    lname: 'Прізвище',
     enter_name: 'вкажіть ім\'я',
     phone: 'Номер телефону',
     enter_phone: 'введіть дійсний номер телефону',
@@ -2598,7 +2867,13 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     phone_secure: 'ми ніколи не передамо Ваш номер телефону третім особам',
     lead_success: 'Номер телефону успішно відправлений',
     lead_success_d: 'З вами зв\'яжуться на протязі години для консультації, очікуйте на дзвінок!',
-    back_to_site: 'Повернутись до перегляду сайту'
+    back_to_site: 'Повернутись до перегляду сайту',
+    vacancy_success: 'Резюме успішно відправлено',
+    vacancy_success_d: 'Ми розглянемо його найближчим часом та зв\'яжемось з вами',
+    age: 'Вік',
+    specialty: 'Спеціалізація',
+    bio_link: 'Посилання на портфоліо',
+    bio_comment: 'Трохи інформації про себе'
   })]
 }));
 
@@ -3584,6 +3859,45 @@ component.options.__file = "resources/js/components/SimpleButton.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/VacancyForm.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/VacancyForm.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _VacancyForm_vue_vue_type_template_id_8e460978___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VacancyForm.vue?vue&type=template&id=8e460978& */ "./resources/js/components/VacancyForm.vue?vue&type=template&id=8e460978&");
+/* harmony import */ var _VacancyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VacancyForm.vue?vue&type=script&lang=js& */ "./resources/js/components/VacancyForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _VacancyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VacancyForm_vue_vue_type_template_id_8e460978___WEBPACK_IMPORTED_MODULE_0__.render,
+  _VacancyForm_vue_vue_type_template_id_8e460978___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/VacancyForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/LeadForm.vue?vue&type=script&lang=js&":
 /*!***********************************************************************!*\
   !*** ./resources/js/components/LeadForm.vue?vue&type=script&lang=js& ***!
@@ -3629,6 +3943,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SimpleButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SimpleButton.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/VacancyForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/VacancyForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VacancyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./VacancyForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VacancyForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VacancyForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -3679,6 +4009,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleButton_vue_vue_type_template_id_af206d22___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleButton_vue_vue_type_template_id_af206d22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SimpleButton.vue?vue&type=template&id=af206d22& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SimpleButton.vue?vue&type=template&id=af206d22&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/VacancyForm.vue?vue&type=template&id=8e460978&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/VacancyForm.vue?vue&type=template&id=8e460978& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VacancyForm_vue_vue_type_template_id_8e460978___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VacancyForm_vue_vue_type_template_id_8e460978___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VacancyForm_vue_vue_type_template_id_8e460978___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./VacancyForm.vue?vue&type=template&id=8e460978& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VacancyForm.vue?vue&type=template&id=8e460978&");
 
 
 /***/ }),
@@ -4271,7 +4618,7 @@ var render = function() {
                     "inline-flex items-center justify-center h-12 px-6 my-4 capitalize tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none",
                   class: [
                     _vm.$v.$invalid ? "bg-red-400" : "",
-                    "bg-" + _vm.clr + "-500"
+                    "bg-" + _vm.clr + "-400"
                   ],
                   attrs: { disabled: _vm.$v.$invalid },
                   on: { click: _vm.sendForm }
@@ -4408,6 +4755,496 @@ var render = function() {
       on: { click: _vm.opnForm }
     },
     [_vm._v("\n  " + _vm._s(_vm.txt) + "\n")]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VacancyForm.vue?vue&type=template&id=8e460978&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VacancyForm.vue?vue&type=template&id=8e460978& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      !_vm.sended
+        ? [
+            _vm.errorshow
+              ? _c("div", { staticClass: "text-base text-center" }, [
+                  _c("span", { staticClass: "text-red-400 mb-6" }, [
+                    _vm._v(_vm._s(_vm.error))
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", [
+              _c("div", { staticClass: "flex flex-wrap" }, [
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-1 py-1 relative" },
+                  [
+                    _c("span", { staticClass: "text-sm text-gray-700" }, [
+                      _vm._v(_vm._s(_vm.$ml.get("name")))
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.name,
+                          expression: "name"
+                        }
+                      ],
+                      staticClass:
+                        "px-4 h-12 w-full transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                      attrs: {
+                        type: "text",
+                        name: "name",
+                        placeholder: _vm.$ml.get("name")
+                      },
+                      domProps: { value: _vm.name },
+                      on: {
+                        blur: function($event) {
+                          return _vm.$v.name.$touch()
+                        },
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.name = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.name.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3"
+                          },
+                          [_vm._v(_vm._s(_vm.$ml.get("enter_name")))]
+                        )
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-1 py-1 relative" },
+                  [
+                    _c("span", { staticClass: "text-sm text-gray-700" }, [
+                      _vm._v(_vm._s(_vm.$ml.get("lname")))
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.lname,
+                          expression: "lname"
+                        }
+                      ],
+                      staticClass:
+                        "px-4 h-12 w-full transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                      attrs: {
+                        type: "text",
+                        name: "last-name",
+                        placeholder: _vm.$ml.get("lname")
+                      },
+                      domProps: { value: _vm.lname },
+                      on: {
+                        blur: function($event) {
+                          return _vm.$v.lname.$touch()
+                        },
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.lname = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.lname.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3"
+                          },
+                          [_vm._v(_vm._s(_vm.$ml.get("format_err")))]
+                        )
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-full px-1 py-1 relative" }, [
+                  _c("span", { staticClass: "text-sm text-gray-700" }, [
+                    _vm._v(_vm._s(_vm.$ml.get("phone")))
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.phone,
+                        expression: "phone"
+                      },
+                      {
+                        name: "mask",
+                        rawName: "v-mask",
+                        value: "+38 (###) ###-####",
+                        expression: "'+38 (###) ###-####'"
+                      }
+                    ],
+                    staticClass:
+                      "px-4 h-12 w-full transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                    attrs: {
+                      type: "text",
+                      name: "phone",
+                      placeholder: _vm.$ml.get("phone")
+                    },
+                    domProps: { value: _vm.phone },
+                    on: {
+                      blur: function($event) {
+                        return _vm.$v.phone.$touch()
+                      },
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.phone = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.$v.phone.$error
+                    ? _c(
+                        "span",
+                        {
+                          staticClass:
+                            "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3"
+                        },
+                        [_vm._v(_vm._s(_vm.$ml.get("format_err")))]
+                      )
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-1 py-1 relative" },
+                  [
+                    _c("span", { staticClass: "text-sm text-gray-700" }, [
+                      _vm._v(_vm._s(_vm.$ml.get("specialty")))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.specialty,
+                            expression: "specialty"
+                          }
+                        ],
+                        staticClass:
+                          "px-4 h-12 w-full transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                        attrs: { placeholder: _vm.$ml.get("specialty") },
+                        on: {
+                          blur: function($event) {
+                            return _vm.$v.specialty.$touch()
+                          },
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.specialty = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c("option", { attrs: { value: "" } }, [_vm._v("--")]),
+                        _vm._v(" "),
+                        _vm._l(_vm.professions, function(prof) {
+                          return _c("option", { domProps: { value: prof } }, [
+                            _vm._v(_vm._s(prof))
+                          ])
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _vm.$v.specialty.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3"
+                          },
+                          [_vm._v(_vm._s(_vm.$ml.get("format_err")))]
+                        )
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-1 py-1 relative" },
+                  [
+                    _c("span", { staticClass: "text-sm text-gray-700" }, [
+                      _vm._v(_vm._s(_vm.$ml.get("age")))
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.age,
+                          expression: "age"
+                        },
+                        {
+                          name: "mask",
+                          rawName: "v-mask",
+                          value: "##",
+                          expression: "'##'"
+                        }
+                      ],
+                      staticClass:
+                        "px-4 h-12 w-full transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                      attrs: {
+                        type: "number",
+                        name: "age",
+                        placeholder: _vm.$ml.get("age")
+                      },
+                      domProps: { value: _vm.age },
+                      on: {
+                        blur: function($event) {
+                          return _vm.$v.age.$touch()
+                        },
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.age = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.$v.age.$error
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3"
+                          },
+                          [_vm._v(_vm._s(_vm.$ml.get("format_err")))]
+                        )
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-full px-1 py-1 relative" }, [
+                  _c("span", { staticClass: "text-sm text-gray-700" }, [
+                    _vm._v(_vm._s(_vm.$ml.get("bio_comment")))
+                  ]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.comment,
+                        expression: "comment"
+                      }
+                    ],
+                    staticClass:
+                      "px-4 h-32 w-full transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                    attrs: { name: "comment" },
+                    domProps: { value: _vm.comment },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.comment = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-full px-1 py-1 relative" }, [
+                  _c("span", { staticClass: "text-sm text-gray-700" }, [
+                    _vm._v(_vm._s(_vm.$ml.get("bio_link")))
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.link,
+                        expression: "link"
+                      }
+                    ],
+                    staticClass:
+                      "px-4 h-12 w-full transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-purple-400 focus:outline-none focus:shadow-outline",
+                    attrs: {
+                      type: "text",
+                      placeholder: _vm.$ml.get("bio_link")
+                    },
+                    domProps: { value: _vm.link },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.link = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex justify-center" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "inline-flex items-center justify-center h-12 px-6 my-4 capitalize tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none",
+                    class: [
+                      _vm.$v.$invalid ? "bg-red-400" : "",
+                      "bg-green-400"
+                    ],
+                    attrs: { disabled: _vm.$v.$invalid },
+                    on: { click: _vm.sendForm }
+                  },
+                  [
+                    _vm.$v.$invalid
+                      ? [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(_vm.$ml.get("fill_form")) +
+                              "\n                    "
+                          )
+                        ]
+                      : [
+                          _c(
+                            "span",
+                            { staticClass: "flex justify-center text-white" },
+                            [
+                              _vm.loading
+                                ? _c(
+                                    "svg",
+                                    {
+                                      staticClass: "animate-spin h-5 w-5 mr-3",
+                                      attrs: {
+                                        viewBox: "0 0 24 24",
+                                        fill: "currentColor"
+                                      }
+                                    },
+                                    [
+                                      _c("path", {
+                                        attrs: {
+                                          d:
+                                            "M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm8 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8zm-19 0c0-6.065 4.935-11 11-11v2c-4.962 0-9 4.038-9 9 0 2.481 1.009 4.731 2.639 6.361l-1.414 1.414.015.014c-2-1.994-3.24-4.749-3.24-7.789z"
+                                        }
+                                      })
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(_vm._s(_vm.$ml.get("continue")))
+                              ])
+                            ]
+                          )
+                        ]
+                  ],
+                  2
+                )
+              ])
+            ])
+          ]
+        : [
+            _c(
+              "div",
+              { staticClass: "w-full flex text-center flex-col rounded py-4" },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "text-base font-semibold text-gray-700 flex flex-row justify-center"
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "mr-2 text-green-400",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          width: "32",
+                          height: "32",
+                          viewBox: "0 0 24 24",
+                          fill: "currentColor"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M21.856 10.303c.086.554.144 1.118.144 1.697 0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11c2.347 0 4.518.741 6.304 1.993l-1.422 1.457c-1.408-.913-3.082-1.45-4.882-1.45-4.962 0-9 4.038-9 9s4.038 9 9 9c4.894 0 8.879-3.928 8.99-8.795l1.866-1.902zm-.952-8.136l-9.404 9.639-3.843-3.614-3.095 3.098 6.938 6.71 12.5-12.737-3.096-3.096z"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", [_vm._v(_vm._s(_vm.$ml.get("vacancy_success")))])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-sm text-gray-700 m-2" }, [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.$ml.get("vacancy_success_d")) +
+                      "\n            "
+                  )
+                ])
+              ]
+            )
+          ]
+    ],
+    2
   )
 }
 var staticRenderFns = []

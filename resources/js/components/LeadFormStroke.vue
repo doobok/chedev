@@ -42,7 +42,7 @@
                 </div>
                 <button
                     class="inline-flex items-center justify-center h-12 px-6 my-4 capitalize tracking-wide text-white transition duration-200 rounded shadow-md focus:shadow-outline focus:outline-none"
-                    :class="[$v.$invalid ? 'bg-red-400' : '', 'bg-'+clr+'-500']"
+                    :class="[$v.$invalid ? 'bg-red-400' : '', 'bg-'+clr+'-400']"
                     :disabled="$v.$invalid"
                     @click="sendForm"
                 >
