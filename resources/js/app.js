@@ -12,6 +12,9 @@ import './ml';
 // input mask
 import VueMask from 'v-mask'
 Vue.use(VueMask);
+// scroll
+import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo)
 
 Vue.component('smpl-button', require('./components/SimpleButton.vue').default);
 Vue.component('lead-form', require('./components/LeadForm.vue').default);

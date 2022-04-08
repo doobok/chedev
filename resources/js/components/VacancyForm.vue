@@ -168,10 +168,10 @@ export default {
             comment: '',
             link: '',
             professions: [
-                'Вебдизайн',
+                'PHP backend',
+                'Vue.js frontend',
+                'Web-дизайн',
                 'Копирайтер',
-                'PHP - бэкенд',
-                'VUE - фронтенд',
                 'Другое'
             ]
         }

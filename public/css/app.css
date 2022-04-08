@@ -82,9 +82,6 @@
 .m-2 {
   margin: 0.5rem;
 }
-.m-4 {
-  margin: 1rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -191,6 +188,9 @@
 .mt-3 {
   margin-top: 0.75rem;
 }
+.ml-auto {
+  margin-left: auto;
+}
 .block {
   display: block;
 }
@@ -257,6 +257,9 @@
 .h-32 {
   height: 8rem;
 }
+.h-1 {
+  height: 0.25rem;
+}
 .max-h-screen {
   max-height: 100vh;
 }
@@ -305,6 +308,9 @@
 .w-24 {
   width: 6rem;
 }
+.w-12 {
+  width: 3rem;
+}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -337,6 +343,9 @@
 }
 .flex-grow {
   flex-grow: 1;
+}
+.origin-left {
+  transform-origin: left;
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -506,22 +515,6 @@
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
-.border-green-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(209 250 229 / var(--tw-border-opacity));
-}
-.border-green-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(52 211 153 / var(--tw-border-opacity));
-}
-.border-yellow-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 191 36 / var(--tw-border-opacity));
-}
-.border-yellow-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(253 230 138 / var(--tw-border-opacity));
-}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -545,6 +538,10 @@
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+}
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
 }
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
@@ -612,11 +609,11 @@
 .p-2 {
   padding: 0.5rem;
 }
-.p-6 {
-  padding: 1.5rem;
-}
 .p-4 {
   padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
 }
 .p-1 {
   padding: 0.25rem;
@@ -656,6 +653,10 @@
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .px-5 {
   padding-left: 1.25rem;
@@ -865,6 +866,10 @@
 .text-red-400 {
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 191 36 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -1571,6 +1576,10 @@ article blockquote {
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
 }
+.hover\:bg-green-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 120 87 / var(--tw-bg-opacity));
+}
 .hover\:bg-indigo-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(49 46 129 / var(--tw-bg-opacity));
@@ -1602,6 +1611,10 @@ article blockquote {
 .hover\:text-secondary-100:hover {
   --tw-text-opacity: 1;
   color: rgb(255 199 91 / var(--tw-text-opacity));
+}
+.hover\:text-green-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(4 120 87 / var(--tw-text-opacity));
 }
 .hover\:opacity-100:hover {
   opacity: 1;
@@ -1651,6 +1664,10 @@ article blockquote {
 .active\:text-gray-500:active {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:scale-x-100 {
+  --tw-scale-x: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 @media (prefers-color-scheme: dark) {
   .dark\:border-gray-700 {
@@ -1710,6 +1727,9 @@ article blockquote {
   .sm\:max-w-xl {
     max-width: 36rem;
   }
+  .sm\:max-w-lg {
+    max-width: 32rem;
+  }
   .sm\:flex-1 {
     flex: 1 1 0%;
   }
@@ -1759,6 +1779,10 @@ article blockquote {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
   .sm\:leading-none {
     line-height: 1;
   }
@@ -1783,6 +1807,9 @@ article blockquote {
   }
   .md\:mb-10 {
     margin-bottom: 2.5rem;
+  }
+  .md\:mb-6 {
+    margin-bottom: 1.5rem;
   }
   .md\:block {
     display: block;
@@ -1921,6 +1948,9 @@ article blockquote {
   .lg\:max-w-screen-md {
     max-width: 768px;
   }
+  .lg\:max-w-xl {
+    max-width: 36rem;
+  }
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -1961,6 +1991,10 @@ article blockquote {
   .lg\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+  .lg\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
   .lg\:py-6 {
     padding-top: 1.5rem;
