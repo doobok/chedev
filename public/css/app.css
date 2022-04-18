@@ -251,6 +251,9 @@
 .h-1 {
   height: 0.25rem;
 }
+.h-64 {
+  height: 16rem;
+}
 .h-0\.5 {
   height: 0.125rem;
 }
@@ -568,6 +571,10 @@
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
 }
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
 .bg-transparent {
   background-color: transparent;
 }
@@ -670,6 +677,10 @@
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .py-3 {
   padding-top: 0.75rem;
@@ -952,6 +963,11 @@
 }
 .transition-opacity {
   transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-shadow {
+  transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1577,6 +1593,10 @@ article blockquote {
   --tw-bg-opacity: 1;
   background-color: rgb(49 46 129 / var(--tw-bg-opacity));
 }
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1722,6 +1742,9 @@ article blockquote {
   }
   .sm\:max-w-lg {
     max-width: 32rem;
+  }
+  .sm\:max-w-sm {
+    max-width: 24rem;
   }
   .sm\:flex-1 {
     flex: 1 1 0%;
@@ -1944,6 +1967,9 @@ article blockquote {
   .lg\:max-w-xl {
     max-width: 36rem;
   }
+  .lg\:max-w-full {
+    max-width: 100%;
+  }
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -1952,6 +1978,9 @@ article blockquote {
   }
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .lg\:flex-row {
     flex-direction: row;
@@ -1996,6 +2025,10 @@ article blockquote {
   .lg\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+  .lg\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   .lg\:pt-24 {
     padding-top: 6rem;

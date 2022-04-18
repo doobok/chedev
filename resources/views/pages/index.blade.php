@@ -3,8 +3,8 @@
 @section('head')
 @component('components.meta')
 
-  @slot('title') title @endslot
-  @slot('description') description @endslot
+  @slot('title') {{ __('seo.index-title') }} @endslot
+  @slot('description') {{ __('seo.index-desc') }} @endslot
   @slot('image') /index.jpg @endslot
   @slot('date') @endslot
 

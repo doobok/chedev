@@ -3,9 +3,9 @@
 @section('head')
     @component('components.meta')
 
-        @slot('title') title @endslot
-        @slot('description') description @endslot
-        @slot('image') /index.jpg @endslot
+        @slot('title') {{ __('seo.contacts-title') }} @endslot
+        @slot('description') {{ __('seo.contacts-desc') }} @endslot
+        @slot('image') /contacts.jpg @endslot
         @slot('date') @endslot
 
     @endcomponent
@@ -17,7 +17,7 @@
 
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <p class="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">
-            Chernobay Development
+            {{ config('app.name') }}
         </p>
         <div class="max-w-xl mb-5 md:mx-auto sm:text-center lg:max-w-2xl">
             <div class="mb-4">
@@ -30,18 +30,18 @@
                 {{ __('site.contacts-d') }}
             </p>
         </div>
-        <div class="mb-4 sm:text-center">
-            <a href="{{ setting('contact.telegram_profile') }}" aria-label="{{ setting('contact.telegram_role_name') }}" class="inline-block mb-1" target="_blank">
-                <img alt="avatar"
-                     src="/founder_photo.jpeg"
-                     class="object-cover w-10 h-10 rounded-full shadow-sm"/>
-            </a>
-            <div>
-                <a href="{{ setting('contact.telegram_profile') }}" aria-label="{{ setting('contact.telegram_role_name') }}" target="_blank"
-                   class="font-semibold text-gray-800 transition-colors duration-200 hover:text-green-700">{{ setting('contact.telegram_username') }}</a>
-                <p class="text-sm font-medium leading-4 text-gray-600">{{ setting('contact.telegram_role_name') }}</p>
-            </div>
-        </div>
+{{--        <div class="mb-4 sm:text-center">--}}
+{{--            <a href="{{ setting('contact.telegram_profile') }}" aria-label="{{ setting('contact.telegram_role_name') }}" class="inline-block mb-1" target="_blank">--}}
+{{--                <img alt="avatar"--}}
+{{--                     src="/founder_photo.jpeg"--}}
+{{--                     class="object-cover w-10 h-10 rounded-full shadow-sm"/>--}}
+{{--            </a>--}}
+{{--            <div>--}}
+{{--                <a href="{{ setting('contact.telegram_profile') }}" aria-label="{{ setting('contact.telegram_role_name') }}" target="_blank"--}}
+{{--                   class="font-semibold text-gray-800 transition-colors duration-200 hover:text-green-700">{{ setting('contact.telegram_username') }}</a>--}}
+{{--                <p class="text-sm font-medium leading-4 text-gray-600">{{ setting('contact.telegram_role_name') }}</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
 
         <div class="px-4 py-8 mx-auto sm:max-w-lg md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
@@ -56,7 +56,7 @@
                         </p>
                     </div>
 
-                    <a href="/" class="flex items-center mb-5 md:mb-6 group lg:max-w-xl">
+                    <a href="{{setting('contact.telegram_profile')}}" class="flex items-center mb-5 md:mb-6 group lg:max-w-xl" target="_blank">
                         <div class="mr-3">
                             <div class="flex items-center justify-center w-16 h-16 rounded-full bg-green-100">
                                 <svg viewBox="0 0 24 24" class="w-10 h-10 text-green-400" fill="currentColor" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
@@ -69,7 +69,7 @@
                             <div class="h-1 ml-auto duration-300 origin-left transform bg-green-400 scale-x-30 group-hover:scale-x-100"></div>
                         </h4>
                     </a>
-                    <a href="mailto:yura.chernobay@gmail.com" class="flex items-center mb-5 md:mb-6 group lg:max-w-xl">
+                    <a href="mailto:{{ setting('contact.email') }}" class="flex items-center mb-5 md:mb-6 group lg:max-w-xl">
                         <div class="mr-3">
                             <div class="flex items-center justify-center w-16 h-16 rounded-full bg-green-100">
                                 <svg viewBox="0 0 24 24" class="w-10 h-10 text-green-400" fill="currentColor">

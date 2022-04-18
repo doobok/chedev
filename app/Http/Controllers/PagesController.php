@@ -12,6 +12,7 @@ class PagesController extends Controller
     public function mainPage()
     {
         $services = Service::all();
+
         return view('pages.index', [
             'services' => $services
         ]);
@@ -32,7 +33,7 @@ class PagesController extends Controller
 //        dynamic pages
         if($slug === 'services') {
             $slg='services';
-            $data=Page::where('id', '<', 4)->get();
+            $data=Service::all();
         }
         if($slug === 'collaborate') {
             $slg='collaborate';
