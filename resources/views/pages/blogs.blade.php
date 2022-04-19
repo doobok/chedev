@@ -3,9 +3,9 @@
 @section('head')
     @component('components.meta')
 
-        @slot('title') {{ __('seo.portfolio-title') }} @endslot
-        @slot('description') {{ __('seo.portfolio-desc') }} @endslot
-        @slot('image') /portfolio.jpg @endslot
+        @slot('title') {{ __('seo.blog-title') }} @endslot
+        @slot('description') {{ __('seo.blog-desc') }} @endslot
+        @slot('image') /blog.jpg @endslot
         @slot('date') @endslot
 
     @endcomponent
@@ -24,11 +24,11 @@
             <div class="mb-4">
                 <h1
                     class="inline-block max-w-lg font-sans text-3xl font-extrabold leading-none tracking-tight text-black transition-colors duration-200 hover:text-green-700 sm:text-4xl">
-                    {{__('site.portfolio')}}
+                    {{__('site.blog')}}
                 </h1>
             </div>
             <p class="text-base text-gray-700 md:text-lg">
-                {{__('site.portfolio_teaser')}}
+                {{__('site.blog_teaser')}}
             </p>
         </div>
 
@@ -52,12 +52,12 @@
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
                 @foreach($data as $item)
                     <div class="overflow-hidden transition-shadow transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
-                        <a href="{{ route('portfolio', $item->slug) }}"
+                        <a href="{{ route('blog', $item->slug) }}"
                            aria-label="{{ $item->getTranslatedAttribute('heading') }}">
                             <img src="{{ Voyager::image( $item->image ) }}" class="object-cover w-full h-64 rounded"
                                  alt="{{$item->getTranslatedAttribute('heading')}}"/></a>
                         <div class="py-5 px-2">
-                            <a href="{{ route('portfolio', $item->slug) }}"
+                            <a href="{{ route('blog', $item->slug) }}"
                                aria-label="{{$item->getTranslatedAttribute('heading')}}"
                                class="inline-block mb-3 text-black transition-colors duration-200 hover:text-green-700">
                                 <h3 class="text-xl font-bold leading-5">
@@ -67,7 +67,7 @@
                             <p class="mb-4 text-sm text-gray-700">
                                 {{$item->getTranslatedAttribute('teaser')}}
                             </p>
-                            <a href="{{ route('portfolio', $item->slug) }}"
+                            <a href="{{ route('blog', $item->slug) }}"
                                class="inline-flex items-center justify-center h-10 px-6 mr-6 tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none w-full"
                             >
                                 {{ __('site.read-more') }}
@@ -85,8 +85,8 @@
 
 
 
-{{--    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">--}}
-{{--        @include('components.lead-form')--}}
-{{--    </div>--}}
+    {{--    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">--}}
+    {{--        @include('components.lead-form')--}}
+    {{--    </div>--}}
 
 @endsection

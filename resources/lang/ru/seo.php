@@ -12,4 +12,7 @@ return [
 
     'portfolio-title' => '',
     'portfolio-desc' => '',
+
+    'blog-title' => '',
+    'blog-desc' => '',
 ];

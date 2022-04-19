@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Page;
 use App\Models\Portfolio;
 use App\Models\Service;
@@ -21,8 +22,6 @@ class PagesController extends Controller
 
     public function page($slug)
     {
-
-
 //        declarative
         $page='';
         $slg='';
@@ -39,6 +38,10 @@ class PagesController extends Controller
         if($slug === 'portfolio') {
             $slg='portfolios';
             $data=Portfolio::all();
+        }
+        if($slug === 'blog') {
+            $slg='blogs';
+            $data=Blog::all();
         }
         if($slug === 'collaborate') {
             $slg='collaborate';
@@ -57,6 +60,22 @@ class PagesController extends Controller
         return view('pages.' . $slg, [
             'page' => $page,
             'data' => $data,
+        ]);
+
+    }
+
+    public function portfolio($slug) {
+        $page = Portfolio::where('slug', $slug)->firstOrfail();
+        return view('pages.portfolio', [
+            'page' => $page,
+        ]);
+
+    }
+
+    public function blog($slug) {
+        $page = Blog::where('slug', $slug)->firstOrfail();
+        return view('pages.blog', [
+            'page' => $page,
         ]);
 
     }
