@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Portfolio;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Null_;
@@ -34,6 +35,10 @@ class PagesController extends Controller
         if($slug === 'services') {
             $slg='services';
             $data=Service::all();
+        }
+        if($slug === 'portfolio') {
+            $slg='portfolios';
+            $data=Portfolio::all();
         }
         if($slug === 'collaborate') {
             $slg='collaborate';

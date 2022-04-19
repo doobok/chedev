@@ -3,9 +3,9 @@
 @section('head')
     @component('components.meta')
 
-        @slot('title') {{ __('seo.services-title') }} @endslot
-        @slot('description') {{ __('seo.services-desc') }} @endslot
-        @slot('image') /services.jpg @endslot
+        @slot('title') {{ __('seo.portfolio-title') }} @endslot
+        @slot('description') {{ __('seo.portfolio-desc') }} @endslot
+        @slot('image') /portfolio.jpg @endslot
         @slot('date') @endslot
 
     @endcomponent
@@ -24,37 +24,34 @@
             <div class="mb-4">
                 <h1
                     class="inline-block max-w-lg font-sans text-3xl font-extrabold leading-none tracking-tight text-black transition-colors duration-200 hover:text-green-700 sm:text-4xl">
-                    {{__('site.services')}}
+                    {{__('site.portfolio')}}
                 </h1>
             </div>
-            <div class="flex justify-center mb-4">
-                <img class="object-cover w-full rounded shadow-lg" src="/services.jpg" alt="{{__('site.services')}}"/>
-            </div>
             <p class="text-base text-gray-700 md:text-lg">
-                {{__('site.services_teaser')}}
+                {{__('site.portfolio_teaser')}}
             </p>
         </div>
 
-{{--        <div class="mb-10 sm:text-center">--}}
-{{--            <a href="{{ setting('contact.telegram_profile') }}" aria-label="{{ setting('contact.telegram_role_name') }}"--}}
-{{--               class="inline-block mb-1" target="_blank">--}}
-{{--                <img alt="avatar"--}}
-{{--                     src="/founder_photo.jpeg"--}}
-{{--                     class="object-cover w-10 h-10 rounded-full shadow-sm"/>--}}
-{{--            </a>--}}
-{{--            <div>--}}
-{{--                <a href="{{ setting('contact.telegram_profile') }}"--}}
-{{--                   aria-label="{{ setting('contact.telegram_role_name') }}" target="_blank"--}}
-{{--                   class="font-semibold text-gray-800 transition-colors duration-200 hover:text-green-700">{{ setting('contact.telegram_username') }}</a>--}}
-{{--                <p class="text-sm font-medium leading-4 text-gray-600">{{ setting('contact.telegram_role_name') }}</p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        {{--        <div class="mb-10 sm:text-center">--}}
+        {{--            <a href="{{ setting('contact.telegram_profile') }}" aria-label="{{ setting('contact.telegram_role_name') }}"--}}
+        {{--               class="inline-block mb-1" target="_blank">--}}
+        {{--                <img alt="avatar"--}}
+        {{--                     src="/founder_photo.jpeg"--}}
+        {{--                     class="object-cover w-10 h-10 rounded-full shadow-sm"/>--}}
+        {{--            </a>--}}
+        {{--            <div>--}}
+        {{--                <a href="{{ setting('contact.telegram_profile') }}"--}}
+        {{--                   aria-label="{{ setting('contact.telegram_role_name') }}" target="_blank"--}}
+        {{--                   class="font-semibold text-gray-800 transition-colors duration-200 hover:text-green-700">{{ setting('contact.telegram_username') }}</a>--}}
+        {{--                <p class="text-sm font-medium leading-4 text-gray-600">{{ setting('contact.telegram_role_name') }}</p>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
 
         {{--Блок услуг--}}
         <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
                 @foreach($data as $item)
-                    <div class="overflow-hidden transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-md p-1">
+                    <div class="overflow-hidden transition-shadow transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
                         <a href="{{ route('page', $item->slug) }}"
                            aria-label="{{ $item->getTranslatedAttribute('heading') }}">
                             <img src="{{ Voyager::image( $item->image ) }}" class="object-cover w-full h-64 rounded"
@@ -63,15 +60,15 @@
                             <a href="{{ route('page', $item->slug) }}"
                                aria-label="{{$item->getTranslatedAttribute('heading')}}"
                                class="inline-block mb-3 text-black transition-colors duration-200 hover:text-green-700">
-                                <p class="text-2xl font-bold leading-5">
+                                <h3 class="text-xl font-bold leading-5">
                                     {{$item->getTranslatedAttribute('heading')}}
-                                </p>
+                                </h3>
                             </a>
                             <p class="mb-4 text-sm text-gray-700">
                                 {{$item->getTranslatedAttribute('teaser')}}
                             </p>
                             <a href="{{ route('page', $item->slug) }}"
-                               class="inline-flex items-center justify-center h-10 px-6 mr-6 tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none w-full"
+                               class="inline-flex items-center justify-center h-10 px-6 mr-6 tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none w-full"
                             >
                                 {{ __('site.read-more') }}
                             </a>
@@ -80,10 +77,16 @@
                 @endforeach
             </div>
         </div>
+        <div class="max-w-screen-lg sm:mx-auto ">
+            <h3>{{ __('site.our-services') }}</h3>
+            @include('modules.services-tags')
+        </div>
     </div>
-    {{--Блок услуг конец--}}
-    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        @include('components.lead-form')
-    </div>
+
+
+
+{{--    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">--}}
+{{--        @include('components.lead-form')--}}
+{{--    </div>--}}
 
 @endsection

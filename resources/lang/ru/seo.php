@@ -9,4 +9,7 @@ return [
 
     'services-title' => '',
     'services-desc' => '',
+
+    'portfolio-title' => '',
+    'portfolio-desc' => '',
 ];

@@ -73,7 +73,7 @@
         @include('components.lead-form')
 
         <div class="max-w-screen-lg sm:mx-auto ">
-            <h3>Вас также могут заинтересовать и другие услуги</h3>
+            <h3>{{ __('site.more-services') }}</h3>
             @include('modules.services-tags')
         </div>
 
