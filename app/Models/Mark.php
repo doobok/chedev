@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
 
-class Portfolio extends Model
+class Mark extends Model
 {
     use HasFactory, Translatable;
 
-    protected $translatable = ['title', 'body', 'heading', 'description', 'teaser'];
+    protected $translatable = ['name'];
 
-    public function tags()
+    public function portfolios()
     {
-        return $this->belongsToMany(Mark::class);
+        return $this->belongsToMany(Portfolio::class);
     }
 
 }

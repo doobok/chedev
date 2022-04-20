@@ -59,12 +59,19 @@
                         <div class="py-5 px-2">
                             <a href="{{ route('portfolio', $item->slug) }}"
                                aria-label="{{$item->getTranslatedAttribute('heading')}}"
-                               class="inline-block mb-3 text-black transition-colors duration-200 hover:text-green-700">
+                               class="inline-block mb-1 text-black transition-colors duration-200 hover:text-green-700">
                                 <h3 class="text-xl font-bold leading-5">
                                     {{$item->getTranslatedAttribute('heading')}}
                                 </h3>
                             </a>
-                            <p class="mb-4 text-sm text-gray-700">
+                            <div>
+                                @foreach($item->tags as $tag)
+                                    <a href="{{ route('page', 'portfolio') }}" class="inline-flex p-1 mr-1 text-xs text-white transition duration-200 rounded shadow-md bg-{{$tag->getTranslatedAttribute('color')}}-500 hover:bg-{{$tag->getTranslatedAttribute('color')}}-700 focus:shadow-outline focus:outline-none">
+                                        {{$tag->getTranslatedAttribute('name')}}
+                                    </a>
+                                @endforeach
+                            </div>
+                            <p class="mb-4 mt-3 text-sm text-gray-700">
                                 {{$item->getTranslatedAttribute('teaser')}}
                             </p>
                             <a href="{{ route('portfolio', $item->slug) }}"
