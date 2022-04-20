@@ -66,8 +66,17 @@ class PagesController extends Controller
 
     public function portfolio($slug) {
         $page = Portfolio::where('slug', $slug)->firstOrfail();
+        $new = Portfolio::where('id', '>', $page->id)->first();
+        if (!$new) {
+            $new = Portfolio::orderBy('id')->first();
+        }
+        $old = Portfolio::where('id', '<', $page->id)->orderBy('id', 'desc')->first();
+        if (!$old) {
+            $old = Portfolio::orderBy('id', 'desc')->first();
+        }
         return view('pages.portfolio', [
             'page' => $page,
+            'similar' => collect([$old, $new]),
         ]);
 
     }

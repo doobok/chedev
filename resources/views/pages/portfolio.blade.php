@@ -70,6 +70,13 @@
 
         </article>
 
+        @component('components.prev-next', [
+                'items' => $similar,
+                'similar_title' => __('site.similar_portfolio_title'),
+                'route' => 'portfolio'
+            ])
+        @endcomponent
+
         @include('components.lead-form')
 
         <div class="max-w-screen-lg sm:mx-auto ">
