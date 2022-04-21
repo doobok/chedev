@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Mark;
 use App\Models\Page;
 use App\Models\Portfolio;
 use App\Models\Service;
@@ -20,7 +21,7 @@ class PagesController extends Controller
         ]);
     }
 
-    public function page($slug)
+    public function page(Request $request, $slug)
     {
 //        declarative
         $page='';
@@ -37,7 +38,17 @@ class PagesController extends Controller
         }
         if($slug === 'portfolio') {
             $slg='portfolios';
-            $data=Portfolio::all();
+            $tag = $request->get('tag');
+            if ($tag != null) {
+                $portfolio = Mark::where('slug', $tag)->first()->portfolios;
+            } else {
+                $portfolio = Portfolio::all();
+            }
+            $data=[
+                'portfolio' => $portfolio,
+                'tags' => Mark::all(),
+                'mark' => $tag,
+            ];
         }
         if($slug === 'blog') {
             $slg='blogs';

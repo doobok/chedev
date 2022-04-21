@@ -20,7 +20,7 @@
         <p class="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">
             {{ config('app.name') }}
         </p>
-        <div class="max-w-xl mb-5 md:mx-auto sm:text-center lg:max-w-2xl">
+        <div class="max-w-xl mb-2 md:mx-auto sm:text-center lg:max-w-2xl">
             <div class="mb-4">
                 <h1
                     class="inline-block max-w-lg font-sans text-3xl font-extrabold leading-none tracking-tight text-black transition-colors duration-200 hover:text-green-700 sm:text-4xl">
@@ -47,10 +47,24 @@
         {{--            </div>--}}
         {{--        </div>--}}
 
+
         {{--Блок услуг--}}
         <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
+            <div class="mb-5 flex justify-center">
+                @foreach($data['tags'] as $tag)
+                    <a href="{{ route('page', 'portfolio?tag=' . $tag->slug) }}" class="inline-flex p-1 mr-1 text-xs text-white transition duration-200 rounded shadow-md
+                    @if($data['mark'] == $tag->slug)
+                        bg-{{$tag->getTranslatedAttribute('color')}}-500
+                    @else
+                        bg-gray-400
+                    @endif
+                    hover:bg-{{$tag->getTranslatedAttribute('color')}}-700 focus:shadow-outline focus:outline-none">
+                        {{$tag->getTranslatedAttribute('name')}}
+                    </a>
+                @endforeach
+            </div>
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-                @foreach($data as $item)
+                @foreach($data['portfolio'] as $item)
                     <div class="overflow-hidden transition-shadow transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
                         <a href="{{ route('portfolio', $item->slug) }}"
                            aria-label="{{ $item->getTranslatedAttribute('heading') }}">
@@ -66,7 +80,7 @@
                             </a>
                             <div>
                                 @foreach($item->tags as $tag)
-                                    <a href="{{ route('page', 'portfolio') }}" class="inline-flex p-1 mr-1 text-xs text-white transition duration-200 rounded shadow-md bg-{{$tag->getTranslatedAttribute('color')}}-500 hover:bg-{{$tag->getTranslatedAttribute('color')}}-700 focus:shadow-outline focus:outline-none">
+                                    <a href="{{ route('page', 'portfolio?tag=' . $tag->slug) }}" class="inline-flex p-1 mr-1 text-xs text-white transition duration-200 rounded shadow-md bg-{{$tag->getTranslatedAttribute('color')}}-500 hover:bg-{{$tag->getTranslatedAttribute('color')}}-700 focus:shadow-outline focus:outline-none">
                                         {{$tag->getTranslatedAttribute('name')}}
                                     </a>
                                 @endforeach
@@ -89,7 +103,6 @@
             @include('modules.services-tags')
         </div>
     </div>
-
 
 
 {{--    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">--}}
