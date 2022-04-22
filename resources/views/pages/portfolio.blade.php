@@ -59,12 +59,12 @@
         </div>
 
 
-        <article class="max-w-screen-lg sm:mx-auto mb-8">
+        <article class="max-w-screen-md sm:mx-auto mb-8">
             <blockquote>
                 <h2 class="text-gray-700">{{$page->getTranslatedAttribute('heading')}}</h2>
             </blockquote>
 
-            <div class="space-y-8">
+            <div>
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
 
