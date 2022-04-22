@@ -91,7 +91,6 @@
             </div>
 
             <h4 class="text-gray-800 mt-7">{{ __('site.portfolio-services') }}</h4>
-
             <div class="flex flex-wrap justify-start mt-5">
                 @foreach($page->services as $service)
                     <a href="{{ route('page', $service->slug) }}"

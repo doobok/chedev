@@ -10,6 +10,7 @@ return [
     'tags' => 'Теги',
     'marks' => 'Метки',
     'portfolio-services' => 'Оказанные услуги',
+    'service-portfolios' => 'Реализованные проекты',
     'collaborate' => 'Сотрудничество и вакансии',
     'footer-consultation-h' => 'Нужна консультация?',
     'footer-consultation-b' => 'Запланировать консультацию',

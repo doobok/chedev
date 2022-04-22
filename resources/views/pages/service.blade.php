@@ -64,11 +64,31 @@
                 <h2 class="text-gray-700">{{$page->getTranslatedAttribute('heading')}}</h2>
             </blockquote>
 
+            @include('components.star-rating')
+
             <div>
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
 
         </article>
+
+        <div class="mx-auto lg:max-w-screen-lg">
+            <h4 class="text-gray-800 mt-7">{{ __('site.service-portfolios') }}</h4>
+            <div class="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
+                @foreach($page->portfolios as $portfolio)
+                    <a href="{{ route('portfolio', $portfolio->slug) }}" class="hover:no-underline text-gray-800 hover:text-green-700 transition-all duration-300 rounded-full border border-white hover:border-green-700 ">
+                        <div class="flex">
+                            <img class="object-cover w-20 h-20 mr-4 rounded-full shadow"
+                                 src="{{ Voyager::image( $portfolio->image ) }}" alt="{{$portfolio->getTranslatedAttribute('heading')}}" />
+                            <div class="flex flex-col justify-center">
+                                <p class="text-sm">{{$portfolio->getTranslatedAttribute('heading')}}</p>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+
 
         @include('components.lead-form')
 
