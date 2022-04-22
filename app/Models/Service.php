@@ -12,4 +12,9 @@ class Service extends Model
     use HasFactory, Translatable, Resizable;
 
     protected $translatable = ['title', 'body', 'heading', 'description', 'teaser'];
+
+    public function portfolios()
+    {
+        return $this->belongsToMany(Portfolio::class);
+    }
 }

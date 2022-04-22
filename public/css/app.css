@@ -194,6 +194,12 @@
 .-mt-10 {
   margin-top: -2.5rem;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
+.mt-7 {
+  margin-top: 1.75rem;
+}
 .block {
   display: block;
 }
@@ -417,6 +423,9 @@
 .items-center {
   align-items: center;
 }
+.justify-start {
+  justify-content: flex-start;
+}
 .justify-end {
   justify-content: flex-end;
 }
@@ -476,6 +485,11 @@
   --tw-space-x-reverse: 0;
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -773,6 +787,9 @@
 .text-right {
   text-align: right;
 }
+.align-middle {
+  vertical-align: middle;
+}
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -840,6 +857,9 @@
 }
 .leading-7 {
   line-height: 1.75rem;
+}
+.leading-3 {
+  line-height: .75rem;
 }
 .tracking-wide {
   letter-spacing: 0.025em;
@@ -928,6 +948,10 @@
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+.no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
@@ -1678,6 +1702,10 @@ article blockquote {
   --tw-bg-opacity: 1;
   background-color: rgb(49 46 129 / var(--tw-bg-opacity));
 }
+.hover\:bg-green-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1822,6 +1850,9 @@ article blockquote {
   .sm\:w-auto {
     width: auto;
   }
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
   .sm\:max-w-xl {
     max-width: 36rem;
   }
@@ -1950,6 +1981,9 @@ article blockquote {
   }
   .md\:flex-row {
     flex-direction: row;
+  }
+  .md\:justify-end {
+    justify-content: flex-end;
   }
   .md\:border-r {
     border-right-width: 1px;

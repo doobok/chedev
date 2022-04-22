@@ -79,11 +79,7 @@
                                 </h3>
                             </a>
                             <div>
-                                @foreach($item->tags as $tag)
-                                    <a href="{{ route('page', 'portfolio?tag=' . $tag->slug) }}" class="inline-flex p-1 mr-1 text-xs text-white transition duration-200 rounded shadow-md bg-{{$tag->getTranslatedAttribute('color')}}-500 hover:bg-{{$tag->getTranslatedAttribute('color')}}-700 focus:shadow-outline focus:outline-none">
-                                        {{$tag->getTranslatedAttribute('name')}}
-                                    </a>
-                                @endforeach
+                                @component('components.portfolio-tags', ['tags'=>$item->tags])@endcomponent
                             </div>
                             <p class="mb-4 mt-3 text-sm text-gray-700">
                                 {{$item->getTranslatedAttribute('teaser')}}

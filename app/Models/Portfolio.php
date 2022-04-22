@@ -17,4 +17,9 @@ class Portfolio extends Model
         return $this->belongsToMany(Mark::class);
     }
 
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
+    }
+
 }

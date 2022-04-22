@@ -2,13 +2,16 @@
     <h4>{{$similar_title}}</h4>
     <div class="flex flex-wrap">
         @foreach($items as $item)
-            <div class="w-1/2 p-4">
+            <div class="w-full sm:w-1/2 p-4">
                 <a href="{{ route($route , $item->slug) }}">
                     <img src="{{ Voyager::image( $item->image ) }}" class="object-cover w-full h-56 mb-5 bg-center rounded" alt="{{$item->getTranslatedAttribute('heading')}}" loading="lazy" />
                 </a>
                 <h2 class="mb-2 text-lg font-semibold text-gray-900">
                     <a href="{{ route($route , $item->slug) }}" class="text-gray-900 hover:text-green-700">{{$item->getTranslatedAttribute('heading')}}</a>
                 </h2>
+                <div class="flex flex-wrap mb-3">
+                    @component('components.portfolio-tags', ['tags'=>$item->tags])@endcomponent
+                </div>
                 <p class="mb-3 text-sm font-normal text-gray-500">
                     {{$item->getTranslatedAttribute('teaser')}}
                 </p>
