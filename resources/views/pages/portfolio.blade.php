@@ -67,23 +67,16 @@
                 <h2 class="text-gray-700">{{$page->getTranslatedAttribute('heading')}}</h2>
             </blockquote>
 
-            @include('components.star-rating')
+            <star-rating
+                itemid="{{$page->id}}"
+                model="page"
+            ></star-rating>
 
-            <div class="flex flex-row text-sm space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17 1c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2zm-12 2c0 .552-.447 1-1 1s-1-.448-1-1v-2c0-.552.447-1 1-1s1 .448 1 1v2zm13 5v10h-16v-10h16zm2-6h-2v1c0 1.103-.897 2-2 2s-2-.897-2-2v-1h-8v1c0 1.103-.897 2-2 2s-2-.897-2-2v-1h-2v18h20v-18zm4 3v19h-22v-2h20v-17h2zm-17 7h-2v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4h-2v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
-                </svg>
-                <span>
-                    {{ date('d-m-Y', strtotime($page->created_at)) }}
-                </span>
-                <span>|</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/>
-                </svg>
-                <span>
-                    523
-                </span>
-            </div>
+            @component('components.text-statistics', [
+                    'date' => $page->created_at,
+                    'views_count' => 123,
+                ])
+            @endcomponent
 
 
             <div>

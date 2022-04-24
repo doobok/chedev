@@ -29,6 +29,7 @@ export default new MLCreate({
             specialty: 'Специализация',
             bio_link: 'Ссылка на портфолио',
             bio_comment: 'Немного информации о себе',
+            'votes-count': 'Количество голосов',
 
         }),
 
@@ -55,6 +56,7 @@ export default new MLCreate({
             specialty: 'Спеціалізація',
             bio_link: 'Посилання на портфоліо',
             bio_comment: 'Трохи інформації про себе',
+            'votes-count': 'Кількість голосів',
 
         }),
 

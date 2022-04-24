@@ -45,5 +45,11 @@ return [
     'similar_portfolio_title' =>  'Другие наши проекты',
     'blog-comment' => 'Коментарии к публикации',
 
+    'read-time' => 'приблизительное время для чтения',
+    'publication-date' => 'дата публикации',
+    'views-count' => 'количество просмотров',
+    'comments-count' => 'количество коментариев',
+    'minutes' => 'минут',
+
 
 ];

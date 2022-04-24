@@ -64,7 +64,10 @@
                 <h2 class="text-gray-700">{{$page->getTranslatedAttribute('heading')}}</h2>
             </blockquote>
 
-            @include('components.star-rating')
+            <star-rating
+                itemid="{{$page->id}}"
+                model="service"
+            ></star-rating>
 
             <div>
                 {!! $page->getTranslatedAttribute('body') !!}

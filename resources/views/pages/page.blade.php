@@ -54,7 +54,7 @@
         </div>
 
         <article class="max-w-screen-lg sm:mx-auto">
-            <div class="space-y-8">
+            <div>
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
         </article>

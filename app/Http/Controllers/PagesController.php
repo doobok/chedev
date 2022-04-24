@@ -94,8 +94,10 @@ class PagesController extends Controller
 
     public function blog($slug) {
         $page = Blog::where('slug', $slug)->firstOrfail();
+        $read_time = ceil(strlen($page->body)/1000);
         return view('pages.blog', [
             'page' => $page,
+            'read_time' => $read_time,
         ]);
 
     }

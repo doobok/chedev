@@ -19,4 +19,6 @@ Route::group(['prefix' => 'v1'], function () {
     // Захват лидов
     Route::post('send-lead', 'App\Http\Controllers\LeadsController@addLead');
     Route::post('send-vacancy', 'App\Http\Controllers\VacanciesController@addVacancy');
+    Route::get('get-rating', 'App\Http\Controllers\RatingController@getRating');
+    Route::post('set-rating', 'App\Http\Controllers\RatingController@setRating');
 });
