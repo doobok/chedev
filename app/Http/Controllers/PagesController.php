@@ -14,7 +14,7 @@ class PagesController extends Controller
 {
     public function mainPage()
     {
-        $services = Service::all();
+        $services = Service::where('active', true)->select('id', 'slug', 'heading', 'image')->orderBy('order', 'desc')->get();
 
         return view('pages.index', [
             'services' => $services
@@ -34,7 +34,7 @@ class PagesController extends Controller
 //        dynamic pages
         if($slug === 'services') {
             $slg='services';
-            $data=Service::all();
+            $data=Service::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image')->orderBy('order', 'desc')->get();
         }
         if($slug === 'portfolio') {
             $slg='portfolios';
@@ -42,7 +42,7 @@ class PagesController extends Controller
             if ($tag != null) {
                 $portfolio = Mark::where('slug', $tag)->first()->portfolios;
             } else {
-                $portfolio = Portfolio::all();
+                $portfolio = Portfolio::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image')->orderBy('order', 'desc')->get();
             }
             $data=[
                 'portfolio' => $portfolio,
@@ -52,7 +52,7 @@ class PagesController extends Controller
         }
         if($slug === 'blog') {
             $slg='blogs';
-            $data=Blog::all();
+            $data=Blog::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image', 'created_at')->get();
         }
         if($slug === 'collaborate') {
             $slg='collaborate';
