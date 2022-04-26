@@ -21,4 +21,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('send-vacancy', 'App\Http\Controllers\VacanciesController@addVacancy');
     Route::get('get-rating', 'App\Http\Controllers\RatingController@getRating');
     Route::post('set-rating', 'App\Http\Controllers\RatingController@setRating');
+    Route::get('get-comments', 'App\Http\Controllers\CommentsController@getComments');
+    Route::post('set-comment', 'App\Http\Controllers\CommentsController@setComment');
 });

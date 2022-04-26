@@ -3,7 +3,7 @@ import Axios from 'axios';
 export default {
   state: {
      toggleform: false,
-    slug: ""
+     slug: ""
   },
   getters: {
     formstatus: state => {
@@ -33,7 +33,7 @@ export default {
 
     // отправка лида
     SEND_LEAD : (context, payload) => {
-      console.log(payload);
+      // console.log(payload);
       return Axios.post('/api/v1/send-lead', tempyGen(payload))
       .then((response) => {
         // какоето действие из состоянием (оставил на будущее)
