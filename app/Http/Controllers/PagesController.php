@@ -66,6 +66,9 @@ class PagesController extends Controller
                 $page = Service::where('slug', $slug)->firstOrFail();
                 $slg = 'service';
             }
+//        increment
+            $page->views++;
+            $page->save();
         }
 //        return data
         return view('pages.' . $slg, [
@@ -85,6 +88,10 @@ class PagesController extends Controller
         if (!$old) {
             $old = Portfolio::orderBy('id', 'desc')->first();
         }
+//        increment
+        $page->views++;
+        $page->save();
+//        return data
         return view('pages.portfolio', [
             'page' => $page,
             'similar' => collect([$old, $new]),
@@ -95,11 +102,13 @@ class PagesController extends Controller
     public function blog($slug) {
         $page = Blog::where('slug', $slug)->firstOrfail();
         $read_time = ceil(strlen($page->body)/1000);
+//        increment
+        $page->views++;
+        $page->save();
+//        return data
         return view('pages.blog', [
             'page' => $page,
             'read_time' => $read_time,
         ]);
-
     }
-
 }

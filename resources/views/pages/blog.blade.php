@@ -72,7 +72,7 @@
             @component('components.text-statistics', [
                     'date' => $page->created_at,
                     'read_time' => $read_time,
-                    'views_count' => 123,
+                    'views_count' => $page->views,
                     'comments_count' => 7,
                 ])
             @endcomponent
@@ -80,6 +80,8 @@
             <div>
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
+
+            <comments-component itemid="{{ $page->id }}"></comments-component>
 
 
             @component('components.blog-comments', [

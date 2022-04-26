@@ -1,7 +1,8 @@
-<div id="comments" class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-    <h3>{{ __('site.blog-comment') }} ( 7 )</h3>
-    <div class="grid gap-4 mx-auto grid-cols-1 lg:max-w-screen-lg">
-        @for($i=0; $i<2; $i++)
+<template>
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <h3>Коментарии к публикации ( 7 )</h3>
+        <div class="grid gap-4 mx-auto grid-cols-1 lg:max-w-screen-lg">
+
             <div class="relative bg-gray-100 px-4 py-2 rounded shadow-lg">
                 <div class="flex flex-row items-center space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-14 mr-1 text-gray-600 rounded-full border-2 border-gray-300 " fill="currentColor" viewBox="0 0 24 24">
@@ -36,26 +37,36 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-        @endfor
-    </div>
-    <div class="flex justify-center m-4 py-2 cursor-pointer border border-dashed rounded-md transition-all duration-300 text-gray-500 hover:text-green-700 hover:border-green-700">
-        Загрузить ещё
-    </div>
-    <div>
-        <p class="text-lg font-bold mb-1 ">Оставить комментарий</p>
-        <textarea
-            class="flex-grow w-full h-24 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-primary focus:outline-none focus:shadow-outline"
-        ></textarea>
-        <div class="flex flex-wrap justify-between items-center">
-            <span class="text-sm text-gray-400">Ви коментуєте від імені <b>Incognito</b></span>
-            <button
-                class="text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
-            >
-                Комментировать
-            </button>
-        </div>
 
+        </div>
+        <div class="flex justify-center m-4 py-2 cursor-pointer border border-dashed rounded-md transition-all duration-300 text-gray-500 hover:text-green-700 hover:border-green-700">
+            Загрузить ещё
+        </div>
+        <div>
+            <p class="text-lg font-bold mb-1 ">Оставить комментарий</p>
+            <textarea
+                class="flex-grow w-full h-24 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-primary focus:outline-none focus:shadow-outline"
+            ></textarea>
+            <div class="flex flex-wrap justify-between items-center">
+                <span class="text-sm text-gray-400">Ви коментуєте від імені <b>Incognito</b></span>
+                <button
+                    class="text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+                >
+                    Комментировать
+                </button>
+            </div>
+
+        </div>
     </div>
-</div>
+</template>
+
+<script>
+export default {
+    name: "CommentsComponent"
+}
+</script>
+
+<style scoped>
+
+</style>
