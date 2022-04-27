@@ -22,6 +22,7 @@ Vue.component('lead-form-stroke', require('./components/LeadFormStroke.vue').def
 Vue.component('vacancy-form', require('./components/VacancyForm.vue').default);
 Vue.component('star-rating', require('./components/StarRating.vue').default);
 Vue.component('comments-component', require('./components/CommentsComponent.vue').default);
+Vue.component('comments-complain', require('./components/CommentComplain.vue').default);
 
 
 const app = new Vue({

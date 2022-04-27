@@ -12,4 +12,9 @@ class Blog extends Model
 
     protected $translatable = ['title', 'body', 'heading', 'description', 'teaser'];
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

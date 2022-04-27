@@ -73,7 +73,7 @@
                     'date' => $page->created_at,
                     'read_time' => $read_time,
                     'views_count' => $page->views,
-                    'comments_count' => 7,
+                    'comments_count' => $comments_count,
                 ])
             @endcomponent
 

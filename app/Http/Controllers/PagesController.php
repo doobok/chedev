@@ -109,6 +109,7 @@ class PagesController extends Controller
         return view('pages.blog', [
             'page' => $page,
             'read_time' => $read_time,
+            'comments_count' => $page->comments()->count(),
         ]);
     }
 }
