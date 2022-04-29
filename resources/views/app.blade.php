@@ -9,8 +9,10 @@
         x-data="{ mobileMenu: false }">
   <div id="app">
 
-    <main>
-    @yield('main')
+    <main class="bg-left-bottom bg-no-repeat bg-100 bg-curve-bl">
+        <div class="bg-left-top bg-no-repeat bg-100 bg-shape">
+            @yield('main')
+        </div>
     </main>
 
     @include('layouts.partials.footer')

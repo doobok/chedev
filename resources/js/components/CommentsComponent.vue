@@ -1,5 +1,5 @@
 <template>
-    <div id="comments" class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div id="comments" class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
         <h3>{{ $ml.get('comments') }} ( {{comments_count}} )</h3>
         <div class="grid gap-4 mx-auto grid-cols-1 lg:max-w-screen-lg">
 

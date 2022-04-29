@@ -75,6 +75,7 @@
 
         </article>
 
+        @if($page->portfolios->count() > 0)
         <div class="mx-auto lg:max-w-screen-lg">
             <h4 class="text-gray-800 mt-7">{{ __('site.service-portfolios') }}</h4>
             <div class="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
@@ -91,6 +92,7 @@
                 @endforeach
             </div>
         </div>
+        @endif
 
 
         @include('components.lead-form')

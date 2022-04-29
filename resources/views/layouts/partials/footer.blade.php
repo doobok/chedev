@@ -108,7 +108,7 @@
                 </p>
             </div>
         </div>
-        <div class="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
+        <div class="flex flex-col justify-between pt-5 pb-5 border-t border-gray-800 sm:flex-row">
             <p class="text-gray-500 text-sm text-center sm:text-left">© 2021 - {{date("Y")}} Copyright —
                 {{config('app.name')}}
                 |

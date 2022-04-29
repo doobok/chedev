@@ -21,6 +21,23 @@ module.exports = {
                 'yellow': colors.amber,
                 'green': colors.emerald,
             },
+            backgroundImage: {
+                'polygon-br': "url('/bg/polygon-br.svg')",
+                'curve-tr': "url('/bg/curve-tr.svg')",
+                'curve-bl': "url('/bg/curve-bl.svg')",
+                'icon-grid': "url('/bg/icon-grid.svg')",
+                'cloudy': "url('/bg/cloudy.svg')",
+                'shape': "url('/bg/shape.svg')",
+            },
+            backgroundSize: {
+                'auto': 'auto',
+                'cover': 'cover',
+                'contain': 'contain',
+                '30': '30%',
+                '50': '50%',
+                '70': '70%',
+                '100': '100%',
+            },
             // animation: {
             //     'fade-in': 'fadeIn 3s linear infinite',
             // },

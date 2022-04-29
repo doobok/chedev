@@ -3397,7 +3397,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     bio_link: 'Ссылка на портфолио',
     bio_comment: 'Немного информации о себе',
     'votes-count': 'Количество голосов',
-    login_at: 'Войти с помощью',
+    login_at: 'Войти через',
     complain_on: 'Жалоба на',
     complain_desc: 'Сообщите нам о нарушениях, чтобы мы могли оперативно разрешить ситуацию',
     complain_success: 'Спасибо за помощь, мы получили ваше сообщение и скоро со всем разберемся',
@@ -3437,7 +3437,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     bio_link: 'Посилання на портфоліо',
     bio_comment: 'Трохи інформації про себе',
     'votes-count': 'Кількість голосів',
-    login_at: 'Увійти за допомогою',
+    login_at: 'Увійти через',
     complain_on: 'Скарга на',
     complain_desc: 'Повідомте нас про порушення, щоб ми могли оперативно вирішити ситуацію',
     complain_success: 'Дякуємо за допомогу, ми отримали ваше повідомлення і скоро з усім розберемось',
@@ -5463,7 +5463,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20",
+        "px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12",
       attrs: { id: "comments" }
     },
     [
