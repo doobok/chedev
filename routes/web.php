@@ -21,3 +21,7 @@ Route::get('/', 'App\Http\Controllers\PagesController@mainPage')->name('main-pag
 Route::get('/{slug}', 'App\Http\Controllers\PagesController@page')->name('page');
 Route::get('/portfolio/{slug}', 'App\Http\Controllers\PagesController@portfolio')->name('portfolio');
 Route::get('/blog/{slug}', 'App\Http\Controllers\PagesController@blog')->name('blog');
+
+Route::get('login/{provider}', 'App\Http\Controllers\Auth\AuthController@redirectToProvider')->name('login');
+Route::get('{provider}/callback', 'App\Http\Controllers\Auth\AuthController@handleProviderCallback');
+Route::post('/logout', 'App\Http\Controllers\Auth\AuthController@logout');

@@ -5008,10 +5008,7 @@ var render = function() {
                   _c("img", {
                     staticClass:
                       "h-14 mr-1 text-gray-600 rounded-full border-2 border-gray-300 ",
-                    attrs: {
-                      src: "/storage/" + comment.user.avatar,
-                      alt: comment.user.name
-                    }
+                    attrs: { src: comment.user.avatar, alt: comment.user.name }
                   }),
                   _vm._v(" "),
                   _c("div", [
