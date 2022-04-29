@@ -3,7 +3,7 @@
     <div class="bg-primary">
         <div class="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div class="relative flex items-center justify-between lg:justify-center lg:space-x-16">
-                <ul class="flex items-center hidden space-x-8 lg:flex text-sm">
+                <ul class="flex items-center hidden space-x-8 lg:flex text-sm font-bold">
                     <li><a href="{{route('page', 'services')}}" aria-label="{{__('site.services')}}" title="{{__('site.services')}}"
                            class="font-medium uppercase tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.services')}}</a>
                     </li>
@@ -11,14 +11,16 @@
                            class="font-medium uppercase tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.portfolio')}}</a>
                     </li>
                     <li><a href="{{route('page', 'blog')}}" aria-label="{{__('site.blog')}}" title="{{__('site.blog')}}"
-                           class="font-medium uppercase tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.blog')}}</a>
+                           class="font-medium uppercase tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100 flex">
+                            {{__('site.blog')}}
+                        </a>
                     </li>
                 </ul>
                 <a href="{{route('main-page')}}" aria-label="{{config('app.name')}}" title="{{config('app.name')}}"
-                   class="inline-flex items-center text-white w-36 -mt-10 lg:-mt-9">
+                   class="inline-flex items-center text-white w-36 -mt-9 lg:-mt-12">
                     @include('layouts.partials.svg.logo')
                 </a>
-                <ul class="flex items-center hidden space-x-8 lg:flex text-sm">
+                <ul class="flex items-center hidden space-x-8 lg:flex text-sm font-bold">
                     <li><a href="{{route('page', 'about-us')}}" aria-label="{{__('site.about-us')}}" title="{{__('site.about-us')}}"
                            class="font-medium uppercase tracking-wide text-gray-100 transition-colors duration-200 hover:text-secondary-100">{{__('site.about-us')}}</a>
                     </li>

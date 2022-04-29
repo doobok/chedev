@@ -7,7 +7,7 @@
 
         </div>
         <div class="flex space-x-3">
-            <div class="hidden md:block">
+            <div class="hidden md:block transition-opacity duration-300 opacity-40 hover:opacity-100">
                 <a href="{{route('page', 'collaborate')}}" title="{{__('site.collaborate')}}"
                    class="inline-flex items-center justify-center h-6 px-4 tracking-wide text-white transition duration-200 rounded shadow-md bg-indigo-700 hover:bg-indigo-900 focus:shadow-outline focus:outline-none"
                 >
