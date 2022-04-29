@@ -7,34 +7,47 @@
                     <div class="flex flex-col">
                         <div class="relative modal-body">
                             <template v-if="!sent">
-                                Жалоба на #{{comment_id}}
-                                <p class="text-xs mt-2">Повідомте нас про порушення, щоб ми могли оперативно вирішити ситуацію</p>
+                                {{ $ml.get('complain_on') }} #{{comment_id}}
+                                <p class="text-xs mt-2">{{ $ml.get('complain_desc') }}</p>
                                 <textarea v-model="complain"
                                           class="flex-grow text-gray-700 w-full p-1 h-24 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-primary focus:outline-none focus:shadow-outline"
                                 ></textarea>
-                                <span class="text-sm">
-                                {{complain.length}}/150
-                            </span>
-                                <div class="flex justify-between">
+                                <div v-if="user.id > 0">
+                                    <span class="text-sm">
+                                    {{complain.length}}/150
+                                </span>
+                                    <div class="flex justify-between">
+                                        <button
+                                            class="text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none bg-gray-700"
+                                            @click="closeDialog">
+                                            {{ $ml.get('cancel') }}
+                                        </button>
+                                        <button
+                                            class="text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none"
+                                            :disabled="$v.$invalid"
+                                            :class="[$v.$invalid ? 'bg-gray-400' : '', 'bg-green-500']"
+                                            @click="sendComplain"
+                                        >
+                                            {{ $ml.get('send') }}
+                                        </button>
+                                    </div>
+                                </div>
+                                <div v-else class="flex items-center space-x-3 text-sm text-red-600">
+                                    <span>
+                                        {{ $ml.get('login_please') }}:
+                                    </span>
+                                    <auth-buttons></auth-buttons>
                                     <button
                                         class="text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none bg-gray-700"
                                         @click="closeDialog">
-                                        Отмена
-                                    </button>
-                                    <button
-                                        class="text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none"
-                                        :disabled="$v.$invalid"
-                                        :class="[$v.$invalid ? 'bg-gray-400' : '', 'bg-green-500']"
-                                        @click="sendComplain"
-                                    >
-                                        Отправить
+                                        {{ $ml.get('cancel') }}
                                     </button>
                                 </div>
                             </template>
                             <template v-else>
                                 <div class="grid grid-cols-1 justify-items-end">
                                     <div class="text-base text-gray-700 bg-white p-3 rounded-md relative">
-                                        Дякуємо за допомогу, ми отримали ваше повідомлення і скоро з усім розберемось
+                                        {{ $ml.get('complain_success') }}
                                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-3 -left-3 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12l18-12v24z"/></svg>
                                     </div>
                                     <button

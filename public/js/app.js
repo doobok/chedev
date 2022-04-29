@@ -2166,6 +2166,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2226,6 +2239,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
 //
 //
 //
@@ -3380,7 +3396,23 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     specialty: 'Специализация',
     bio_link: 'Ссылка на портфолио',
     bio_comment: 'Немного информации о себе',
-    'votes-count': 'Количество голосов'
+    'votes-count': 'Количество голосов',
+    login_at: 'Войти с помощью',
+    complain_on: 'Жалоба на',
+    complain_desc: 'Сообщите нам о нарушениях, чтобы мы могли оперативно разрешить ситуацию',
+    complain_success: 'Спасибо за помощь, мы получили ваше сообщение и скоро со всем разберемся',
+    cancel: 'Отмена',
+    send: 'Отправить',
+    login_please: 'Авторизируйтесь, чтобы отправить',
+    comments: 'Комментарии',
+    commentate: 'Комментировать',
+    answer: 'Ответить',
+    answer_to: 'ответ на',
+    complain: 'Пожаловаться',
+    load_more: 'Загрузить еще',
+    leave_comment: 'Оставить комментарий',
+    commentate_from: 'Вы комментируете от имени',
+    comment_success: 'Комментарий успешно отправлен'
   }), new vue_multilanguage__WEBPACK_IMPORTED_MODULE_0__.MLanguage('uk').create({
     dark_mode_toggle: 'Переключити тему',
     lead_h: 'Залишіть контактний номер',
@@ -3404,7 +3436,23 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use(vue_multilanguage__WEBPACK_IMPOR
     specialty: 'Спеціалізація',
     bio_link: 'Посилання на портфоліо',
     bio_comment: 'Трохи інформації про себе',
-    'votes-count': 'Кількість голосів'
+    'votes-count': 'Кількість голосів',
+    login_at: 'Увійти за допомогою',
+    complain_on: 'Скарга на',
+    complain_desc: 'Повідомте нас про порушення, щоб ми могли оперативно вирішити ситуацію',
+    complain_success: 'Дякуємо за допомогу, ми отримали ваше повідомлення і скоро з усім розберемось',
+    cancel: 'Скасувати',
+    send: 'Надіслати',
+    login_please: 'Авторизуйтесь, щоб надіслати',
+    comments: 'Коментарі',
+    commentate: 'Коментувати',
+    answer: 'Відповісти',
+    answer_to: 'відповідь на',
+    complain: 'Поскаржитись',
+    load_more: 'Завантажити ще',
+    leave_comment: 'Залишити коментар',
+    commentate_from: 'Ви коментуєте від імені',
+    comment_success: 'Коментар успішно відправлений'
   })]
 }));
 
@@ -5064,7 +5112,10 @@ var render = function() {
       {
         staticClass:
           "border border-dashed border-gray-300 p-0.5 transition-colors duration-300 hover:text-secondary",
-        attrs: { href: "/login/google", target: "_blank", title: "Google" }
+        attrs: {
+          href: "/login/google",
+          title: _vm.$ml.get("login_at") + " Google"
+        }
       },
       [
         _c(
@@ -5090,7 +5141,10 @@ var render = function() {
       {
         staticClass:
           "border border-dashed border-gray-300 p-0.5 transition-colors duration-300 hover:text-secondary",
-        attrs: { href: "/login/facebook", target: "_blank", title: "Facebook" }
+        attrs: {
+          href: "/login/facebook",
+          title: _vm.$ml.get("login_at") + " Facebook"
+        }
       },
       [
         _c(
@@ -5116,7 +5170,10 @@ var render = function() {
       {
         staticClass:
           "border border-dashed border-gray-300 p-0.5 transition-colors duration-300 hover:text-secondary",
-        attrs: { href: "/login/github", target: "_blank", title: "Github" }
+        attrs: {
+          href: "/login/github",
+          title: _vm.$ml.get("login_at") + " Github"
+        }
       },
       [
         _c(
@@ -5192,14 +5249,14 @@ var render = function() {
                     !_vm.sent
                       ? [
                           _vm._v(
-                            "\n                            Жалоба на #" +
+                            "\n                            " +
+                              _vm._s(_vm.$ml.get("complain_on")) +
+                              " #" +
                               _vm._s(_vm.comment_id) +
                               "\n                            "
                           ),
                           _c("p", { staticClass: "text-xs mt-2" }, [
-                            _vm._v(
-                              "Повідомте нас про порушення, щоб ми могли оперативно вирішити ситуацію"
-                            )
+                            _vm._v(_vm._s(_vm.$ml.get("complain_desc")))
                           ]),
                           _vm._v(" "),
                           _c("textarea", {
@@ -5224,48 +5281,94 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
-                          _c("span", { staticClass: "text-sm" }, [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(_vm.complain.length) +
-                                "/150\n                        "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "flex justify-between" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none bg-gray-700",
-                                on: { click: _vm.closeDialog }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                    Отмена\n                                "
+                          _vm.user.id > 0
+                            ? _c("div", [
+                                _c("span", { staticClass: "text-sm" }, [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(_vm.complain.length) +
+                                      "/150\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "flex justify-between" },
+                                  [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none bg-gray-700",
+                                        on: { click: _vm.closeDialog }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(_vm.$ml.get("cancel")) +
+                                            "\n                                    "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none",
+                                        class: [
+                                          _vm.$v.$invalid ? "bg-gray-400" : "",
+                                          "bg-green-500"
+                                        ],
+                                        attrs: { disabled: _vm.$v.$invalid },
+                                        on: { click: _vm.sendComplain }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(_vm.$ml.get("send")) +
+                                            "\n                                    "
+                                        )
+                                      ]
+                                    )
+                                  ]
                                 )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none",
-                                class: [
-                                  _vm.$v.$invalid ? "bg-gray-400" : "",
-                                  "bg-green-500"
+                              ])
+                            : _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex items-center space-x-3 text-sm text-red-600"
+                                },
+                                [
+                                  _c("span", [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(_vm.$ml.get("login_please")) +
+                                        ":\n                                "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("auth-buttons"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "text-white mt-2 p-1 transition duration-200 rounded shadow-md md:w-auto focus:shadow-outline focus:outline-none bg-gray-700",
+                                      on: { click: _vm.closeDialog }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                    " +
+                                          _vm._s(_vm.$ml.get("cancel")) +
+                                          "\n                                "
+                                      )
+                                    ]
+                                  )
                                 ],
-                                attrs: { disabled: _vm.$v.$invalid },
-                                on: { click: _vm.sendComplain }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                    Отправить\n                                "
-                                )
-                              ]
-                            )
-                          ])
+                                1
+                              )
                         ]
                       : [
                           _c(
@@ -5282,7 +5385,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                    Дякуємо за допомогу, ми отримали ваше повідомлення і скоро з усім розберемось\n                                    "
+                                    "\n                                    " +
+                                      _vm._s(_vm.$ml.get("complain_success")) +
+                                      "\n                                    "
                                   ),
                                   _c(
                                     "svg",
@@ -5362,7 +5467,14 @@ var render = function() {
       attrs: { id: "comments" }
     },
     [
-      _c("h3", [_vm._v("Комментарии ( " + _vm._s(_vm.comments_count) + " )")]),
+      _c("h3", [
+        _vm._v(
+          _vm._s(_vm.$ml.get("comments")) +
+            " ( " +
+            _vm._s(_vm.comments_count) +
+            " )"
+        )
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -5401,7 +5513,7 @@ var render = function() {
                     _c("p", { staticClass: "text-gray-400 text-sm" }, [
                       _vm._v(
                         _vm._s(_vm.localeDate(comment.created_at)) +
-                          "\n                            "
+                          "\n                        "
                       ),
                       comment.parent_id > 0
                         ? _c(
@@ -5417,7 +5529,14 @@ var render = function() {
                               ],
                               staticClass: "text-green-500 cursor-pointer"
                             },
-                            [_vm._v("ответ на #" + _vm._s(comment.parent_id))]
+                            [
+                              _vm._v(
+                                " " +
+                                  _vm._s(_vm.$ml.get("answer_to")) +
+                                  " #" +
+                                  _vm._s(comment.parent_id)
+                              )
+                            ]
                           )
                         : _vm._e()
                     ])
@@ -5431,9 +5550,9 @@ var render = function() {
                   { staticClass: "text-sm tracking-wide text-gray-800" },
                   [
                     _vm._v(
-                      "\n                        " +
+                      "\n                    " +
                         _vm._s(comment.comment) +
-                        "\n                    "
+                        "\n                "
                     )
                   ]
                 )
@@ -5489,7 +5608,13 @@ var render = function() {
                                   }
                                 }
                               },
-                              [_vm._v("Ответить")]
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(_vm.$ml.get("answer")) +
+                                    "\n                        "
+                                )
+                              ]
                             )
                           ]
                         )
@@ -5501,7 +5626,7 @@ var render = function() {
                       {
                         staticClass:
                           "cursor-pointer absolute top-2 right-2 inline-flex p-1 mr-1 text-xs text-gray-500 hover:text-red-500 transition duration-200",
-                        attrs: { title: "Пожаловаться" },
+                        attrs: { title: _vm.$ml.get("complain") },
                         on: {
                           click: function($event) {
                             return _vm.complainShow(comment.id)
@@ -5552,7 +5677,7 @@ var render = function() {
                 "flex justify-center m-4 py-2 cursor-pointer border border-dashed rounded-md transition-all duration-300 text-gray-500 hover:text-green-700 hover:border-green-700",
               on: { click: _vm.reloadComments }
             },
-            [_vm._v("\n            Загрузить ещё\n        ")]
+            [_vm._v("\n        " + _vm._s(_vm.$ml.get("load_more")) + "\n    ")]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -5560,7 +5685,7 @@ var render = function() {
         ? _c("div", { staticClass: "mt-3", attrs: { id: "comment-form" } }, [
             _c("div", { staticClass: "mb-2 space-x-3" }, [
               _c("span", { staticClass: "text-lg font-bold mb-1 " }, [
-                _vm._v("Оставить комментарий")
+                _vm._v(_vm._s(_vm.$ml.get("leave_comment")))
               ]),
               _vm._v(" "),
               _vm.parent_id > 0
@@ -5580,7 +5705,13 @@ var render = function() {
                             }
                           ]
                         },
-                        [_vm._v("ответ на #" + _vm._s(_vm.parent_id))]
+                        [
+                          _vm._v(
+                            _vm._s(_vm.$ml.get("answer_to")) +
+                              " #" +
+                              _vm._s(_vm.parent_id)
+                          )
+                        ]
                       ),
                       _vm._v(" "),
                       _c(
@@ -5593,7 +5724,13 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("отменить")]
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(_vm.$ml.get("cancel")) +
+                              "\n                "
+                          )
+                        ]
                       )
                     ]
                   )
@@ -5630,7 +5767,7 @@ var render = function() {
                   },
                   [
                     _c("span", { staticClass: "text-sm text-gray-400" }, [
-                      _vm._v("Ви коментуєте від імені "),
+                      _vm._v(_vm._s(_vm.$ml.get("commentate_from")) + " "),
                       _c("b", { staticClass: "mx-4" }, [
                         _vm._v(_vm._s(_vm.user.name))
                       ]),
@@ -5651,7 +5788,9 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                    Комментировать\n                "
+                          "\n                " +
+                            _vm._s(_vm.$ml.get("commentate")) +
+                            "\n            "
                         )
                       ]
                     )
@@ -5666,7 +5805,9 @@ var render = function() {
                   [
                     _c("span", [
                       _vm._v(
-                        "\n                    Авторизуйтесь, щоб залишити коментар:\n                "
+                        "\n                " +
+                          _vm._s(_vm.$ml.get("login_please")) +
+                          ":\n            "
                       )
                     ]),
                     _vm._v(" "),
@@ -5682,7 +5823,11 @@ var render = function() {
             },
             [
               _c("span", { staticClass: "text-base text-gray-500" }, [
-                _vm._v("Коментар успішно відправлено")
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.$ml.get("comment_success")) +
+                    "\n        "
+                )
               ])
             ]
           ),
