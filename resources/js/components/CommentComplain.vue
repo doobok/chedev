@@ -56,6 +56,7 @@
 
 <script>
 import {required, maxLength, minLength} from "vuelidate/lib/validators";
+import {mapGetters} from "vuex";
 export default {
     props: ['show', 'comment_id'],
     data: function () {
@@ -67,7 +68,7 @@ export default {
     methods: {
         sendComplain () {
             axios.post('/api/v1/send-complain', {
-                    user_id: 1,
+                    user_id: this.user.id,
                     comment_id: this.comment_id,
                     complain: this.complain
                 })
@@ -82,6 +83,9 @@ export default {
             this.complain = ''
             this.$emit('hidedialog')
         }
+    },
+    computed: {
+        ...mapGetters(['user']),
     },
     validations: {
         complain: {

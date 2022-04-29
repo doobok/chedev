@@ -81,12 +81,8 @@
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
 
-            <comments-component blog_id="{{ $page->id }}" user_id="1"></comments-component>
+            <comments-component blog_id="{{ $page->id }}"></comments-component>
 
-{{--            @component('components.blog-comments', [--}}
-{{--                    'comments' => "Hello 25"--}}
-{{--                ])--}}
-{{--            @endcomponent--}}
         </article>
 
         @include('components.lead-form')
