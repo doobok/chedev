@@ -3,215 +3,77 @@
         <div class="flex flex-col mb-6 lg:flex-row md:mb-10">
             <div class="lg:w-1/2">
                 <h2 class="max-w-md mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none xl:max-w-lg">
-{{--                    Нам доверяют создание продуктов, которые призваны покорять рынок.--}}
-                    Мы создаем продукты, которые меняют рынок
+                    {{ __('index.accent-h') }}
                 </h2>
             </div>
             <div class="lg:w-1/2">
                 <p class="text-base text-gray-700 md:text-lg">
-                    Наш подход призван изменить видение ваших товаров и услуг в глазах потенциальных клиентов, что способствует положительному опыту в ведении любого современного бизнеса
+                    <a href="{{ route('page', 'about-us') }}" title="{{ __('site.about-us') }}"
+                       class="font-semibold transition-colors duration-200 text-primary hover:text-blue-800">{{ __('index.accent-a') }}</a>
+                    {{ __('index.accent-desc') }}
                 </p>
             </div>
         </div>
+        @php
+            $icons = [
+                '<path d="M21 14.655l-5.799.908 3.393 6.917-3.111 1.52-3.413-6.982-4.07 3.651v-15.857l13 9.843m-12.792-10.905l-1.042.519-1.536-3.087 1.043-.519 1.535 3.087zm2.599-3.577l-1.152-.173-.513 3.409 1.152.173.513-3.409zm-4.779 5.848l.557-1.023-3.028-1.648-.557 1.023 3.028 1.648z"/>',
+                '<path d="M2.827 8.25l.257-.018.076-.005c1.311 0 2.963 4.604 3.343 6.724.63-.22 1.272-.401 1.923-.545-.219-1.122-.637-2.472-1.06-3.562l.172.002c1.549 0 3.271-.571 4.464-2.016 1.191 1.444 2.914 2.016 4.463 2.016l.171-.002c-.424 1.09-.842 2.44-1.058 3.562.649.144 1.291.325 1.921.544.379-2.121 2.031-6.724 3.341-6.724l.076.005.256.018c.986.001 1.828-.803 1.828-1.832 0-1.013-.82-1.833-1.832-1.833-1.217 0-2.104 1.167-1.764 2.329.287.981-1.247 1.935-2.939 1.935-1.613 0-3.37-.867-3.83-3.405-.24-1.324.02-1.671.666-2.321.328-.329.533-.783.533-1.287 0-1.014-.82-1.835-1.834-1.835-1.012 0-1.833.821-1.833 1.833 0 .503.204.958.534 1.287.647.651.907.998.668 2.321-.461 2.539-2.218 3.406-3.831 3.406-1.692 0-3.227-.955-2.94-1.935.34-1.162-.549-2.329-1.764-2.329-1.012 0-1.834.821-1.834 1.834 0 1.029.842 1.833 1.827 1.833zm.033 9.735l2.343 3.335c-.89.769-1.664 1.668-2.277 2.68l-.566-3h-2.36c.807-1.167 1.771-2.136 2.86-3.015zm18.28 0l-2.343 3.335c.89.769 1.664 1.668 2.277 2.68l.566-3h2.36c-.807-1.167-1.771-2.136-2.86-3.015zm-1.383.228l-2.334 3.322c-1.603-.924-3.448-1.464-5.423-1.473-1.975.009-3.82.549-5.423 1.473l-2.334-3.322c2.266-1.386 4.912-2.202 7.757-2.211 2.845.009 5.491.825 7.757 2.211zm-10.908.561l.53-.511-.729-.101-.323-.662-.322.663-.729.101.531.511-.13.725.65-.348.65.348-.128-.726zm3.672-.5l.53-.511-.729-.101-.322-.662-.322.663-.729.101.531.511-.13.725.65-.348.65.348-.129-.726zm3.718.5l.53-.511-.729-.101-.322-.662-.322.663-.729.101.531.511-.131.725.65-.348.65.348-.128-.726z"/>',
+                '<path d="M9.916 8.195h-.013v.961c-.034 1.598 4.213 1.601 4.161 0v-.96c-.123-1.511-4.042-1.52-4.148-.001zm2.08.71c-.723 0-1.311-.253-1.311-.564 0-.312.588-.564 1.311-.564.724 0 1.311.253 1.311.564 0 .311-.587.564-1.311.564zm6.421-2.155v-.96c-.124-1.511-4.042-1.52-4.148-.001h-.013v.961c-.034 1.599 4.214 1.602 4.161 0zm-2.067-1.379c.723 0 1.311.253 1.311.564s-.589.565-1.311.565c-.724 0-1.311-.253-1.311-.564s.587-.565 1.311-.565zm-10.797.418h-.013v.961c-.034 1.598 4.213 1.601 4.161 0v-.96c-.123-1.511-4.042-1.519-4.148-.001zm2.08.711c-.723 0-1.311-.253-1.311-.564s.588-.565 1.311-.565c.724 0 1.311.253 1.311.564s-.588.565-1.311.565zm2.283-2.988l-.013.201v.759c-.034 1.598 4.214 1.602 4.161 0v-.959c-.124-1.512-4.042-1.52-4.148-.001zm3.392.145c0 .311-.588.564-1.311.564-.724 0-1.311-.253-1.311-.564s.587-.564 1.311-.564c.723 0 1.311.253 1.311.564zm-1.308-3.657l-11 6 .009.019-.009-.005v12.118l11 5.868 11-5.869v-12.055l-11-6.076zm-1 21l-8-4.268v-7.133l8 4.401v7zm-8.885-14.464l9.882-5.396 9.917 5.458-9.896 5.385-9.903-5.447zm10.885 7.464l8-4.353v7.085l-8 4.268v-7z"/>',
+                '<path d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092zm1 12c0 .552-.448 1-1 1s-1-.448-1-1 .448-1 1-1 1 .448 1 1zm4 0c0 .552-.448 1-1 1s-1-.448-1-1 .448-1 1-1 1 .448 1 1zm-8 0c0 .552-.448 1-1 1s-1-.448-1-1 .448-1 1-1 1 .448 1 1z"/>',
+            ];
+            $links = [
+                'landing-page',
+                'corporate-website',
+                'telegram-bot',
+                'api',
+            ]
+        @endphp
         <div class="grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            @for($i=0; $i<4; $i++)
             <div>
                 <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-7 h-7 text-primary" stroke-linecap="round" stroke-width="2"
-                         viewBox="0 0 24 24">
-                        <circle cx="11" cy="13" fill="none" r="9" stroke="currentColor"></circle>
-                        <path
-                            d=" M21.955,18.005c1.089,2.145,1.378,3.816,0.622,4.572C20.92,24.234,14.799,20.799,9,15S-0.234,3.08,1.423,1.423 C2.18,0.666,3.853,0.956,6,2.047"
-                            stroke="currentColor" fill="none"></path>
+                    <svg class="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        {!! $icons[$i] !!}
                     </svg>
                 </div>
-                <h6 class="mb-2 font-semibold leading-5">Our planet</h6>
+                <h6 class="mb-2 font-semibold leading-5">
+                    {{ __('index.accent-' . $i) }}
+                </h6>
                 <p class="mb-3 text-sm text-gray-900">
-                    We choose to go to the moon, not because it's easy, but because it's hard.
+                    {{ __('index.accent-desc-' . $i) }}
                 </p>
                 <ul class="mb-4 -ml-1 space-y-2">
                     <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Earth
+                    <span class="mr-1">
+                        <svg class="w-5 h-5 mt-px text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 7.328v-3.328l8 8-8 8v-3.328l-16-4.672z"/>
+                        </svg>
+                    </span>
+                        {{ __('index.accent-li-1-' . $i) }}
                     </li>
                     <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Space
+                    <span class="mr-1">
+                        <svg class="w-5 h-5 mt-px text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 7.328v-3.328l8 8-8 8v-3.328l-16-4.672z"/>
+                        </svg>
+                    </span>
+                        {{ __('index.accent-li-2-' . $i) }}
                     </li>
                     <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Humans
+                    <span class="mr-1">
+                        <svg class="w-5 h-5 mt-px text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 7.328v-3.328l8 8-8 8v-3.328l-16-4.672z"/>
+                        </svg>
+                    </span>
+                        {{ __('index.accent-li-3-' . $i) }}
                     </li>
                 </ul>
-                <a href="/" aria-label=""
-                   class="inline-flex items-center font-semibold transition-colors duration-200 text-primary hover:text-purple-800">Learn
-                    more</a>
+                <a href="{{ route('page', $links[$i] ) }}"
+                   class="inline-flex items-center font-semibold transition-colors duration-200 text-primary hover:text-blue-800">
+                    {{ __('site.read-more') }}
+                </a>
             </div>
-            <div>
-                <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-7 h-7 text-primary" viewBox="0 0 24 24" stroke-linecap="round">
-                        <path d="M2,10C2,5.029,6.47,1,12,1c5.379,0,10,4.029,10,9S15.712,23,12,23C8.212,23,2,14.971,2,10Z"
-                              fill="none" stroke-width="2" stroke="currentColor"></path>
-                        <path
-                            d="M5,9a6.529,6.529,0,0,1,4.393,1.607C10.705,11.92,10,15,10,15a6.59,6.59,0,0,1-3.436-1.564C5.022,11.894,5,9,5,9Z"
-                            fill="none" stroke-width="1.5" stroke="currentColor"></path>
-                        <path
-                            d="M19,9a6.523,6.523,0,0,0-4.392,1.608C13.3,11.92,14,15,14,15a6.59,6.59,0,0,0,3.436-1.564C18.978,11.894,19,9,19,9Z"
-                            fill="none" stroke-width="1.5" stroke="currentColor"></path>
-                    </svg>
-                </div>
-                <h6 class="mb-2 font-semibold leading-5">Another life</h6>
-                <p class="mb-3 text-sm text-gray-900">
-                    There can be no thought of finishing for "aiming for the stars".
-                </p>
-                <ul class="mb-4 -ml-1 space-y-2">
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Life
-                    </li>
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Aliens
-                    </li>
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Shrek
-                    </li>
-                </ul>
-                <a href="/" aria-label=""
-                   class="inline-flex items-center font-semibold transition-colors duration-200 text-primary hover:text-purple-800">Learn
-                    more</a>
-            </div>
-            <div>
-                <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-7 h-7 text-primary" stroke-linecap="round" stroke-width="2"
-                         viewBox="0 0 24 24">
-                        <path d="M8.291,18.709,4.182,22.818c-.419.419-1.43.086-2.258-.742s-1.161-1.839-.742-2.258l4.11-4.11"
-                              fill="none" stroke="currentColor"></path>
-                        <ellipse cx="19.078" cy="4.922" fill="none" rx="2.5" ry="4.95" stroke="currentColor"
-                                 transform="translate(2.107 14.932) rotate(-45)"></ellipse>
-                        <path d="M9.185,9.815,5.3,13.7c-.7.7-.143,2.382,1.238,3.762S9.6,19.4,10.3,18.7l3.885-3.885"
-                              fill="none" stroke="currentColor"></path>
-                        <path
-                            d="M15.578,1.422,9.422,7.578c-.976.976-.2,3.335,1.732,5.268s4.292,2.708,5.268,1.732l6.156-6.156"
-                            fill="none" stroke="currentColor"></path>
-                    </svg>
-                </div>
-                <h6 class="mb-2 font-semibold leading-5">Explore space</h6>
-                <p class="mb-3 text-sm text-gray-900">
-                    We are all connected to the universe atomically, strong bonds.
-                </p>
-                <ul class="mb-4 -ml-1 space-y-2">
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Infinity
-                    </li>
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Stars
-                    </li>
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Black Holes
-                    </li>
-                </ul>
-                <a href="/" aria-label=""
-                   class="inline-flex items-center font-semibold transition-colors duration-200 text-primary hover:text-purple-800">Learn
-                    more</a>
-            </div>
-            <div>
-                <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-                    <svg class="w-7 h-7 text-primary" stroke-linecap="round" stroke-width="2"
-                         viewBox="0 0 24 24">
-                        <path d="M8,13l3,3,9.379-9.379a2.122,2.122,0,0,0,0-3h0a2.122,2.122,0,0,0-3,0Z" fill="none"
-                              stroke="currentColor"></path>
-                        <polyline fill="none" points="10 11 10 6 6 2 3 5 7 9" stroke="currentColor"></polyline>
-                        <polyline fill="none" points="15 12 15 17 19 21 22 18 18 14" stroke="currentColor"></polyline>
-                        <path d="M8,23a7,7,0,0,1-7-7" fill="none" stroke="currentColor"></path>
-                        <path d="M8,19a3,3,0,0,1-3-3" fill="none" stroke="currentColor"></path>
-                    </svg>
-                </div>
-                <h6 class="mb-2 font-semibold leading-5">First contact</h6>
-                <p class="mb-3 text-sm text-gray-900">
-                    For those who have seen the Earth from space or in dreams.
-                </p>
-                <ul class="mb-4 -ml-1 space-y-2">
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Listen
-                    </li>
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Communicate
-                    </li>
-                    <li class="flex items-start">
-          <span class="mr-1">
-            <svg class="w-5 h-5 mt-px text-primary" stroke="currentColor" viewBox="0 0 52 52">
-              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                       points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
-            </svg>
-          </span>
-                        Run
-                    </li>
-                </ul>
-                <a href="/" aria-label=""
-                   class="inline-flex items-center font-semibold transition-colors duration-200 text-primary hover:text-purple-800">Learn
-                    more</a>
-            </div>
+            @endfor
         </div>
     </div>
 </div>
