@@ -293,14 +293,14 @@
 .h-20 {
   height: 5rem;
 }
-.h-96 {
-  height: 24rem;
-}
 .h-8 {
   height: 2rem;
 }
 .h-1 {
   height: 0.25rem;
+}
+.h-96 {
+  height: 24rem;
 }
 .h-0\.5 {
   height: 0.125rem;
@@ -338,6 +338,12 @@
 .w-20 {
   width: 5rem;
 }
+.w-8 {
+  width: 2rem;
+}
+.w-auto {
+  width: auto;
+}
 .w-4 {
   width: 1rem;
 }
@@ -346,12 +352,6 @@
 }
 .w-6 {
   width: 1.5rem;
-}
-.w-8 {
-  width: 2rem;
-}
-.w-auto {
-  width: auto;
 }
 .w-36 {
   width: 9rem;
@@ -486,11 +486,11 @@
 .gap-10 {
   gap: 2.5rem;
 }
-.gap-6 {
-  gap: 1.5rem;
-}
 .gap-16 {
   gap: 4rem;
+}
+.gap-6 {
+  gap: 1.5rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -663,10 +663,6 @@
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
 .bg-teal-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(45 212 191 / var(--tw-bg-opacity));
@@ -682,6 +678,18 @@
 .bg-green-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 250 229 / var(--tw-bg-opacity));
+}
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 192 70 / var(--tw-bg-opacity));
+}
+.bg-green-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
 }
 .bg-transparent {
   background-color: transparent;
@@ -759,6 +767,10 @@
 .object-right {
   -o-object-position: right;
      object-position: right;
+}
+.object-right-top {
+  -o-object-position: right top;
+     object-position: right top;
 }
 .object-bottom {
   -o-object-position: bottom;
@@ -866,14 +878,14 @@
 .pb-5 {
   padding-bottom: 1.25rem;
 }
+.pt-8 {
+  padding-top: 2rem;
+}
 .pt-1 {
   padding-top: 0.25rem;
 }
 .pb-8 {
   padding-bottom: 2rem;
-}
-.pt-8 {
-  padding-top: 2rem;
 }
 .pt-0\.5 {
   padding-top: 0.125rem;
@@ -1845,9 +1857,9 @@ article blockquote {
   --tw-text-opacity: 1;
   color: rgb(255 192 70 / var(--tw-text-opacity));
 }
-.hover\:text-purple-800:hover {
+.hover\:text-blue-800:hover {
   --tw-text-opacity: 1;
-  color: rgb(107 33 168 / var(--tw-text-opacity));
+  color: rgb(55 48 163 / var(--tw-text-opacity));
 }
 .hover\:text-purple-200:hover {
   --tw-text-opacity: 1;
@@ -1860,14 +1872,6 @@ article blockquote {
 .hover\:text-red-500:hover {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-.hover\:text-secondary-50:hover {
-  --tw-text-opacity: 1;
-  color: rgb(159 135 87 / var(--tw-text-opacity));
-}
-.hover\:text-blue-800:hover {
-  --tw-text-opacity: 1;
-  color: rgb(55 48 163 / var(--tw-text-opacity));
 }
 .hover\:no-underline:hover {
   -webkit-text-decoration-line: none;
