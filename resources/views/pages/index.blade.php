@@ -21,6 +21,7 @@
     @include('layouts.partials.index.numbers')
     @include('layouts.partials.index.accents')
     @include('layouts.partials.index.steps')
+    @include('layouts.partials.index.portfolios')
     @include('layouts.partials.index.tmp')
 
 

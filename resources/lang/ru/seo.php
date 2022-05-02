@@ -15,4 +15,7 @@ return [
 
     'blog-title' => '',
     'blog-desc' => '',
+
+    'sitemap-title' => '',
+    'sitemap-desc' => '',
 ];
