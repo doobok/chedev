@@ -3,94 +3,82 @@
         <div class="grid row-gap-10 mb-8 lg:grid-cols-6">
             <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
                 <div>
-                    <p class="font-medium tracking-wide text-gray-300">Category</p>
+                    <p class="font-medium tracking-wide text-gray-300">Разработка</p>
                     <ul class="mt-2 space-y-2">
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">News</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Landing Page</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">World</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Корпоративный сайт</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Games</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Телеграм бот</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">References</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">API</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <p class="font-medium tracking-wide text-gray-300">Apples</p>
+                    <p class="font-medium tracking-wide text-gray-300">Продвижение</p>
                     <ul class="mt-2 space-y-2">
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Web</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">SEO</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">eCommerce</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Реклама</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Business</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Аудит сайта</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Entertainment</a>
-                        </li>
-                        <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Portfolio</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Анализ конкурентов</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <p class="font-medium tracking-wide text-gray-300">Cherry</p>
+                    <p class="font-medium tracking-wide text-gray-300">{{ __('site.blog') }}</p>
                     <ul class="mt-2 space-y-2">
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Media</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Новости</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Brochure</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Инструкции</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Nonprofit</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Механики</a>
                         </li>
                         <li>
                             <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Educational</a>
-                        </li>
-                        <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Projects</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Технологии</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <p class="font-medium tracking-wide text-gray-300">Business</p>
+                    <p class="font-medium tracking-wide text-gray-300">{{ __('site.links') }}</p>
                     <ul class="mt-2 space-y-2">
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Infopreneur</a>
+                            <a href="{{ route('page', 'contacts') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.contacts') }}</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Personal</a>
+                            <a href="{{ route('page', 'collaborate') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.collaborate') }}</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Wiki</a>
-                        </li>
-                        <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Forum</a>
+                            <a href="{{ route('sitemap-view') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.sitemap') }}</a>
                         </li>
                     </ul>
                 </div>

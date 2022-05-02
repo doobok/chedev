@@ -22,4 +22,9 @@ class Portfolio extends Model
         return $this->belongsToMany(Service::class);
     }
 
+    public function stars()
+    {
+        return $this->hasOne(Rating::class, 'itemid')->where('model', '=', 'portfolio');
+    }
+
 }

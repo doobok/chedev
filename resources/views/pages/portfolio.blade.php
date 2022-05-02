@@ -69,12 +69,12 @@
 
             <star-rating
                 itemid="{{$page->id}}"
-                model="page"
+                model="portfolio"
             ></star-rating>
 
             @component('components.text-statistics', [
                     'date' => $page->created_at,
-                    'views_count' => 123,
+                    'views_count' => $page->views,
                 ])
             @endcomponent
 
