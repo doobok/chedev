@@ -14,7 +14,7 @@ class PagesController extends Controller
 {
     public function mainPage()
     {
-        $services = Service::where('active', true)->select('id', 'slug', 'heading', 'image')->orderBy('order', 'desc')->get();
+        $services = Service::where('active', true)->select('id', 'slug', 'heading', 'image')->orderBy('order', 'desc')->limit(8)->get();
         $portfolios = Portfolio::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'image', 'views')->orderBy('views', 'desc')->limit(6)->get();
 
         return view('pages.index', [

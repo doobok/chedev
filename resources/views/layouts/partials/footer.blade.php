@@ -3,44 +3,44 @@
         <div class="grid row-gap-10 mb-8 lg:grid-cols-6">
             <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
                 <div>
-                    <p class="font-medium tracking-wide text-gray-300">Разработка</p>
+                    <p class="font-medium tracking-wide text-gray-300">{{ __('site.development') }}</p>
                     <ul class="mt-2 space-y-2">
                         <li>
-                            <a href="/"
+                            <a href="{{ route('page', 'landing-page') }}"
                                class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Landing Page</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Корпоративный сайт</a>
+                            <a href="{{ route('page', 'corporate-website') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.corporate-website') }}</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Телеграм бот</a>
+                            <a href="{{ route('page', 'telegram-bot') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.telegram-bot') }}</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">API</a>
+                            <a href="{{ route('page', 'rest-api') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">REST API</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <p class="font-medium tracking-wide text-gray-300">Продвижение</p>
+                    <p class="font-medium tracking-wide text-gray-300">{{ __('site.promotion') }}</p>
                     <ul class="mt-2 space-y-2">
                         <li>
-                            <a href="/"
+                            <a href="{{ route('page', 'seo-optimization') }}"
                                class="text-gray-500 transition-colors duration-300 hover:text-purple-200">SEO</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Реклама</a>
+                            <a href="{{ route('page', 'contextual-advertising') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.ads') }}</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Аудит сайта</a>
+                            <a href="{{ route('page', 'site-audit') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.site-audit') }}</a>
                         </li>
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Анализ конкурентов</a>
+                            <a href="{{ route('page', 'competitor-analysis') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.competitor-analysis') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -48,21 +48,21 @@
                     <p class="font-medium tracking-wide text-gray-300">{{ __('site.blog') }}</p>
                     <ul class="mt-2 space-y-2">
                         <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Новости</a>
+                            <a href="{{ route('page', 'blog?tag=news') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.news') }}</a>
                         </li>
-                        <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Инструкции</a>
-                        </li>
-                        <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Механики</a>
-                        </li>
-                        <li>
-                            <a href="/"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Технологии</a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="/"--}}
+{{--                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Инструкции</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="/"--}}
+{{--                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Механики</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="/"--}}
+{{--                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Технологии</a>--}}
+{{--                        </li>--}}
                     </ul>
                 </div>
                 <div>
@@ -100,7 +100,7 @@
             <p class="text-gray-500 text-sm text-center sm:text-left">© 2021 - {{date("Y")}} Copyright —
                 {{config('app.name')}}
                 |
-                <a href="/policy" class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Политика конфиденциальности</a>
+                <a href="/policy" class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">{{ __('site.policy') }}</a>
             </p>
             <div class="h-6">
                 @include('layouts.partials.social-buttons')

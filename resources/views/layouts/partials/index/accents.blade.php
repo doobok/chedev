@@ -25,7 +25,7 @@
                 'landing-page',
                 'corporate-website',
                 'telegram-bot',
-                'api',
+                'rest-api',
             ]
         @endphp
         <div class="grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-4">

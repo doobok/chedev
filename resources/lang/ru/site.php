@@ -59,5 +59,16 @@ return [
 
     'links' => 'Ссылки',
 
+    'policy' => 'Политика конфиденциальности',
+    'news' => 'Новости',
+    'corporate-website' => 'Корпоративный сайт',
+    'telegram-bot' => 'Телеграм бот',
+    'ads' => 'Реклама',
+    'development' => 'Разработка',
+    'promotion' => 'Продвижение',
+    'site-audit' => 'Аудит сайта',
+    'competitor-analysis' => 'Анализ конкурентов',
+
+
 
 ];
