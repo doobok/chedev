@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Faq;
 use App\Models\Mark;
 use App\Models\Page;
 use App\Models\Portfolio;
@@ -16,10 +17,12 @@ class PagesController extends Controller
     {
         $services = Service::where('active', true)->select('id', 'slug', 'heading', 'image')->orderBy('order', 'desc')->limit(8)->get();
         $portfolios = Portfolio::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'image', 'views')->orderBy('views', 'desc')->limit(6)->get();
+        $faqs = Faq::where('active', true)->select('id', 'ask', 'answer')->orderBy('order', 'desc')->limit(6)->get();
 
         return view('pages.index', [
             'services' => $services,
             'portfolios' => $portfolios,
+            'faqs' => $faqs,
         ]);
     }
 
