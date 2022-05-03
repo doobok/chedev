@@ -82,7 +82,7 @@
             </div>
         </div>
 
-        <article class="max-w-screen-lg sm:mx-auto">
+        <article class="max-w-screen-md sm:mx-auto mb-8">
             <div class="space-y-8 mb-16">
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
@@ -92,7 +92,7 @@
             <h4>{{ __('site.vacancy-form-h') }}</h4>
             <p class="mb-2">{{ __('site.vacancy-form-d') }}</p>
 
-            <div class="border-2 border-gray-200 rounded-lg p-4">
+            <div class="border-2 border-gray-200 bg-white rounded-lg p-4">
                 <vacancy-form></vacancy-form>
             </div>
         </div>

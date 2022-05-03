@@ -11,11 +11,10 @@
                   @include('layouts.partials.svg.chips-pattern')
                   <span class="relative text-primary">FAQ</span>
                 </span>
-                ответы на популярные вопросы
+                {{ __('index.faq') }}
             </h2>
             <p class="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque
-                ipsa quae.
+                {{ __('index.faq-desc') }}
             </p>
         </div>
     </div>

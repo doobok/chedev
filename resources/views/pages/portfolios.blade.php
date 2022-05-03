@@ -34,9 +34,9 @@
 
         {{--Блок услуг--}}
         <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
-            <div class="mb-5 flex justify-center">
+            <div class="mb-5 flex flex-wrap justify-center">
                 @foreach($data['tags'] as $tag)
-                    <a href="{{ route('page', 'portfolio?tag=' . $tag->slug) }}" class="inline-flex p-1 mr-1 text-xs text-white transition duration-200 rounded shadow-md
+                    <a href="{{ route('page', 'portfolio?tag=' . $tag->slug) }}" class="inline-flex p-1 mr-1 mb-1 text-xs text-white transition duration-200 rounded shadow-md
                     @if($data['mark'] == $tag->slug)
                         bg-{{$tag->getTranslatedAttribute('color')}}-500
                     @else
