@@ -1,7 +1,7 @@
 <div>
     @include('layouts.partials.nav-top')
     <div class="bg-primary">
-        <div class="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div class="px-4 py-3 mx-auto lg:py-7 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div class="relative flex items-center justify-between lg:justify-center lg:space-x-16">
                 <ul class="flex items-center hidden space-x-8 lg:flex text-sm font-bold">
                     <li><a href="{{route('page', 'services')}}" aria-label="{{__('site.services')}}" title="{{__('site.services')}}"
@@ -17,7 +17,7 @@
                     </li>
                 </ul>
                 <a href="{{route('main-page')}}" aria-label="{{config('app.name')}}" title="{{config('app.name')}}"
-                   class="inline-flex items-center text-white w-36 -mt-9 lg:-mt-12">
+                   class="inline-flex items-center text-white w-44 xl:w-48">
                     @include('layouts.partials.svg.logo')
                 </a>
                 <ul class="flex items-center hidden space-x-8 lg:flex text-sm font-bold">

@@ -5,7 +5,7 @@
                 <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                     <h2 class="max-w-xl mb-6 font-sans text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto">
         <span class="relative inline-block">
-            @include('layouts.partials.svg.chips-pattern')
+            @include('layouts.partials.svg.logo-pattern')
           <span class="relative text-primary">{{ __('index.alfa-h-1') }}</span>
         </span>
                         {{ __('index.alfa-h-2') }}

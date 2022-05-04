@@ -1,7 +1,7 @@
-<div class="bg-primary-50">
+<div class="bg-dark-100">
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div class="grid grid-cols-2 row-gap-8 md:grid-cols-4">
-            <a href="{{ route('page', 'corporate-website') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-primary-50 hover:border-green-500 rounded-md">
+            <a href="{{ route('page', 'corporate-website') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-dark-100 hover:border-green-500 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-14 mb-2" fill="currentColor"
                      viewBox="0 0 24 24">
                     <path
@@ -11,7 +11,7 @@
                     {{ __('index.vector-1') }}
                 </p>
             </a>
-            <a href="{{ route('page', 'telegram-bot') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-primary-50 hover:border-green-500 rounded-md">
+            <a href="{{ route('page', 'telegram-bot') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-dark-100 hover:border-green-500 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-14 mb-2" fill="currentColor"
                      viewBox="0 0 48 48">
                     <path
@@ -21,7 +21,7 @@
                     {{ __('index.vector-2') }}
                 </p>
             </a>
-            <a href="{{ route('page', 'website-promotion') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-primary-50 hover:border-green-500 rounded-md">
+            <a href="{{ route('page', 'website-promotion') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-dark-100 hover:border-green-500 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-14 mb-2" fill="currentColor"
                      viewBox="0 0 247.065 247.065">
                     <path
@@ -31,7 +31,7 @@
                     {{ __('index.vector-3') }}
                 </p>
             </a>
-            <a href="{{ route('page', 'rest-api') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-primary-50 hover:border-green-500 rounded-md">
+            <a href="{{ route('page', 'rest-api') }}" class="text-center py-4 mx-4 grid justify-items-center text-secondary transition-all duration-150 hover:text-green-500 border-2 border-dark-100 hover:border-green-500 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-14 mb-2" fill="currentColor"
                      viewBox="0 0 511 511">
                     <path
