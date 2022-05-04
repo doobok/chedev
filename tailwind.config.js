@@ -14,6 +14,8 @@ module.exports = {
                 primary: '#4168BB',
                 'primary-50': '#455575',
                 'primary-100': '#567BCA',
+                'dark-50': '#020633',
+                'dark-100': '#000b4d',
                 secondary: '#FFC046',
                 'secondary-50': '#9F8757',
                 'secondary-100': '#FFC75B',
@@ -22,11 +24,9 @@ module.exports = {
                 'green': colors.emerald,
             },
             backgroundImage: {
-                'polygon-br': "url('/bg/polygon-br.svg')",
-                'curve-tr': "url('/bg/curve-tr.svg')",
                 'curve-bl': "url('/bg/curve-bl.svg')",
                 'icon-grid': "url('/bg/icon-grid.svg')",
-                'cloudy': "url('/bg/cloudy.svg')",
+                'index': "url('/bg/index-bg.svg')",
                 'shape': "url('/bg/shape.svg')",
             },
             backgroundSize: {

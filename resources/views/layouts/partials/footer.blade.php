@@ -74,7 +74,7 @@
                         </li>
                         <li>
                             <a href="{{ route('page', 'collaborate') }}"
-                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.collaborate') }}</a>
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.cooperation') }}</a>
                         </li>
                         <li>
                             <a href="{{ route('sitemap-view') }}"

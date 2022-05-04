@@ -22,8 +22,11 @@ Route::get('/portfolio/{slug}', 'App\Http\Controllers\PagesController@portfolio'
 Route::get('/blog/{slug}', 'App\Http\Controllers\PagesController@blog')->name('blog');
 Route::get('/sitemap', 'App\Http\Controllers\SitemapController@visual')->name('sitemap-view');
 Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapController@index')->name('sitemap');
-Route::get('/{slug}', 'App\Http\Controllers\PagesController@page')->name('page');
 
+Route::post('/logout', 'App\Http\Controllers\Auth\AuthController@logout');
 Route::get('login/{provider}', 'App\Http\Controllers\Auth\AuthController@redirectToProvider')->name('login');
 Route::get('{provider}/callback', 'App\Http\Controllers\Auth\AuthController@handleProviderCallback');
-Route::post('/logout', 'App\Http\Controllers\Auth\AuthController@logout');
+Route::get('/home', 'App\Http\Controllers\Auth\HomeController@index')->name('home');
+
+Route::get('/{slug}', 'App\Http\Controllers\PagesController@page')->name('page');
+

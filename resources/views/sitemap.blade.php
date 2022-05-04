@@ -18,11 +18,11 @@
         <lastmod>{{ $blog_date->tz('GMT')->toAtomString() }}</lastmod>
         <priority>0.90</priority>
     </url>
-    {{-- <url>
-      <loc>{{route('stmap')}}</loc>
+    {<url>
+      <loc>{{route('sitemap-view')}}</loc>
       <lastmod>{{ $mainpage_date->tz('GMT')->toAtomString() }}</lastmod>
       <priority>1.00</priority>
-    </url> --}}
+    </url>
     {{-- pages --}}
     @foreach ($pages as $page)
         <url>
@@ -47,6 +47,5 @@
             <priority>0.90</priority>
         </url>
     @endforeach
-
 
 </urlset>

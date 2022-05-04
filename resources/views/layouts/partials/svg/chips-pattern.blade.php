@@ -1,5 +1,5 @@
 <svg viewBox="0 0 265.06 260.14" fill="currentColor"
-     class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block opacity-40">
+     class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block opacity-90">
     <defs>
         <pattern id="chips-pattern" x="0" y="0" width="26.506" height="26.014">
             <path fill="#6ee7b7" d="m259.78 209.72-112.13 45.27 16.87-119.74 95.26 74.47z"/>

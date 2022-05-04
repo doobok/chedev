@@ -32,21 +32,6 @@
             </p>
         </div>
 
-        {{--        <div class="mb-10 sm:text-center">--}}
-        {{--            <a href="{{ setting('contact.telegram_profile') }}" aria-label="{{ setting('contact.telegram_role_name') }}"--}}
-        {{--               class="inline-block mb-1" target="_blank">--}}
-        {{--                <img alt="avatar"--}}
-        {{--                     src="/founder_photo.jpeg"--}}
-        {{--                     class="object-cover w-10 h-10 rounded-full shadow-sm"/>--}}
-        {{--            </a>--}}
-        {{--            <div>--}}
-        {{--                <a href="{{ setting('contact.telegram_profile') }}"--}}
-        {{--                   aria-label="{{ setting('contact.telegram_role_name') }}" target="_blank"--}}
-        {{--                   class="font-semibold text-gray-800 transition-colors duration-200 hover:text-green-700">{{ setting('contact.telegram_username') }}</a>--}}
-        {{--                <p class="text-sm font-medium leading-4 text-gray-600">{{ setting('contact.telegram_role_name') }}</p>--}}
-        {{--            </div>--}}
-        {{--        </div>--}}
-
         {{--Блок услуг--}}
         <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">

@@ -33,7 +33,7 @@ class AuthController extends Controller
         $user = Socialite::driver($provider)->user();
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
-        return redirect(route('main-page'));
+        return redirect($this->redirectTo);
     }
 
     /**
@@ -71,8 +71,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return back();
-
+        return redirect($this->redirectTo);
     }
 
 //    public function handleProviderCallback()
