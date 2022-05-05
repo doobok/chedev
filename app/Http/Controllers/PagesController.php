@@ -18,11 +18,13 @@ class PagesController extends Controller
         $services = Service::where('active', true)->select('id', 'slug', 'heading', 'image')->orderBy('order', 'desc')->limit(8)->get();
         $portfolios = Portfolio::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'image', 'views')->orderBy('views', 'desc')->limit(6)->get();
         $faqs = Faq::where('active', true)->select('id', 'ask', 'answer')->orderBy('order', 'desc')->limit(6)->get();
+        $date = Blog::orderBy('created_at', 'DESC')->value('created_at');
 
         return view('pages.index', [
             'services' => $services,
             'portfolios' => $portfolios,
             'faqs' => $faqs,
+            'date' => $date,
         ]);
     }
 
@@ -32,14 +34,17 @@ class PagesController extends Controller
         $page='';
         $slg='';
         $data='';
+        $date='05.05.2022';
+
 //        static pages
         ($slug === 'contacts') ? $slg='contacts' : '';
         ($slug === 'products') ? $slg='products' : '';
         ($slug === 'collaborate') ? $slg='collaborate' : '';
 //        dynamic pages
         if($slug === 'services') {
-            $slg='services';
-            $data=Service::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image')->orderBy('order', 'desc')->get();
+            $slg = 'services';
+            $data = Service::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image')->orderBy('order', 'desc')->get();
+            $date = Service::orderBy('created_at', 'DESC')->value('created_at');
         }
         if($slug === 'portfolio') {
             $slg='portfolios';
@@ -54,10 +59,12 @@ class PagesController extends Controller
                 'tags' => Mark::all(),
                 'mark' => $tag,
             ];
+            $date = Portfolio::orderBy('created_at', 'DESC')->value('created_at');
         }
         if($slug === 'blog') {
             $slg='blogs';
             $data=Blog::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image', 'created_at')->get();
+            $date = Blog::orderBy('created_at', 'DESC')->value('created_at');
         }
         if($slug === 'collaborate') {
             $slg='collaborate';
@@ -79,6 +86,7 @@ class PagesController extends Controller
         return view('pages.' . $slg, [
             'page' => $page,
             'data' => $data,
+            'date' => $date,
         ]);
 
     }

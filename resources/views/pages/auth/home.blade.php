@@ -5,8 +5,9 @@
 
         @slot('title') {{ __('seo.home-title') }} @endslot
         @slot('description') {{ __('seo.home-desc') }} @endslot
-        @slot('image') /home.jpg @endslot
-        @slot('date') @endslot
+        @slot('image') /meta/home.png @endslot
+        @slot('date') 05.05.2022 @endslot
+        @slot('noindex')  @endslot
 
     @endcomponent
 @endsection

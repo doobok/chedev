@@ -5,8 +5,8 @@
 
         @slot('title') {{ __('seo.contacts-title') }} @endslot
         @slot('description') {{ __('seo.contacts-desc') }} @endslot
-        @slot('image') /contacts.jpg @endslot
-        @slot('date') @endslot
+        @slot('image') /meta/contacts.jpg @endslot
+        @slot('date') {{$date}} @endslot
 
     @endcomponent
 @endsection
@@ -70,13 +70,19 @@
                         </h4>
                     </a>
 
+                    <p class="text-base text-gray-700 md:text-lg">{{ __('site.our-social-media') }}:</p>
+                    <div class="h-8 mt-3 mb-6 text-green-400">
+                        @include('layouts.partials.social-buttons')
+
+                    </div>
+
                     <smpl-button
                         cls="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none"
                         txt="{{__('site.call-me')}}"
                     ></smpl-button>
                 </div>
                 <div>
-                    <img src="/contacts.svg" class="object-cover object-right w-full h-auto" alt="contacts" />
+                    <img src="/svg/contacts.svg" class="object-cover object-right w-full h-auto" alt="contacts" />
                 </div>
             </div>
         </div>

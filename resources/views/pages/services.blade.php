@@ -5,8 +5,8 @@
 
         @slot('title') {{ __('seo.services-title') }} @endslot
         @slot('description') {{ __('seo.services-desc') }} @endslot
-        @slot('image') /services.jpg @endslot
-        @slot('date') @endslot
+        @slot('image') /meta/services.jpg @endslot
+        @slot('date') {{$date}} @endslot
 
     @endcomponent
 @endsection
@@ -28,7 +28,7 @@
                 </h1>
             </div>
             <div class="flex justify-center mb-4">
-                <img class="object-cover w-full rounded shadow-lg" src="/services.jpg" alt="{{__('site.services')}}"/>
+                <img class="object-cover w-full rounded shadow-lg" src="/meta/services.jpg" alt="{{__('site.services')}}"/>
             </div>
             <p class="text-base text-gray-700 md:text-lg">
                 {{__('site.services_teaser')}}

@@ -5,8 +5,8 @@
 
         @slot('title') {{ __('seo.portfolio-title') }} @endslot
         @slot('description') {{ __('seo.portfolio-desc') }} @endslot
-        @slot('image') /portfolio.jpg @endslot
-        @slot('date') @endslot
+        @slot('image') /meta/portfolio.jpg @endslot
+        @slot('date') {{$date}} @endslot
 
     @endcomponent
 @endsection

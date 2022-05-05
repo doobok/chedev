@@ -36,11 +36,13 @@ class SitemapController extends Controller
         $services = Service::where('active', true)->orderBy('order', 'DESC')->select('id', 'slug', 'updated_at', 'heading')->get();
         $portfolios = Portfolio::where('active', true)->orderBy('order', 'DESC')->select('id', 'slug', 'updated_at', 'heading')->get();
         $blogs = Blog::where('active', true)->orderBy('created_at')->select('id', 'slug', 'updated_at', 'heading')->get();
+        $date = Blog::orderBy('created_at', 'DESC')->value('created_at');
 
         return view('pages.sitemap', [
             'services' => $services,
             'portfolios' => $portfolios,
             'blogs' => $blogs,
+            'date' => $date,
         ]);
 
     }

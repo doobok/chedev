@@ -5,8 +5,8 @@
 
         @slot('title') {{ __('seo.sitemap-title') }} @endslot
         @slot('description') {{ __('seo.sitemap-desc') }} @endslot
-        @slot('image') /sitemap.png @endslot
-        @slot('date') @endslot
+        @slot('image') /meta/sitemap.png @endslot
+        @slot('date') {{ $date }} @endslot
 
     @endcomponent
 @endsection

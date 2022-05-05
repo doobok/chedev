@@ -5,8 +5,8 @@
 
   @slot('title') {{ __('seo.index-title') }} @endslot
   @slot('description') {{ __('seo.index-desc') }} @endslot
-  @slot('image') /index.jpg @endslot
-  @slot('date') @endslot
+  @slot('image') /meta/index.png @endslot
+  @slot('date') {{ $date }} @endslot
 
 @endcomponent
 @endsection

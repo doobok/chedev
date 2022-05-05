@@ -63,7 +63,7 @@
                     </button>
                 </div>
                 <div>
-                    <img src="/resume.svg" class="object-cover object-right w-full h-auto" alt="resume" />
+                    <img src="/svg/resume.svg" class="object-cover object-right w-full h-auto" alt="resume" />
 
                 </div>
             </div>

@@ -1,7 +1,11 @@
 <title>{{ $title }}</title>
 <meta name="keywords" content="{{ $title }}">
 <meta name="description" content="{{ $description }}">
+@isset($noindex)
+<meta name="robots" content="noindex, nofollow">
+@else
 <meta name="robots" content="index, follow">
+@endisset
 <meta name="author" content="{{ config('app.name') }}">
 <meta name="copyright" content="Copyright (c) 2021-{{ date("Y") }} by {{ config('app.name') }}">
 

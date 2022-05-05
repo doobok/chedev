@@ -5,8 +5,8 @@
 
         @slot('title') {{ __('seo.blog-title') }} @endslot
         @slot('description') {{ __('seo.blog-desc') }} @endslot
-        @slot('image') /blog.jpg @endslot
-        @slot('date') @endslot
+        @slot('image') /meta/blog.jpg @endslot
+        @slot('date') {{$date}} @endslot
 
     @endcomponent
 @endsection
