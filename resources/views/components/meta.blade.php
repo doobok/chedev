@@ -6,8 +6,8 @@
 <meta name="copyright" content="Copyright (c) 2021-{{ date("Y") }} by {{ config('app.name') }}">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@tutormath">
-<meta name="twitter:creator" content="@tutormath">
+<meta name="twitter:site" content="@ChernobayDev">
+<meta name="twitter:creator" content="@ChernobayDev">
 <meta name="twitter:url" content="{{url()->current()}}">
 <meta name="twitter:title" content="{{ $title }}">
 <meta name="twitter:description" content="{{ $description }}">
@@ -31,4 +31,4 @@
 <meta property="og:title"         content="{{ $title }}">
 <meta property="og:description"   content="{{ $description }}">
 <meta property="og:image"         content="{{ asset($image) }}">
-<meta property="fb:app_id" content="600937670928308">
+<meta property="fb:app_id" content="1739723756369470">
