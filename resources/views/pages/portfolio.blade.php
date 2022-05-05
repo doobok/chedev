@@ -6,10 +6,14 @@
             {{$page->getTranslatedAttribute('title')}}
         @endslot
         @slot('description')
-            {{$page->getTranslatedAttribute('description')}}
+            @if($page->getTranslatedAttribute('description'))
+                {{$page->getTranslatedAttribute('description')}}
+            @else
+                {{$page->getTranslatedAttribute('teaser')}}
+            @endif
         @endslot
         @slot('image')
-            @if($page->seo_image == true)
+            @if($page->seo_image)
                 {{ Voyager::image( $page->seo_image ) }}
             @else
                 {{ Voyager::image( $page->image ) }}
