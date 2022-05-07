@@ -100,9 +100,9 @@
             <p class="text-gray-500 text-sm text-center sm:text-left">© 2021 - {{date("Y")}} Copyright —
                 {{config('app.name')}}
                 |
-                <a href="/policy" class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">{{ __('site.policy') }}</a>
+                <a href="{{ route('page', 'policy') }}" class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">{{ __('site.policy') }}</a>
             </p>
-            <div class="h-6">
+            <div class="h-6 mt-3 sm:mt-0">
                 @include('layouts.partials.social-buttons')
             </div>
 

@@ -1,6 +1,6 @@
 @auth
     <div class="flex flex-row space-x-3 items-center">
-        <img src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->email }}" class="h-5 rounded-full">
+        <img src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->email }}" class="h-5 rounded-full" loading="lazy">
         <span>
             {{ auth()->user()->name }}
         </span>

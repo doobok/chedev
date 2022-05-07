@@ -1,4 +1,4 @@
-<div class="flex items-center space-x-4 h-full">
+<div class="flex items-center justify-center space-x-4 h-full">
     @if(setting('social.twitter'))
         <a href="{{ setting('social.twitter') }}" class="transition-colors duration-300 hover:text-secondary h-full" target="_blank" rel="nofollow" title="Twitter">
             <svg viewBox="0 0 24 24" fill="currentColor" class="h-full">

@@ -6,7 +6,7 @@
             {{$page->getTranslatedAttribute('title')}}
         @endslot
         @slot('description')
-            {{$page->getTranslatedAttribute('description')}}
+            {{$page->getTranslatedAttribute('description')}} {{ __('seo.service-desc-tail') }}
         @endslot
         @slot('image')
             @if($page->seo_image == true)
