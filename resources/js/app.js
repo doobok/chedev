@@ -25,6 +25,7 @@ Vue.component('comments-component', require('./components/CommentsComponent.vue'
 Vue.component('comments-complain', require('./components/CommentComplain.vue').default);
 Vue.component('user-auth', require('./components/UserAuth.vue').default);
 Vue.component('auth-buttons', require('./components/AuthButtons.vue').default);
+Vue.component('lang-toggle', require('./components/LangToggle.vue').default);
 
 
 const app = new Vue({

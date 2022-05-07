@@ -17,16 +17,19 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/', 'App\Http\Controllers\PagesController@mainPage')->name('main-page');
-Route::get('/portfolio/{slug}', 'App\Http\Controllers\PagesController@portfolio')->name('portfolio');
-Route::get('/blog/{slug}', 'App\Http\Controllers\PagesController@blog')->name('blog');
-Route::get('/sitemap', 'App\Http\Controllers\SitemapController@visual')->name('sitemap-view');
-Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapController@index')->name('sitemap');
-
 Route::post('/logout', 'App\Http\Controllers\Auth\AuthController@logout');
 Route::get('login/{provider}', 'App\Http\Controllers\Auth\AuthController@redirectToProvider')->name('login');
 Route::get('{provider}/callback', 'App\Http\Controllers\Auth\AuthController@handleProviderCallback');
-Route::get('/home', 'App\Http\Controllers\Auth\HomeController@index')->name('home');
 
-Route::get('/{slug}', 'App\Http\Controllers\PagesController@page')->name('page');
+Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function(){
+    Route::get('/', 'App\Http\Controllers\PagesController@mainPage')->name('main-page');
+    Route::get('/portfolio/{slug}', 'App\Http\Controllers\PagesController@portfolio')->name('portfolio');
+    Route::get('/blog/{slug}', 'App\Http\Controllers\PagesController@blog')->name('blog');
+    Route::get('/sitemap', 'App\Http\Controllers\SitemapController@visual')->name('sitemap-view');
+    Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapController@index')->name('sitemap');
+    Route::get('/home', 'App\Http\Controllers\Auth\HomeController@index')->name('home');
 
+    Route::get('/{slug}', 'App\Http\Controllers\PagesController@page')->name('page');
+});
+
+Route::get('setlocale/{lang}', 'App\Http\Controllers\LangController@setLocale')->name('setlocale');
