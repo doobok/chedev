@@ -70,7 +70,7 @@
         </div>
 
         <article class="max-w-screen-md sm:mx-auto mb-8">
-            <div class="space-y-8 mb-16">
+            <div class="mb-16">
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
         </article>
