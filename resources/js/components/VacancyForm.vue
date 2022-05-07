@@ -62,7 +62,7 @@
                             @blur="$v.specialty.$touch()"
                         >
                             <option value="">--</option>
-                            <option v-for="prof in professions" :value="prof">{{ prof }}</option>
+                            <option v-for="prof in professions" :value="prof">{{ $ml.get('skill.' + prof) }}</option>
                         </select>
                         <span v-if="$v.specialty.$error"
                               class="text-xs text-white p-1 rounded opacity-90 bg-red-400 absolute -bottom-2 left-3">{{
@@ -168,11 +168,11 @@ export default {
             comment: '',
             link: '',
             professions: [
-                'PHP backend',
-                'Vue.js frontend',
-                'Web-дизайн',
-                'Копирайтер',
-                'Другое'
+                'backend',
+                'frontend',
+                'copywriter',
+                'designer',
+                'other',
             ]
         }
     },

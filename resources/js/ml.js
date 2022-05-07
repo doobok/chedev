@@ -46,6 +46,13 @@ export default new MLCreate({
             leave_comment: 'Оставить комментарий',
             commentate_from: 'Вы комментируете от имени',
             comment_success: 'Комментарий успешно отправлен',
+            skill: {
+                backend: 'PHP Backend разработчик',
+                frontend: 'Frontend разработчик',
+                copywriter: 'Копирайтер/Контент-менеджер',
+                designer: 'Веб-дизайнер',
+                other: 'другая полезная специализация'
+            }
 
         }),
 
@@ -89,6 +96,13 @@ export default new MLCreate({
             leave_comment: 'Залишити коментар',
             commentate_from: 'Ви коментуєте від імені',
             comment_success: 'Коментар успішно відправлений',
+            skill: {
+                backend: 'PHP Backend розробник',
+                frontend: 'Frontend розробник',
+                copywriter: 'Копірайтер/Контент-менеджер',
+                designer: 'Веб-дизайнер',
+                other: 'інша корисна спеціалізація'
+            }
 
         }),
 

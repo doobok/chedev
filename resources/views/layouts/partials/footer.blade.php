@@ -83,7 +83,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="md:max-w-md lg:col-span-2">
+            <div class="md:max-w-md lg:col-span-2 mt-7 lg:mt-0">
                 <span class="text-base font-medium tracking-wide text-gray-300">{{__('site.footer-consultation-h')}}</span>
                 <div class="flex flex-col mt-4 md:flex-row">
                     <smpl-button
