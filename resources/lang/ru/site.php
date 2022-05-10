@@ -72,6 +72,8 @@ return [
     'site-audit' => 'Аудит сайта',
     'competitor-analysis' => 'Анализ конкурентов',
 
+    'hours' => 'часов',
+
 
 
 ];

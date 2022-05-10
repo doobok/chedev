@@ -22,5 +22,5 @@ return [
     'home-title' => 'Ваша персональна сторінка на Chernobay Development',
     'home-desc' => 'Почніть роботу з авторизації, щоб мати більше можливостей для взаємодії з контентом.',
 
-    'service-desc-tail' => 'ціна від 200$ | відгуки 🚀 Telegram, 📫 Instagram пн-пт 🕐 9.00 - 21.00'
+    'service-desc-tail' => 'ціна від :price$ розробимо за :time годин | відгуки 🚀 Telegram, 📫 Instagram пн-пт 🕐 9.00 - 21.00'
 ];

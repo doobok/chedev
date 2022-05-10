@@ -6,10 +6,13 @@
             {{$page->getTranslatedAttribute('title')}}
         @endslot
         @slot('description')
-            {{$page->getTranslatedAttribute('description')}} {{ __('seo.service-desc-tail') }}
+            {{$page->getTranslatedAttribute('description')}} {{ __('seo.service-desc-tail', [
+                'price' => $page->price ?? 200,
+                'time' => $page->time ?? 48,
+            ]) }}
         @endslot
         @slot('image')
-            @if($page->seo_image == true)
+            @if($page->seo_image)
                 {{ Voyager::image( $page->seo_image ) }}
             @else
                 {{ Voyager::image( $page->image ) }}
@@ -61,25 +64,36 @@
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
 
+            @isset($page->youtube)
+                <div class="aspect-w-16 aspect-h-9 mt-8">
+                    <iframe src="https://www.youtube.com/embed/{{$page->youtube}}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            @endisset
+            @isset($page->price)
+            <div class="mt-8">
+                @include('components.service-time-price')
+            </div>
+            @endisset
+
         </article>
 
         @if($page->portfolios->count() > 0)
-        <div class="mx-auto lg:max-w-screen-lg">
-            <h4 class="text-gray-800 mt-7">{{ __('site.service-portfolios') }}</h4>
-            <div class="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
-                @foreach($page->portfolios as $portfolio)
-                    <a href="{{ route('portfolio', $portfolio->slug) }}" class="hover:no-underline text-gray-800 hover:text-green-700 transition-all duration-300 rounded-full border border-white hover:border-green-700 ">
-                        <div class="flex">
-                            <img class="object-cover w-20 h-20 mr-4 rounded-full shadow"
-                                 src="{{ Voyager::image( $portfolio->image ) }}" alt="{{$portfolio->getTranslatedAttribute('heading')}}" />
-                            <div class="flex flex-col justify-center">
-                                <p class="text-sm">{{$portfolio->getTranslatedAttribute('heading')}}</p>
+            <div class="mx-auto lg:max-w-screen-lg my-10">
+                <h4 class="text-gray-800 mt-7">{{ __('site.service-portfolios') }}</h4>
+                <div class="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
+                    @foreach($page->portfolios as $portfolio)
+                        <a href="{{ route('portfolio', $portfolio->slug) }}" class="hover:no-underline bg-gray-100 text-gray-800 hover:text-green-700 transition-all duration-300 rounded-full border border-white hover:border-green-700 ">
+                            <div class="flex">
+                                <img class="object-cover w-20 h-20 mr-4 rounded-full shadow"
+                                     src="{{ Voyager::image( $portfolio->image ) }}" alt="{{$portfolio->getTranslatedAttribute('heading')}}" />
+                                <div class="flex flex-col justify-center">
+                                    <p class="text-sm">{{$portfolio->getTranslatedAttribute('heading')}}</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                @endforeach
+                        </a>
+                    @endforeach
+                </div>
             </div>
-        </div>
         @endif
 
         @include('components.lead-form')
