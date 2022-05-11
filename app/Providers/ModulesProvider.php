@@ -30,7 +30,7 @@ class ModulesProvider extends ServiceProvider
     public function servicesTags()
     {
         \View::composer('modules.services-tags', function ($view){
-            $view->with('services', Service::where('active', true)->select('id', 'slug', 'heading')->orderBy('order', 'desc')->get());
+            $view->with('services', Service::with('translations')->where('active', true)->select('id', 'slug', 'heading')->orderBy('order', 'desc')->get());
         });
     }
 }
