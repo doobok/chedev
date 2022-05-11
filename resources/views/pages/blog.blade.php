@@ -69,6 +69,12 @@
                 {!! $page->getTranslatedAttribute('body') !!}
             </div>
 
+            @isset($page->youtube)
+                <div class="aspect-w-16 aspect-h-9 mt-8">
+                    <iframe src="https://www.youtube.com/embed/{{$page->youtube}}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            @endisset
+
             <comments-component blog_id="{{ $page->id }}"></comments-component>
 
         </article>

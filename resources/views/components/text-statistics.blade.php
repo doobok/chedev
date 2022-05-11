@@ -1,4 +1,4 @@
-<div class="flex flex-row text-sm space-x-3">
+<div class="flex flex-row text-sm space-x-3 mb-4">
     @isset($date)
         <div class="flex flex-row space-x-1" title="{{ __('site.publication-date') }}">
             <span>
