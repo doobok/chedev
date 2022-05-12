@@ -27,8 +27,6 @@
 
 @section('main')
 
-    @include('layouts.partials.nav')
-
     @component('components.breadcrumbs', [
                       'crumbs' => [
                           [route('page', 'portfolio'), __('site.portfolio')],

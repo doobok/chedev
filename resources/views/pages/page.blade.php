@@ -23,8 +23,6 @@
 
 @section('main')
 
-    @include('layouts.partials.nav')
-
     @component('components.breadcrumbs', [
                       'crumbs' => [
                           ['', $page->getTranslatedAttribute('heading')],

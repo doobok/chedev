@@ -13,8 +13,6 @@
 
 @section('main')
 
-    @include('layouts.partials.nav')
-
     @component('components.breadcrumbs', [
                       'crumbs' => [
                           ['', __('site.blog')],

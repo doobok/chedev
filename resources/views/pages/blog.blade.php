@@ -23,8 +23,6 @@
 
 @section('main')
 
-    @include('layouts.partials.nav')
-
     @component('components.breadcrumbs', [
                       'crumbs' => [
                           [route('page', 'blog'), __('site.blog')],
