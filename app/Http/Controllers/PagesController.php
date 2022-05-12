@@ -63,7 +63,7 @@ class PagesController extends Controller
         }
         if($slug === 'blog') {
             $slg='blogs';
-            $data=Blog::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image', 'created_at')->get();
+            $data=Blog::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image', 'created_at', 'youtube', 'views')->orderBy('created_at', 'DESC')->get();
             $date = Blog::orderBy('created_at', 'DESC')->value('created_at');
         }
         if($slug === 'collaborate') {

@@ -73,6 +73,7 @@ return [
     'competitor-analysis' => 'Анализ конкурентов',
 
     'hours' => 'часов',
+    'video-include' => 'содержит видео',
 
 
 

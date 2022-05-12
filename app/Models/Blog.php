@@ -17,4 +17,9 @@ class Blog extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function stars()
+    {
+        return $this->hasOne(Rating::class, 'itemid')->where('model', '=', 'blog');
+    }
+
 }

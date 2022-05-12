@@ -49,12 +49,12 @@
             </div>
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
                 @foreach($data['portfolio'] as $item)
-                    <div class="overflow-hidden transition-shadow transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
+                    <div class="relative overflow-hidden transition-shadow transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
                         <a href="{{ route('portfolio', $item->slug) }}"
                            aria-label="{{ $item->getTranslatedAttribute('heading') }}">
                             <img src="{{ Voyager::image( $item->image ) }}" class="object-cover w-full h-64 rounded"
                                  alt="{{$item->getTranslatedAttribute('heading')}}"/></a>
-                        <div class="py-5 px-2">
+                        <div class="py-5 px-2 mb-8">
                             <a href="{{ route('portfolio', $item->slug) }}"
                                aria-label="{{$item->getTranslatedAttribute('heading')}}"
                                class="inline-block mb-1 text-black transition-colors duration-200 hover:text-green-700">
@@ -68,6 +68,8 @@
                             <p class="mb-4 mt-3 text-sm text-gray-700">
                                 {{$item->getTranslatedAttribute('teaser')}}
                             </p>
+                        </div>
+                        <div class="absolute w-full bottom-0 left-0 p-3">
                             <a href="{{ route('portfolio', $item->slug) }}"
                                class="inline-flex items-center justify-center h-10 px-6 mr-6 tracking-wide text-white transition duration-200 rounded shadow-md bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none w-full"
                             >
