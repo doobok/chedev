@@ -91,20 +91,6 @@
                     </a>
                 </li>
 
-                {{--                @if ($blocks)--}}
-                {{--                    @foreach ($blocks as $block)--}}
-                {{--                        @if ($block['menu'])--}}
-                {{--                            <li class="py-2">--}}
-                {{--                                <a href="#" v-scroll-to="'#{{$block['name']}}'"--}}
-                {{--                                   onclick="toggleNavbar('collapse-navbar')"--}}
-                {{--                                   class="font-header font-semibold text-white uppercase pt-0.5 cursor-pointer">--}}
-                {{--                                    {{__('site.menu-' . $block['name'])}}--}}
-                {{--                                </a>--}}
-                {{--                            </li>--}}
-                {{--                        @endif--}}
-                {{--                    @endforeach--}}
-                {{--                @endif--}}
-
             </ul>
         </div>
     </div>

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'main' => 'Главная',
     'services' => 'Услуги',
     'prices' => 'Цены',
     'about-us' => 'О нас',
