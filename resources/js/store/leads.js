@@ -19,7 +19,6 @@ export default {
     },
     SET_SLUG: (state, payload) => {
       state.slug = payload;
-      // console.log(state.slug);
     },
   },
   actions: {
@@ -33,7 +32,6 @@ export default {
 
     // отправка лида
     SEND_LEAD : (context, payload) => {
-      // console.log(payload);
       return Axios.post('/api/v1/send-lead', tempyGen(payload))
       .then((response) => {
         // какоето действие из состоянием (оставил на будущее)

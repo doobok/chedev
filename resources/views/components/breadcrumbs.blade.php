@@ -1,15 +1,17 @@
-<section class="py-2 text-xs">
+<section class="py-2 text-xs -mb-8">
     <div class="px-2">
-        <ol itemscope itemtype="https://schema.org/BreadcrumbList"
+        <ol vocab="https://schema.org/" typeof="BreadcrumbList"
             class="flex justify-center items-center list-reset py-4 flex-inline overflow-x-auto text-gray-500 space-x-2">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"
+            <li property="itemListElement" typeof="ListItem"
                 class="whitespace-nowrap transition-colors duration-200 hover:text-green-700">
-                <a itemprop="item" href="{{route('main-page')}}" class="no-underline flex flex-inline items-center">
-                <span itemprop="name">
+                <a property="item" typeof="WebPage"
+                   class="no-underline flex flex-inline items-center"
+                   href="{{route('main-page')}}">
+                <span property="name">
                     {{__('site.main')}}
                 </span>
                 </a>
-                <meta itemprop="position" content="1"/>
+                <meta property="position" content="1"/>
             </li>
 
             @foreach ($crumbs as $key => list($uri, $title))
@@ -18,19 +20,15 @@
                         <path d="M6 0l12 12-12 12z"/>
                     </svg>
                 </span>
-                <li class="whitespace-nowrap transition-colors duration-200 hover:text-green-700"
-                    itemprop="itemListElement" itemscope
-                    itemtype="https://schema.org/ListItem">
-                    <a
+                <li property="itemListElement" typeof="ListItem">
                     @if (!$uri)
-                        class="underline" itemprop="item" href="{{url()->current()}}"
+                        <span property="name" class="text-gray-400">{{ $title }}</span>
                     @else
-                        itemscope itemtype="https://schema.org/WebPage"
-                        itemprop="item" itemid="{{ $uri }}" class="no-underline" href="{{ $uri }}"
+                        <a property="item" typeof="WebPage"
+                           class="no-underline whitespace-nowrap transition-colors duration-200 hover:text-green-700" href="{{ $uri }}">
+                            <span property="name">{{ $title }}</span></a>
                     @endif
-                    >
-                        <span itemprop="name">{{ $title }}</span></a>
-                        <meta itemprop="position" content="{{ $key + 2 }}"/>
+                        <meta property="position" content="{{ $key + 2 }}"/>
                 </li>
             @endforeach
         </ol>

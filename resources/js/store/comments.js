@@ -26,7 +26,6 @@ export default {
         GET_COMMENTS: (context, payload) => {
             Axios.get('/api/v1/get-comments', { params: payload})
                 .then(response => {
-                    console.log(response.data)
                     context.commit('SET_COMMENTS', response.data.comments)
                     context.commit('SET_COMMENTS_COUNT', response.data.count)
                 })
@@ -37,7 +36,6 @@ export default {
         NEW_COMMENT: (context, payload) => {
             Axios.post('/api/v1/set-comment', payload)
                 .then(response => {
-                    console.log(response)
                     context.commit('SET_COMMENTS', response.data)
                 })
                 .catch(error => {
