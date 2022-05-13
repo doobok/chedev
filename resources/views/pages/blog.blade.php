@@ -92,7 +92,29 @@
             @include('modules.services-tags')
         </div>
 
-
     </div>
+
+    {{-- Schema --}}
+    @component('layouts.schema.blog-article',[
+       'title' => $page->getTranslatedAttribute('heading'),
+       'image' => Voyager::image( $page->image ),
+       'created' => $page->created_at,
+       'updated' => $page->updated_at,
+    ])@endcomponent
+    @component('layouts.schema.rating', [
+       'name' => $page->getTranslatedAttribute('heading'),
+       'rating' => $rating->rating,
+       'count' => $rating->count,
+    ])@endcomponent
+
+    @isset($page->youtube)
+        @component('layouts.schema.youtube-video', [
+            'name' => $page->getTranslatedAttribute('heading'),
+            'youtube' => $page->youtube,
+            'created' => $page->created_at,
+            'image' => Voyager::image( $page->image ),
+            'description' => $page->getTranslatedAttribute('teaser'),
+        ])@endcomponent
+    @endisset
 
 @endsection

@@ -17,4 +17,9 @@ class Service extends Model
     {
         return $this->belongsToMany(Portfolio::class);
     }
+
+    public function stars()
+    {
+        return $this->hasOne(Rating::class, 'itemid')->where('model', '=', 'service');
+    }
 }

@@ -22,4 +22,7 @@
     @include('layouts.partials.index.portfolios')
     @include('layouts.partials.index.faq')
 
+    {{--Schema--}}
+    @component('layouts.schema.faq',['faqs'=>$faqs])@endcomponent
+
 @endsection

@@ -43,7 +43,7 @@ class PagesController extends Controller
 //        dynamic pages
         if($slug === 'services') {
             $slg = 'services';
-            $data = Service::where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image')->orderBy('order', 'desc')->get();
+            $data = Service::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image')->orderBy('order', 'desc')->get();
             $date = Service::orderBy('created_at', 'DESC')->value('created_at');
         }
         if($slug === 'portfolio') {
@@ -75,8 +75,10 @@ class PagesController extends Controller
             $page = Page::where('slug', $slug)->first();
             $slg = 'page';
             if ($page == null) {
-                $page = Service::where('slug', $slug)->firstOrFail();
+                $page = Service::with('stars')->where('slug', $slug)->firstOrFail();
                 $slg = 'service';
+                $rating = $page->stars;
+
             }
 //        increment
             $page->views++;
@@ -87,12 +89,13 @@ class PagesController extends Controller
             'page' => $page,
             'data' => $data,
             'date' => $date,
+            'rating' => $rating ?? (object)['rating' => 5, 'count' => 1],
         ]);
 
     }
 
     public function portfolio($slug) {
-        $page = Portfolio::where('slug', $slug)->firstOrfail();
+        $page = Portfolio::with('stars')->where('slug', $slug)->firstOrfail();
         $new = Portfolio::where('id', '>', $page->id)->first();
         if (!$new) {
             $new = Portfolio::orderBy('id')->first();
@@ -108,12 +111,13 @@ class PagesController extends Controller
         return view('pages.portfolio', [
             'page' => $page,
             'similar' => collect([$old, $new]),
+            'rating' => $page->stars ?? (object)['rating' => 5, 'count' => 1],
         ]);
 
     }
 
     public function blog($slug) {
-        $page = Blog::where('slug', $slug)->firstOrfail();
+        $page = Blog::with('stars')->where('slug', $slug)->firstOrfail();
         $read_time = ceil(strlen($page->body)/1000);
 //        increment
         $page->views++;
@@ -123,6 +127,7 @@ class PagesController extends Controller
             'page' => $page,
             'read_time' => $read_time,
             'comments_count' => $page->comments()->count(),
+            'rating' => $page->stars ?? (object)['rating' => 5, 'count' => 1],
         ]);
     }
 }

@@ -111,4 +111,14 @@
 
     </div>
 
+    {{--schema--}}
+    @component('layouts.schema.product',[
+          'name' => $page->getTranslatedAttribute('heading'),
+          'description' => $page->getTranslatedAttribute('teaser'),
+          'image' => Voyager::image( $page->image ),
+          'price' => $page->price,
+          'rating' => $rating,
+          'id' => $page->id,
+    ])@endcomponent
+
 @endsection
