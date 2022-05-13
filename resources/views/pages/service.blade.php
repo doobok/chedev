@@ -121,4 +121,14 @@
           'id' => $page->id,
     ])@endcomponent
 
+    @isset($page->youtube)
+        @component('layouts.schema.youtube-video', [
+            'name' => $page->getTranslatedAttribute('heading'),
+            'youtube' => $page->youtube,
+            'created' => $page->created_at,
+            'image' => Voyager::image( $page->image ),
+            'description' => $page->getTranslatedAttribute('teaser'),
+        ])@endcomponent
+    @endisset
+
 @endsection
