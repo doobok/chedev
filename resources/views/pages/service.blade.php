@@ -34,7 +34,7 @@
                       ])
     @endcomponent
 
-    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="px-4 py-8 sm:py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
 
         <p class="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase sm:text-center">
             {{ config('app.name') }}

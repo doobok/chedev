@@ -45,16 +45,16 @@
     </div>
 
     <div id="collapse-navbar"
-         class="fixed hidden inset-0 bg-black bg-opacity-80 z-50 min-h-screen lg:hidden transition-opacity duration-300 opacity-100 pointer-events-auto">
-        <div class="w-2/3 md:w-1/3 bg-primary min-h-screen absolute right-0 shadow py-4 px-8">
-            <button class="absolute top-0 right-0 mt-4 mr-4"
+         class="sidebar-menu-container--hidden fixed inset-0 bg-black bg-opacity-80 z-50 min-h-screen lg:hidden opacity-100 pointer-events-auto">
+        <div class="flex items-center w-2/3 md:w-1/3 bg-primary h-screen absolute right-0 shadow py-4 px-8">
+            <button class="absolute top-0 right-0 mt-7 mr-7"
                     onclick="toggleNavbar('collapse-navbar')"
             >
                 <img src="/svg/cross.svg"
-                     class="h-7 w-auto mt-2 text-white">
+                     class="h-8 w-auto mt-2 text-white">
             </button>
             <nav itemscope itemtype="https://www.schema.org/SiteNavigationElement">
-                <ul class="flex flex-col space-y-4 mt-8">
+                <ul class="flex flex-col space-y-7">
                     <li itemprop="name">
                         <a itemprop="url" href="{{route('page', 'services')}}" title="{{__('site.services')}}"
                            class="font-header font-semibold text-white uppercase pt-0.5 cursor-pointer flex flex-nowrap">
@@ -97,4 +97,14 @@
     </div>
 </div>
 
+<div v-scroll-to="'#app'"
+     class="fixed bottom-4 right-4 z-40 cursor-pointer transition-opacity duration-200 opacity-25 hover:opacity-90"
+     title="{{ __('site.to-top') }}"
+>
+    <div class="bg-primary text-white rounded-full border-2 border-white p-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 md:h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.245 20l-11.245-14.374-11.219 14.374-.781-.619 12-15.381 12 15.391-.755.609z"/>
+        </svg>
+    </div>
+</div>
 

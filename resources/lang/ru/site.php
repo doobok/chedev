@@ -75,6 +75,7 @@ return [
 
     'hours' => 'часов',
     'video-include' => 'содержит видео',
+    'to-top' => 'в начало',
 
 
 

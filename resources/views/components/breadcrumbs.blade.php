@@ -1,7 +1,7 @@
 <section class="py-2 text-xs -mb-8">
-    <div class="px-2">
+    <div class="px-4">
         <ol vocab="https://schema.org/" typeof="BreadcrumbList"
-            class="flex justify-center items-center list-reset py-4 flex-inline overflow-x-auto text-gray-500 space-x-2">
+            class="flex sm:justify-center items-center list-reset py-4 flex-inline overflow-x-auto text-gray-500 space-x-2">
             <li property="itemListElement" typeof="ListItem"
                 class="whitespace-nowrap transition-colors duration-200 hover:text-green-700">
                 <a property="item" typeof="WebPage"

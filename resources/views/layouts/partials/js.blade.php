@@ -9,7 +9,7 @@
 "></div>
 <script>
   function toggleNavbar(collapseID) {
-    document.getElementById(collapseID).classList.toggle("hidden");
-    document.getElementById(collapseID).classList.toggle("block");
+    document.getElementById(collapseID).classList.toggle("sidebar-menu-container--hidden");
+    document.getElementById(collapseID).classList.toggle("sidebar-menu-container--visible");
   }
 </script>
