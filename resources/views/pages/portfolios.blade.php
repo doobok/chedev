@@ -54,7 +54,7 @@
             </div>
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
                 @foreach($data['portfolio'] as $item)
-                    <div class="relative overflow-hidden transition-shadow transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
+                    <div class="relative overflow-hidden transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
                         <a href="{{ route('portfolio', $item->slug) }}"
                            aria-label="{{ $item->getTranslatedAttribute('heading') }}">
                             <img src="{{ Voyager::image( $item->image ) }}" class="object-cover w-full h-64 rounded"

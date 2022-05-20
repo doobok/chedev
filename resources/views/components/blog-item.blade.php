@@ -1,4 +1,4 @@
-<div class="relative overflow-hidden transition-shadow transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
+<div class="relative overflow-hidden transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">
     <a href="{{ route('blog', $item->slug) }}"
        aria-label="{{ $item->getTranslatedAttribute('heading') }}">
         <img src="{{ Voyager::image( $item->image ) }}" class="object-cover w-full h-64 rounded"
