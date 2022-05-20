@@ -22,4 +22,9 @@ class Blog extends Model
         return $this->hasOne(Rating::class, 'itemid')->where('model', '=', 'blog');
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
 }
