@@ -36,11 +36,30 @@
                 {{__('site.blog_teaser')}}
             </p>
         </div>
+        {{-- Блок тегов --}}
+        <div class="mb-5 flex flex-wrap justify-center items-center text-gray-500 text-sm space-x-2 space-y-1">
+            <span class="mt-1">Теми:</span>
+            @foreach($data['tags'] as $tag)
+                <a href="{{ route('page', 'blog?tag=' . $tag->slug) }}" class="inline-flex transition duration-200
+                    @if($data['mark'] == $tag->slug)
+                        text-green-500
+                    @endif
+                    hover:text-green-500">
+                    #{{$tag->getTranslatedAttribute('name')}}
+                </a>
+            @endforeach
+            @isset($data['mark'])
+                <a href="{{ route('page', 'blog') }}"
+                   class="inline-flex transition duration-200 hover:text-green-500"
+                   title="{{ __('site.show-all-blogs') }}"
+                >[ {{ __('site.all') }} ]</a>
+            @endisset
+        </div>
 
         {{--Блок материалов--}}
-        <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
+        <div class="py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-                @foreach($data as $item)
+                @foreach($data['blogs'] as $item)
                     @component('components.blog-item', ['item'=>$item])@endcomponent
                 @endforeach
             </div>

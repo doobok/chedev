@@ -51,6 +51,14 @@
                             <a href="{{ route('page', 'blog?tag=news') }}"
                                class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.news') }}</a>
                         </li>
+                        <li>
+                            <a href="{{ route('page', 'blog?tag=business') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.for-business') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('page', 'blog?tag=guide') }}"
+                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">{{ __('site.guides') }}</a>
+                        </li>
 {{--                        <li>--}}
 {{--                            <a href="/"--}}
 {{--                               class="text-gray-500 transition-colors duration-300 hover:text-purple-200">Инструкции</a>--}}
@@ -87,7 +95,7 @@
                 <span class="text-base font-medium tracking-wide text-gray-300">{{__('site.footer-consultation-h')}}</span>
                 <div class="flex flex-col mt-4 md:flex-row">
                     <smpl-button
-                        cls="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+                        cls="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
                         txt="{{__('site.footer-consultation-b')}}"
                     ></smpl-button>
                 </div>

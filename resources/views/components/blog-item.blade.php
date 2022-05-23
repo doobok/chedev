@@ -6,11 +6,14 @@
     <div class="py-4 px-2 mb-8">
         <a href="{{ route('blog', $item->slug) }}"
            aria-label="{{$item->getTranslatedAttribute('heading')}}"
-           class="inline-block mb-3 text-black transition-colors duration-200 hover:text-green-700">
+           class="inline-block text-black transition-colors duration-200 hover:text-green-700">
             <h3 class="text-xl font-bold leading-5">
                 {{$item->getTranslatedAttribute('heading')}}
             </h3>
         </a>
+        <div class="mb-1 text-sm">
+            @component('components.blog-item-tags', ['tags'=>$item->tags])@endcomponent
+        </div>
         <div class="flex flex-nowrap mb-4">
             @for($i=1; $i<=(($item->stars) ? $item->stars->rating : 5); $i++)
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">

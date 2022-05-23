@@ -37,21 +37,29 @@
             </p>
         </div>
 
-        {{--Блок услуг--}}
-        <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12">
-            <div class="mb-5 flex flex-wrap justify-center">
-                @foreach($data['tags'] as $tag)
-                    <a href="{{ route('page', 'portfolio?tag=' . $tag->slug) }}" class="inline-flex p-1 mr-1 mb-1 text-xs text-white transition duration-200 rounded shadow-md
+        {{-- Блок тегов --}}
+        <div class="mb-5 flex flex-wrap justify-center mt-4 text-xs text-white space-x-1">
+            @foreach($data['tags'] as $tag)
+                <a href="{{ route('page', 'portfolio?tag=' . $tag->slug) }}" class="inline-flex p-1 transition duration-200 rounded shadow-md mb-1
                     @if($data['mark'] == $tag->slug)
                         bg-{{$tag->getTranslatedAttribute('color')}}-500
                     @else
                         bg-gray-400
                     @endif
                     hover:bg-{{$tag->getTranslatedAttribute('color')}}-700 focus:shadow-outline focus:outline-none">
-                        {{$tag->getTranslatedAttribute('name')}}
-                    </a>
-                @endforeach
-            </div>
+                    {{$tag->getTranslatedAttribute('name')}}
+                </a>
+            @endforeach
+            @isset($data['mark'])
+                <a href="{{ route('page', 'portfolio') }}"
+                   title="{{ __('site.show-all-portfolios') }}"
+                   class="inline-flex p-1 transition duration-200 rounded shadow-md bg-red-400 hover:bg-red-500  focus:shadow-outline focus:outline-none mb-1"
+                >[ {{ __('site.all') }} ]</a>
+            @endisset
+        </div>
+
+        {{--Блок услуг--}}
+        <div class="pt-4 pb-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-12">
             <div class="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
                 @foreach($data['portfolio'] as $item)
                     <div class="relative overflow-hidden transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-lg p-1">

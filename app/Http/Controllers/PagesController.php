@@ -8,6 +8,7 @@ use App\Models\Mark;
 use App\Models\Page;
 use App\Models\Portfolio;
 use App\Models\Service;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Null_;
 
@@ -63,7 +64,17 @@ class PagesController extends Controller
         }
         if($slug === 'blog') {
             $slg='blogs';
-            $data=Blog::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image', 'created_at', 'youtube', 'views')->orderBy('created_at', 'DESC')->get();
+            $tag = $request->get('tag');
+            if ($tag != null) {
+                $blogs = Tag::where('slug', $tag)->first()->blogs;
+            } else {
+                $blogs = Blog::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image', 'created_at', 'youtube', 'views')->orderBy('created_at', 'DESC')->get();
+            }
+            $data=[
+                'blogs' => $blogs,
+                'tags' => Tag::all(),
+                'mark' => $tag,
+            ];
             $date = Blog::orderBy('created_at', 'DESC')->value('created_at');
         }
         if($slug === 'collaborate') {
@@ -78,7 +89,6 @@ class PagesController extends Controller
                 $page = Service::with('stars')->where('slug', $slug)->firstOrFail();
                 $slg = 'service';
                 $rating = $page->stars;
-
             }
 //        increment
             $page->views++;

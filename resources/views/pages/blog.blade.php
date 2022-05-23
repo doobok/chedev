@@ -58,6 +58,10 @@
                 <h2 class="text-gray-700">{{$page->getTranslatedAttribute('heading')}}</h2>
             </blockquote>
 
+            <div class="mb-1 text-base">
+                @component('components.blog-item-tags', ['tags'=>$page->tags])@endcomponent
+            </div>
+
             <star-rating
                 itemid="{{$page->id}}"
                 model="blog"
