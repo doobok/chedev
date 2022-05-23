@@ -82,7 +82,7 @@ class PagesController extends Controller
             }
 //        increment
             $page->views++;
-            $page->save();
+            $page->saveQuietly();
         }
 //        return data
         return view('pages.' . $slg, [
@@ -106,7 +106,7 @@ class PagesController extends Controller
         }
 //        increment
         $page->views++;
-        $page->save();
+        $page->saveQuietly();
 //        return data
         return view('pages.portfolio', [
             'page' => $page,
@@ -121,7 +121,7 @@ class PagesController extends Controller
         $read_time = ceil(strlen($page->body)/1000);
 //        increment
         $page->views++;
-        $page->save();
+        $page->saveQuietly();
 //        return data
         return view('pages.blog', [
             'page' => $page,
