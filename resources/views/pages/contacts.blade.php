@@ -87,7 +87,8 @@
                     ></smpl-button>
                 </div>
                 <div>
-                    <img src="/svg/contacts.svg" class="object-cover object-right w-full h-auto" alt="contacts" />
+                    @include('layouts.partials.svg.animated.girl-send-message')
+{{--                    <img src="/svg/contacts.svg" class="object-cover object-right w-full h-auto" alt="contacts" />--}}
                 </div>
             </div>
         </div>

@@ -33,7 +33,8 @@
                 </h1>
             </div>
             <div class="flex justify-center mb-4">
-                <img class="object-cover w-full rounded shadow-lg" src="/meta/services.jpg" alt="{{__('site.services')}}"/>
+                @include('layouts.partials.svg.animated.girl-project')
+{{--                <img class="object-cover w-full rounded shadow-lg" src="/meta/services.jpg" alt="{{__('site.services')}}"/>--}}
             </div>
             <p class="text-base text-gray-700 md:text-lg">
                 {{__('site.services_teaser')}}
