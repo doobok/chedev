@@ -48,7 +48,13 @@
                     <div class="relative overflow-hidden transition-all duration-300 bg-white rounded bg-gray-50 hover:bg-gray-100 hover:-mt-2 hover:mb-2 shadow-md p-1">
                         <a href="{{ route('page', $item->slug) }}"
                            aria-label="{{ $item->getTranslatedAttribute('heading') }}">
-                            <img src="{{ Voyager::image( $item->image ) }}" class="object-cover w-full h-64 rounded"
+                            <img src="
+                            @isset($item->svg)
+                            {{Storage::url((json_decode($item->svg))[0]->download_link)}}
+                            @else
+                            {{ Voyager::image( $item->image ) }}
+                            @endisset
+                            " class="w-full h-64"
                                  alt="{{$item->getTranslatedAttribute('heading')}}"/></a>
                         <div class="py-5 px-2 mb-8">
                             <a href="{{ route('page', $item->slug) }}"

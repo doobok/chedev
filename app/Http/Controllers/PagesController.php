@@ -16,7 +16,7 @@ class PagesController extends Controller
 {
     public function mainPage()
     {
-        $services = Service::where('active', true)->select('id', 'slug', 'heading', 'image')->orderBy('order', 'desc')->limit(8)->get();
+        $services = Service::where('active', true)->select('id', 'slug', 'heading', 'image', 'svg')->orderBy('order', 'desc')->limit(8)->get();
         $portfolios = Portfolio::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'image', 'views')->orderBy('views', 'desc')->limit(6)->get();
         $faqs = Faq::where('active', true)->select('id', 'ask', 'answer')->orderBy('order', 'desc')->limit(6)->get();
         $date = Blog::orderBy('created_at', 'DESC')->value('created_at');
@@ -44,7 +44,7 @@ class PagesController extends Controller
 //        dynamic pages
         if($slug === 'services') {
             $slg = 'services';
-            $data = Service::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image')->orderBy('order', 'desc')->get();
+            $data = Service::with('stars')->where('active', true)->select('id', 'slug', 'heading', 'teaser', 'image', 'svg')->orderBy('order', 'desc')->get();
             $date = Service::orderBy('created_at', 'DESC')->value('created_at');
         }
         if($slug === 'portfolio') {

@@ -47,7 +47,13 @@
                 </h1>
             </div>
             <div class="flex justify-center mb-4">
-                <img class="object-cover w-full rounded shadow-lg" src="{{ Voyager::image( $page->image ) }}" alt="{{$page->getTranslatedAttribute('heading')}}" />
+                <img class="w-full" src="
+                    @isset($page->svg)
+                    {{Storage::url((json_decode($page->svg))[0]->download_link)}}
+                    @else
+                    {{ Voyager::image( $page->image ) }}
+                    @endisset
+                " alt="{{$page->getTranslatedAttribute('heading')}}" />
             </div>
             <p class="text-base text-gray-700 md:text-lg">
                 {{$page->getTranslatedAttribute('teaser')}}

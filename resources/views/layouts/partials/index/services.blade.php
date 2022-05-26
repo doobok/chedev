@@ -1,7 +1,7 @@
 <div class="bg-dark-50">
     <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <h2 class="max-w-md mb-6 font-sans text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl sm:leading-none xl:max-w-lg">
-            Каталог услуг
+            {{ __('site.services') }}
         </h2>
         <div class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
             <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-gray-800">
@@ -13,15 +13,20 @@
             </svg>
         </div>
 
-        <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4 mt-6">
             @foreach($services as $service)
                 <a href="{{route('page', $service->slug)}}" title="{{$service->getTranslatedAttribute('heading')}}">
-                    <div class="text-center">
-                        <div
-                            class="px-10 py-20 text-center transition duration-300 transform bg-local rounded shadow-2xl hover:scale-105 md:shadow-xl hover:shadow-2xl"
-                            style="background-image: url('{{Voyager::image($service->thumbnail('small'))}}')">
-                        </div>
-                        <p class="font-semibold text-sm text-white mt-2">
+                    <div class="text-center transition-all duration-300 border-2 border-dark-50 hover:border-green-500 rounded-md text-white hover:text-green-500 p-2">
+                        <img src="
+                            @isset($service->svg)
+                            {{Storage::url((json_decode($service->svg))[0]->download_link)}}
+                            @else
+                            {{ Voyager::image( $service->image ) }}
+                            @endisset
+                        "
+                             class="w-full h-36"
+                             alt="{{$service->getTranslatedAttribute('heading')}}">
+                        <p class="font-semibold text-sm mt-4">
                             {{$service->getTranslatedAttribute('heading')}}
                         </p>
                     </div>
