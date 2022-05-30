@@ -25,7 +25,6 @@ module.exports = {
             },
             backgroundImage: {
                 'curve-bl': "url('/bg/curve-bl.svg')",
-                'icon-grid': "url('/bg/icon-grid.svg')",
                 'index': "url('/bg/index-bg.svg')",
                 'shape': "url('/bg/shape.svg')",
             },

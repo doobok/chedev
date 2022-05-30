@@ -1,4 +1,4 @@
-<div class="bg-gradient-to-r from-purple-800 via-teal-500 to-fuchsia-700 text-gray-300 py-1 text-sm">
+<div class="gradient text-gray-300 py-1 text-sm">
     <div class="flex justify-between px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div>
             <div class="h-3 mt-1.5 sm:h-5 sm:mt-0">

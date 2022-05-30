@@ -6,7 +6,7 @@
         <div class="mb-2 lg:pr-5 lg:max-w-lg lg:mb-0">
             <div class="max-w-xl mb-6">
                 <div>
-                    <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-green-400">
+                    <p class="gradient inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full">
                         {{config('app.name')}}
                     </p>
                 </div>
