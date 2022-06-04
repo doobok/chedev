@@ -62,4 +62,8 @@
     .gradient {
         @apply bg-gradient-to-r from-purple-800 via-teal-500 to-fuchsia-700;
     }
+
+    .txt-gradient {
+        @apply gradient text-transparent bg-clip-text;
+    }
 }
