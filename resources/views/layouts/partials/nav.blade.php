@@ -98,7 +98,7 @@
 </div>
 
 <div v-scroll-to="'#app'"
-     class="fixed bottom-4 right-4 z-40 cursor-pointer transition-opacity duration-200 opacity-25 hover:opacity-90"
+     class="fixed bottom-4 right-4 z-40 cursor-pointer opacity-25 hover:opacity-90"
      title="{{ __('site.to-top') }}"
 >
     <div class="bg-primary text-white rounded-full border-2 border-white p-4">

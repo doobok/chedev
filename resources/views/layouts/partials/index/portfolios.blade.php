@@ -24,7 +24,7 @@
                 <a href="{{ route('portfolio', $portfolio->slug) }}" title="{{$portfolio->getTranslatedAttribute('heading')}}"
                 class="text-gray-100 transition-all duration-200 hover:text-green-500">
                     <div class="relative aspect-w-14 aspect-h-10 transition-all duration-200 hover:scale-105 hover:-mt-2 hover:mb-2">
-                        <img src="/svg/screan.svg" alt="frame" class="w-full z-40">
+                        <img src="/svg/screan.svg" alt="frame" class="w-full z-30">
                         <div class="absolute left-0 top-0 aspect-w-16 aspect-h-10 align-middle">
                             <img class="px-1 mt-1 w-full h-2/3 object-cover"
                                  src="{{ Voyager::image( $portfolio->image ) }}"
