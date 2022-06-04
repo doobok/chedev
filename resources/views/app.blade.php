@@ -23,6 +23,7 @@
 
 </div>
 @include('layouts.partials.js')
+@yield('js')
 
 </body>
 </html>

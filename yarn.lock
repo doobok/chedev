@@ -3266,6 +3266,16 @@
   "resolved" "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
   "version" "1.2.0"
 
+"highlight.js@^11.5.1":
+  "integrity" "sha512-LKzHqnxr4CrD2YsNoIf/o5nJ09j4yi/GcH5BnYz9UnVpZdS4ucMgvP61TDty5xJcFGRjnH4DpujkS9bHT3hq0Q=="
+  "resolved" "https://registry.npmjs.org/highlight.js/-/highlight.js-11.5.1.tgz"
+  "version" "11.5.1"
+
+"highlightjs-copy@^1.0.3":
+  "integrity" "sha512-vXHBmzz7IuJg8f5ixX7qxhfCCDnEQCXRuIzcd7yTblJazZT3ZkaRto0md8IfBu86JdK4VRIdKMubxKt7kwNGfg=="
+  "resolved" "https://registry.npmjs.org/highlightjs-copy/-/highlightjs-copy-1.0.3.tgz"
+  "version" "1.0.3"
+
 "hmac-drbg@^1.0.1":
   "integrity" "sha1-0nRXAQJabHdabFRXk+1QL8DGSaE="
   "resolved" "https://registry.npmjs.org/hmac-drbg/-/hmac-drbg-1.0.1.tgz"

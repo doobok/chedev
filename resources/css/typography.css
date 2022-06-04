@@ -55,6 +55,10 @@
         @apply border-l-4 border-green-500 italic my-8 pl-8 md:pl-12;
     }
 
+    article pre {
+        @apply my-1.5 rounded-md overflow-x-auto;
+    }
+
     .gradient {
         @apply bg-gradient-to-r from-purple-800 via-teal-500 to-fuchsia-700;
     }

@@ -19,6 +19,7 @@
             {{$page->created_at}}
         @endslot
     @endcomponent
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/nord.min.css">
 @endsection
 
 @section('main')
@@ -120,5 +121,19 @@
             'description' => $page->getTranslatedAttribute('teaser'),
         ])@endcomponent
     @endisset
+
+@endsection
+@section('js')
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>
+        setTimeout(function () {
+            document
+                .querySelectorAll('pre code')
+                .forEach((block) => {
+                    hljs.highlightElement(block);
+                })
+        }, 1000);
+
+    </script>
 
 @endsection
