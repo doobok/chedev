@@ -124,8 +124,8 @@
 
 @endsection
 @section('js')
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-    <script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" defer></script>
+    <script defer>
         setTimeout(function () {
             document
                 .querySelectorAll('pre code')
