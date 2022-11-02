@@ -15,7 +15,7 @@ class CreateCurrencies
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $currency;
+    public Currency $currency;
 
     /**
      * Create a new event instance.

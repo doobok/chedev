@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Notification;
 
 class ChangeCurrencyNotification
 {
-    private $supportedCurrencies = [
+    private array $supportedCurrencies = [
         'eur',
         'usd',
     ];

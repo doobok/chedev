@@ -28,7 +28,7 @@ class TelegramCurrencyChangeUp extends Notification
         $this->currencyName = Str::upper($currencyName);
         $this->oldCurrency = $old;
         $this->newCurrency = $new;
-        $this->diff = $new - $old;
+        $this->diff = round($new - $old, 2);
     }
 
     /**
@@ -50,7 +50,7 @@ class TelegramCurrencyChangeUp extends Notification
     public function toTelegram($notifiable)
     {
         return TelegramMessage::create()
-            ->to(config('supp.telegramchat'))
+            ->to(config('supp.telegram_currency_chat'))
             ->content("💹 курс *$this->currencyName* виріс на *$this->diff* і тепер становить *$this->newCurrency* \nСтарий курс: $this->oldCurrency");
     }
 
