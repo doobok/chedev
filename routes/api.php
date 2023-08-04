@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AlarmController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +24,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('get-comments', 'App\Http\Controllers\CommentsController@getComments');
     Route::post('set-comment', 'App\Http\Controllers\CommentsController@setComment');
     Route::post('send-complain', 'App\Http\Controllers\CommentsController@sendComplain');
+    // air alarms
+    Route::post('air-alarms-handler', [AlarmController::class, 'webhook'])->name('air-alarms');
 });
