@@ -52,4 +52,10 @@ return [
         'redirect'      => env('GOOGLE_URL'),
     ],
 
+    'telegram' => [
+        'channel' => [
+            'mono-transactions' => '-1002738492718'
+        ]
+    ]
+
 ];

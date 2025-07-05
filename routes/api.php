@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlarmController;
+use App\Http\Controllers\MonoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('send-complain', 'App\Http\Controllers\CommentsController@sendComplain');
     // air alarms
     Route::post('air-alarms-handler', [AlarmController::class, 'webhook'])->name('air-alarms');
+    // mono transactions
+    Route::post('transaction-3Fv72kLzQ9mEjpA8gXrMnT5bY1dUcWoN', [MonoController::class, 'webhook'])->name('mono-transactions');
 });
