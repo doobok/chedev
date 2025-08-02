@@ -18,7 +18,7 @@ class MonoTransactionNotification extends Notification
      *
      * @return void
      */
-    public function __construct(private string $body)
+    public function __construct(private string $amount, private string $balance, private string $description)
     {
     }
 
@@ -37,9 +37,12 @@ class MonoTransactionNotification extends Notification
      */
     public function toTelegram(): TelegramMessage
     {
+        $icon = $this->amount > 0
+            ? "🪙"
+            : "💸";
 
         return TelegramMessage::create()
             ->to(config('services.telegram.channel.mono-transactions'))
-            ->content("$this->body");
+            ->content("$icon $this->description\n*$this->amount*\nбаланс *$this->balance*");
     }
 }
