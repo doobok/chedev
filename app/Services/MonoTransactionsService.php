@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Notification;
 
 class MonoTransactionsService
 {
-    private const MASTER_MODE_ENABLED = true;
+    private const MASTER_MODE_ENABLED = false;
     private const MASTER_MODE_LIMIT = 5000000;
     private const UAH_CURRENCY_CODE = 980;
     private int $currencyCode = 0;

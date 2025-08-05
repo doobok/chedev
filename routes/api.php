@@ -28,5 +28,6 @@ Route::group(['prefix' => 'v1'], function () {
     // air alarms
     Route::post('air-alarms-handler', [AlarmController::class, 'webhook'])->name('air-alarms');
     // mono transactions
+    Route::get('transaction-3Fv72kLzQ9mEjpA8gXrMnT5bY1dUcWoN', [MonoController::class, 'webhookCheck'])->name('mono-check');
     Route::post('transaction-3Fv72kLzQ9mEjpA8gXrMnT5bY1dUcWoN', [MonoController::class, 'webhook'])->name('mono-transactions');
 });
