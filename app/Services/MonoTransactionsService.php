@@ -12,6 +12,8 @@ class MonoTransactionsService
     private const UAH_CURRENCY_CODE = 980;
     private const FILTERED_TRANSACTIONS = [
         'З гривневого рахунку ФОП',
+        'На чорну картку',
+        'На гривневий рахунок ФОП для переказу на картку',
     ];
     private int $currencyCode = 0;
     private int $balance = 1000000;
