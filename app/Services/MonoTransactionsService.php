@@ -10,6 +10,9 @@ class MonoTransactionsService
     private const MASTER_MODE_ENABLED = false;
     private const MASTER_MODE_LIMIT = 5000000;
     private const UAH_CURRENCY_CODE = 980;
+    private const FILTERED_TRANSACTIONS = [
+        'З гривневого рахунку ФОП',
+    ];
     private int $currencyCode = 0;
     private int $balance = 1000000;
     private int $operationAmount = 0;
@@ -25,6 +28,9 @@ class MonoTransactionsService
         $this->parseData($data);
 
         if ($this->currencyCode !== self::UAH_CURRENCY_CODE) {
+            return;
+        }
+        if (in_array($this->description, self::FILTERED_TRANSACTIONS)) {
             return;
         }
         if (!self::MASTER_MODE_ENABLED && $this->balance > self::MASTER_MODE_LIMIT) {
